@@ -1,5 +1,5 @@
 
-
+/*
 #define WARTHOG_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {        \
   class 12th_ground_spawner {     \
