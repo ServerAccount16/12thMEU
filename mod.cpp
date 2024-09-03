@@ -1,0 +1,11 @@
+name = "12th MEU";
+author = "12th Marine Expeditionary Unit S-4 Team";
+picture         = "logo.paa";           // Picture displayed from the expansions menu. Optimal size is 2048x1024
+logo            = "logo.paa";        // Logo displayed in the main menu 128x128
+logoOver        = "logo.paa";
+logoSmall       = "logo.paa";
+tooltip         = "12th MEU";
+overview        = "*sob*";         // Overview text, displayed from the extension menu
+description     = "12th MEU Mod"; // Probably in context with action
+action          = "https://discord.gg/12thmeu";    // Website URL, that can accessed from the expansions menu 
+actionName      = "Website?";                 // label of button/tooltip in extension menu

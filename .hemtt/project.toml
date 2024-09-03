@@ -1,0 +1,23 @@
+name = "12th MEU"
+prefix = "12thMEU"
+author = "Weber"
+
+[files]
+include = [
+    "mod.cpp",
+    "logo.paa",
+    "README.md",
+    "LICENSE",
+    "*.pbo"
+]
+
+exclude = [
+    "*.png", # explicitly excluding image source files from build, but not repository
+]
+
+[version]
+major = 6
+minor = 0
+patch = 0
+build = 0
+git_hash = 0
