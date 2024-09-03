@@ -1,3 +1,4 @@
+#pragma hemtt suppress pw3_padded_arg config
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "config_macros.hpp"
 
