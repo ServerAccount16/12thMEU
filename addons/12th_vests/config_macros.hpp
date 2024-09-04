@@ -133,3 +133,5 @@ UNSCF_VEST(GLUE(BC,_gr_c2)   ,CAMO,GRENADIER_CHEST2_SEL,           Q(GLUE(BD, Gr
 UNSCF_VEST(GLUE(BC,_gr_c2l)  ,CAMO,GRENADIER_CHEST2_LEG_SEL,       Q(GLUE(BD, Grenadier Vest (Partial Chest & Leg Pouches))))         \
 UNSCF_VEST(GLUE(BC,_gr_c2h)  ,CAMO,GRENADIER_CHEST2_HEAVY_SEL,     Q(GLUE(BD, Grenadier Vest (Heavy & Partial Chest Pouches))))       \
 UNSCF_VEST(GLUE(BC,_gr_c2hl) ,CAMO,GRENADIER_CHEST2_HEAVY_LEG_SEL, Q(GLUE(BD, Grenadier Vest (Heavy & Partial Chest & Leg Pouches)))) \
+
+// Yet again, thank you Kelp for a baseline!

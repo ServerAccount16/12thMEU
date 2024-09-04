@@ -1,5 +1,6 @@
 // This hpp includes macros. They are organized into sections as listed below.
-// 
+
+//I wonder if I can make all of the weapon attachments into a single macro... 
 
 
 // Start Attachment Macros

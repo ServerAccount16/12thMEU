@@ -3,8 +3,6 @@
 // Includes necessary macros for configurations
 #include "macros.hpp"
 
-// Configuration for weapon and ammo data
-
 class CfgPatches
 {
   class 12th_weapons
@@ -16,13 +14,14 @@ class CfgPatches
                  "12th_br55", "12th_br55_gl", "12th_br55_HB", "12th_br55_HB_gl", 
                  "12th_M392", "12th_MA37K", "12th_BR45", "12th_Commando", 
                  "12th_MMG33_T", "12th_M33_t", "12th_M247", "12th_M319", 
-                 "12th_M319N"};
-    ammo[] = {"12th_20g_bb", "12th_95x40_UW", "12th_5x23mm_UW", "12th_40mmG_HEAT"};
+                 "12th_M319N"}; // Please add your new weapons to this list
+    ammo[] = {"12th_20g_bb", "12th_95x40_UW", "12th_5x23mm_UW", "12th_40mmG_HEAT"}; // Please add your new ammo types to this list
     magazines[] = {"12th_20g_mag", "12th_95x40_100rnd", "12th_762x51_200rnd", 
                    "12th_762x51_200rnd_T", "12th_br_36Rnd_UW", "12th_m7_60rnd_UW", 
-                   "12th_m7_48rnd_UW", "12th_40mm_heat"};
+                   "12th_m7_48rnd_UW", "12th_40mm_heat"}; // Please add your new magazines to this list
     requiredVersion = 0.1;
-    requiredAddons[] = {}; // No additional addons required
+    requiredAddons[] = {"Dmns_Weapons", "OPTRE_Weapons", "Dmns_Weapons_F_MachineGuns",
+            "A3_Weapons_F", "A3_Weapons_F_Exp", "19_UNSC_Weapons"}; // **THIS NEEDS TO BE UPDATED**
   };
 };
 
@@ -30,7 +29,7 @@ class CfgPatches
 
 class CfgAmmo
 {
-  class BulletBase; // Base class for all bullet-type ammunition
+  class BulletBase; // Base class for all bullet-type ammunition. However, this is only used for BB ammo right now
   class OPTRE_B_95x40_Ball; // Base class for 9.5x40mm Ball ammo
   class OPTRE_B_5x23_Caseless; // Base class for 5x23mm Caseless ammo
   class M319_HEAT; // Base class for 40mm HEAT grenades
@@ -40,7 +39,7 @@ class CfgAmmo
   {
     model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
     cartridge = "";
-    hit = 0; // Non-lethal training rounds
+    hit = 0; // Non-lethal training rounds. I will probably change this later so it bruises
     indirectHit = 0;
     indirectHitRange = 0;
     cost = 100;
@@ -58,7 +57,7 @@ class CfgAmmo
     dangerRadiusBulletClose = 4;
     dangerRadiusHit = 8;
     suppressionRadiusBulletClose = 2;
-    suppressionRadiusHit = 4;
+    suppressionRadiusHit = 4; // Who says you can't suppress someone with BB's?
   };
 
   // Underwater rifle ammunition configuration
@@ -175,7 +174,7 @@ class CfgMagazines
     displayName = "[12th] 40mm HEAT";
     displaynameshort = "40mm HEAT";
     ammo = "12th_40mmG_HEAT"; // 40mm HEAT grenade
-    author = "Waylen";
+    author = "Waylen"; // Nerd
     mass = 8;
   };
 };
@@ -184,7 +183,7 @@ class CfgMagazines
 
 class CBA_DisposableLaunchers
 {
-  ACE_12th_M96_LAW_Ready[] = {"12th_M96_LAW", "12th_M96_LAW_Used"}; // Defines the ready and used states of the M96 LAW
+  ACE_12th_M96_LAW_Ready[] = {"12th_M96_LAW", "12th_M96_LAW_Used"}; // Defines the ready and used states of the M96 LAW. I'm not sure it's need though
 };
 
 // Configuration for custom weapons
@@ -197,18 +196,18 @@ class CfgWeapons
   class UnderBarrelSlot; // Base class for underbarrel attachments
   class FullAuto; // Base class for full-auto fire mode
   class Launcher; // Base class for launcher weapons
-  class OPTRE_MA37K; // Base class for the MA37K Carbine
-  class OPTRE_BR45; // Base class for the BR45 Battle Rifle
+  class OPTRE_MA37K;
+  class OPTRE_BR45;
   class OPTRE_Commando;
-  class OPTRE_M247;
+  class OPTRE_M247; 
   class OPTRE_M319;
   class OPTRE_M319N;
-  class OPTRE_M301UGL;
-  class Dmns_M33_T; // Base class for the M33-T Machine Gun
-  class DMNS_M96_LAW; // Base class for the M96 LAW Launcher
+  class OPTRE_M301UGL; // Base class for our UGLs
+  class Dmns_M33_T;
+  class DMNS_M96_LAW;
   class GL_3GL_F; // Base class for grenade launchers
   class InventoryOpticsItem_Base_F; // Base class for optics
-  class 19_UNSC_M6C;
+  class 19_UNSC_M6C; // 
   class 19_UNSC_M7;
   class 19_UNSC_M7_Side;
   class 19_UNSC_M90;
@@ -233,7 +232,7 @@ class CfgWeapons
     {
       class CowsSlot : CowsSlot
       {
-        compatibleItems[] = COMMON_SIGHTS;
+        compatibleItems[] = COMMON_SIGHTS; // This macro defines our current array of optics. Check macros.hpp
       };
     };
   };
@@ -270,6 +269,8 @@ class CfgWeapons
 
   // Configuration for various rifles and attachments
 
+  // **ANY COMMON_MACRO_NAME CAN BE FOUND IN macros.hpp**
+
   class 12th_M6C : 19_UNSC_M6C
   {
     scope = 2;
@@ -277,7 +278,7 @@ class CfgWeapons
     author = "Weber";
     display = "[12th] M6C";
     baseWeapon = "12th_M6C";
-    magazines[] = COMMON_M6_MAGAZINES;
+    magazines[] = COMMON_M6_MAGAZINES; 
   };
 
   class 12th_M7_Test : 19_UNSC_M7
@@ -341,7 +342,7 @@ class CfgWeapons
     canShootInWater = 1;
     displayName = "[12th] MA5A W/ M301";
     baseWeapon = "12th_MA5A_gl";
-    muzzles[] = {"this", "12th_M301UGL"}; // Attachments
+    muzzles[] = {"this", "12th_M301UGL"}; // This is the portion of code that adds the UGL. Basically it has 2 muzzles to fire from
     class 12th_M301UGL : OPTRE_M301UGL
     {
       displayName = "M301 Grenade Launcher";
@@ -363,6 +364,7 @@ class CfgWeapons
   };
 
   // BR55 Rifle configuration with attachments
+  // I want to come back through this later and update this so that these are maybe a macro since they're so similar
 
   class 12th_br55 : 19_UNSC_br55
   {
@@ -381,10 +383,7 @@ class CfgWeapons
         compatibleItems[] = COMMON_BR_SIGHTS;
       };
       class PointerSlot : PointerSlot {};
-      class UnderBarrelSlot : UnderBarrelSlot
-      {
-        compatibleitems[] = {};
-      };
+      class UnderBarrelSlot : UnderBarrelSlot{}; 
     };
   };
 
@@ -414,10 +413,7 @@ class CfgWeapons
         compatibleItems[] = COMMON_BR_SIGHTS;
       };
       class PointerSlot : PointerSlot {};
-      class UnderBarrelSlot : UnderBarrelSlot
-      {
-        compatibleitems[] = {};
-      };
+      class UnderBarrelSlot : UnderBarrelSlot{};
     };
   };
 
@@ -438,10 +434,7 @@ class CfgWeapons
         compatibleItems[] = COMMON_BR_SIGHTS;
       };
       class PointerSlot : PointerSlot {};
-      class UnderBarrelSlot : UnderBarrelSlot
-      {
-        compatibleitems[] = {};
-      };
+      class UnderBarrelSlot : UnderBarrelSlot{};
     };
   };
 
@@ -469,10 +462,7 @@ class CfgWeapons
         compatibleItems[] = COMMON_BR_SIGHTS;
       };
       class PointerSlot : PointerSlot {};
-      class UnderBarrelSlot : UnderBarrelSlot
-      {
-        compatibleitems[] = {};
-      };
+      class UnderBarrelSlot : UnderBarrelSlot{};
     };
   };
 
@@ -549,7 +539,7 @@ class CfgWeapons
 
   class 12th_MMG33_T : Dmns_M33_T
   {
-    author = "Jack";
+    author = "Jack"; // Thank you!
     displayName = "[12th] MMG33-T";
     baseWeapon = "12th_MMG33_T";
     magazines[] = {
