@@ -38,7 +38,7 @@ class CfgWeapons {
     author="Weber";
     picture="";  // No picture is set. I'll make one eventually probably
     model="\19th_H2A_armor\19th_H2A_marines_vests.p3d";
-    allowedSlots[]={ 701 };]
+    allowedSlots[]={ 701 };
     hiddenSelections[]={};
     hiddenSelectionsTextures[]={};
     UNSCF_VEST_ITEM_INFO("",default)  // Including vest item information using the UNSCF_VEST_ITEM_INFO macro.
@@ -63,4 +63,4 @@ class CfgWeapons {
   UNSCF_VEST_ALL_VARIANTS(12th_unscf_vest_win,winter,[12th][W])
 };
 
-// Thank you Kelp for making a baseline for be to build off of :kisses:
+// Thank you Kelp for making a baseline for me to build off of :kisses:

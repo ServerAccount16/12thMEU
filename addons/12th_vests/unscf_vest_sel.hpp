@@ -1,3 +1,6 @@
+#ifndef UNSCF_VEST_SEL_HPP
+#define UNSCF_VEST_SEL_HPP
+
 /*
 A big set of every possible selection combination
 for the UNSC Foundries halo-themed vests.
@@ -386,3 +389,5 @@ for the UNSC Foundries halo-themed vests.
   "light",                            \
   "Shotgun",                          \
   "HeavyRifle",                       \
+
+#endif // UNSCF_VEST_SEL_HPP

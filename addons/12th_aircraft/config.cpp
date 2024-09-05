@@ -51,5 +51,5 @@ class CfgVehicles {
     displayName = "[12th] D77-TC Pelican";
     Pelican_TextureSets
     Air_SP_Info(Pelican,0,Troop Transport)
-  }
-}
+  };
+};
