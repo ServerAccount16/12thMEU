@@ -181,7 +181,7 @@ class CfgVehicles {
     uniformClass="12th_dress_navy_wep";
     hiddenSelections[] = {"camo1", "insignia", "clan", "ODST"};
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\dress\dress_uni_navy_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\dress\dress_uni_navy_co.paa"
     };
   };
 
@@ -193,8 +193,8 @@ class CfgVehicles {
     model="ODST\ODST_Uniform_F.p3d";
     hiddenSelections[]={"camo1", "camo2"};
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\odst\odst_top.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\odst\odst_pants.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\odst\odst_top.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\odst\odst_pants.paa"
     };
   };
 
@@ -202,8 +202,8 @@ class CfgVehicles {
   class 12th_clothes_std_veh: OPTRE_UNSC_Army_Soldier_WDL {
     uniformClass="12th_clothes_std_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -218,8 +218,8 @@ class CfgVehicles {
   class 12th_clothes_std_short_veh: OPTRE_UNSC_Army_Soldier_S_WDL {
     uniformClass="12th_clothes_std_short_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -234,8 +234,8 @@ class CfgVehicles {
   class 12th_clothes_std_rolled_veh: OPTRE_UNSC_Army_Soldier_R_WDL {
     uniformClass="12th_clothes_std_rolled_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_standard_2_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -251,8 +251,8 @@ class CfgVehicles {
     author="Kelp";
     uniformClass="12th_clothes_desert_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -268,8 +268,8 @@ class CfgVehicles {
     author="Kelp";
     uniformClass="12th_clothes_desert_short_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -285,8 +285,8 @@ class CfgVehicles {
     author="Kelp";
     uniformClass="12th_clothes_desert_rolled_wep";
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
-      "\x\12thMEUAssets\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
+      "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_2_co.paa"
     };
     hiddenSelections[]= {
       "camo",
@@ -459,12 +459,12 @@ class CfgWeapons {
     displayName="[12th][Caps] Patrol Cap";
     hiddenSelections[] = { "camo1", "hide_army" };
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_armor\helmets\cap\cap_standard_co.paa"
+      "\x\12thMEU\addons\12th_armor\helmets\cap\cap_standard_co.paa"
     };
     class ItemInfo: ItemInfo {
       hiddenSelections[] = { "camo1", "hide_army" };
       hiddenSelectionsTextures[] = {
-        "\x\12thMEUAssets\addons\12th_armor\helmets\cap\cap_standard_co.paa"
+        "\x\12thMEU\addons\12th_armor\helmets\cap\cap_standard_co.paa"
       };
     };
   };
@@ -475,12 +475,12 @@ class CfgWeapons {
     displayName="[12th][Caps][Desert] Patrol Cap";
     hiddenSelections[] = { "camo1", "hide_army" };
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_armor\helmets\cap\cap_desert_co.paa"
+      "\x\12thMEU\addons\12th_armor\helmets\cap\cap_desert_co.paa"
     };
     class ItemInfo: ItemInfo {
       hiddenSelections[] = { "camo1", "hide_army" };
       hiddenSelectionsTextures[] = {
-        "\x\12thMEUAssets\addons\12th_armor\helmets\cap\cap_desert_co.paa"
+        "\x\12thMEU\addons\12th_armor\helmets\cap\cap_desert_co.paa"
       };
     };
   };
@@ -495,7 +495,7 @@ class CfgWeapons {
     model = "\a3\characters_f\Common\booniehat";
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_armor\helmets\boonie_hat\boonie_co_marpat.paa"
+      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\boonie_co_marpat.paa"
     };
     class ItemInfo: HeadgearItem {
         mass = 5;
@@ -517,7 +517,7 @@ class CfgWeapons {
     model="\ODST\ODST_helm_F.p3d";
     hiddenSelections[]= { "camo" };
     hiddenSelectionsTextures[]= {
-      "\x\12thMEUAssets\addons\12th_armor\helmets\odst\odst_helm.paa"
+      "\x\12thMEU\addons\12th_armor\helmets\odst\odst_helm.paa"
     };
     class ItemInfo: HeadgearItem {
       mass=40;
@@ -533,7 +533,7 @@ class CfgWeapons {
       uniformModel="\ODST\ODST_helm_F.p3d";
       hiddenSelections[]={"camo"};
       hiddenSelectionsTextures[]= {
-        "\x\12thMEUAssets\addons\12th_armor\helmets\odst\odst_helm.paa"
+        "\x\12thMEU\addons\12th_armor\helmets\odst\odst_helm.paa"
       };
     };
   };

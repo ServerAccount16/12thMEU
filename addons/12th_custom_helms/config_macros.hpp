@@ -1,7 +1,7 @@
-#define HELMTEXPATH(SUFFIX) \x\12thMEUAssets\addons\12th_custom_helms\data\helms\Helm_co_##SUFFIX.paa
-#define HELMVISORPATH(VISOR) \x\12thMEUAssets\addons\12th_custom_helms\data\visors\##VISOR.paa
+#define HELMTEXPATH(SUFFIX) \x\12thMEU\addons\12th_custom_helms\data\helms\Helm_co_##SUFFIX.paa
+#define HELMVISORPATH(VISOR) \x\12thMEU\addons\12th_custom_helms\data\visors\##VISOR.paa
 
-#define P(PATH) \x\12thMEUAssets\addons\12th_custom_helms\##PATH
+#define P(PATH) \x\12thMEU\addons\12th_custom_helms\##PATH
 #define CH_PILOT_TEX(CAMOTYPE,FILENAME) P(data\pilots\##CAMOTYPE\##FILENAME)
 
 #define GLUE(A,B) A##B
