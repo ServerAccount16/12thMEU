@@ -71,7 +71,7 @@ class 12th_uni_ng_##CSFX##_wep {      \
 #define HELM_NV(SUFFIX,DISPLAY)                 \
 class 12th_helm_##SUFFIX##_nv: 12th_helm_base { \
   scope=2;                                      \
-  author="Kelp";                                \
+  author="Waylen";                              \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
@@ -105,7 +105,7 @@ class 12th_helm_##SUFFIX##_nv: 12th_helm_base { \
 #define HELM_SV(SUFFIX,DISPLAY)                 \
 class 12th_helm_##SUFFIX##: 12th_helm_base {    \
   scope=2;                                      \
-  author="Kelp";                                \
+  author="Waylen";                              \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
