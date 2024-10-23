@@ -10,7 +10,8 @@ class CfgPatches {
       "twelfth_supply_pod_mortar",
       "twelfth_supply_pod_rifle",
       "twelfth_supply_pod_mg",
-      "twelfth_supply_pod_dmr"
+      "twelfth_supply_pod_dmr",
+      "twelfth_supply_pod_eq"
     };
     requiredVersion = 0.1;
   };
@@ -93,9 +94,13 @@ class CfgVehicles {
       class _xx_ACE_HuntIR_M203 { magazine = "ACE_HuntIR_M203"; count = 10; };
       class _xx_C7_Remote_Mag { magazine = "C7_Remote_Mag"; count = 20; };
       class _xx_C12_Remote_Mag { magazine = "C12_Remote_Mag"; count = 10; };
-      class _xx_tsp_frameCharge_mag { magazine = "tsp_frameCharge_mag"; count = 10; };
-      class _xx_tsp_popperCharge_mag { magazine = "tsp_popperCharge_mag"; count = 20; };
-      class _xx_tsp_stickCharge_mag { magazine = "tsp_stickCharge_mag"; count = 10; };
+      class _xx_M168_Remote_Mag { magazine = "M168_Remote_Mag"; count = 5; };
+      class _xx_tsp_breach_block_mag { magazine = "tsp_breach_block_mag"; count = 20; };
+      class _xx_tsp_breach_linear_mag { magazine = "tsp_breach_linear_mag"; count = 20; };
+      class _xx_tsp_breach_popper_mag { magazine = "tsp_breach_popper_mag"; count = 40; };
+      class _xx_tsp_breach_silhouette_mag { magazine = "tsp_breach_silhouette_mag"; count = 10; };
+      class _xx_tsp_breach_package_mag { magazine = "tsp_breach_package_mag"; count = 10; };
+      class _xx_tsp_breach_stick_mag { magazine = "tsp_breach_stick_mag"; count = 20; };
       class _xx_DemoCharge_Remote_Mag { magazine = "DemoCharge_Remote_Mag"; count = 10; };
       class _xx_M319_HEDP_Grenade_Shell { magazine = "M319_HEDP_Grenade_Shell"; count = 20; };
     };
@@ -110,6 +115,7 @@ class CfgVehicles {
       class _xx_OPTRE_M2_Smoke_Purple { name = "OPTRE_M2_Smoke_Purple"; count = 10; };
       class _xx_OPTRE_ELB47_Strobe { name = "OPTRE_ELB47_Strobe"; count = 5; };
       class _xx_ACE_M84 { name = "ACE_M84"; count = 10; };
+      class _xx_ACRE_M26_Clacker { name = "ACRE_M26_Clacker"; count = 10; };
     };
   };
 
@@ -142,15 +148,17 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_supply_pods\data\pod_co_mortar.paa"
     };
     class TransportMagazines {
-      class _xx_avm224_M_6Rnd_60mm_HE_0_csw { magazine = "avm224_M_6Rnd_60mm_HE_0_csw"; count = 20; };
-      class _xx_avm224_M_6Rnd_60mm_HE_csw { magazine = "avm224_M_6Rnd_60mm_HE_csw"; count = 20; };
+      class _xx_avm224_M_6Rnd_60mm_HE_0_csw { magazine = "avm224_M_6Rnd_60mm_HE_0_csw"; count = 500; };
+      class _xx_avm224_M_6Rnd_60mm_HE_csw { magazine = "avm224_M_6Rnd_60mm_HE_csw"; count = 600; };
       class _xx_avm224_M_6Rnd_60mm_ILLUM_IR_csw { magazine = "avm224_M_6Rnd_60mm_ILLUM_IR_csw"; count = 10; };
-      class _xx_avm224_M_6Rnd_60mm_ILLUM_csw { magazine = "avm224_M_6Rnd_60mm_ILLUM_csw"; count = 10; };
+      class _xx_avm224_M_6Rnd_60mm_ILLUM_csw { magazine = "avm224_M_6Rnd_60mm_ILLUM_csw"; count = 50; };
     };
     class TransportWeapons {
-      class _xx_avm224_W_M224_mortar_carry { weapon = "avm224_W_M224_mortar_carry"; count = 1; };
+      class _xx_avm224_W_M224_mortar_carry { weapon = "avm224_W_M224_mortar_carry"; count = 2; };
     };
-    class TransportItems {};
+    class TransportItems {
+      class _xx_ACE_artilleryTable { weapon = "ACE_artilleryTable"; count = 2; };
+    };
   };
 
   // Define the rifle ammo supply pod
@@ -160,12 +168,12 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_supply_pods\data\pod_co_rifle.paa"
     };
     class TransportMagazines {
-      class _xx_OPTRE_32Rnd_762x51_Mag { magazine = "OPTRE_32Rnd_762x51_Mag"; count = 50; };
-      class _xx_OPTRE_32Rnd_762x51_Mag_Tracer { magazine = "OPTRE_32Rnd_762x51_Mag_Tracer"; count = 50; };
+      class _xx_OPTRE_32Rnd_762x51_Mag { magazine = "OPTRE_32Rnd_762x51_Mag"; count = 75; };
+      class _xx_OPTRE_32Rnd_762x51_Mag_Tracer { magazine = "OPTRE_32Rnd_762x51_Mag_Tracer"; count = 75; };
       class _xx_OPTRE_36Rnd_95x40_Mag { magazine = "OPTRE_36Rnd_95x40_Mag"; count = 25; };
       class _xx_OPTRE_36Rnd_95x40_Mag_Tracer { magazine = "OPTRE_36Rnd_95x40_Mag_Tracer"; count = 25; };
       class _xx_OPTRE_60Rnd_5x23mm_Mag { magazine = "OPTRE_60Rnd_5x23mm_Mag"; count = 25; };
-      class _xx_OPTRE_12Rnd_8Gauge_Pellets { magazine = "OPTRE_12Rnd_8Gauge_Pellets"; count = 25; };
+      class _xx_12Rnd_8Gauge { magazine = "12Rnd_8Gauge"; count = 25; };
       class _xx_OPTRE_4Rnd_145x114_APFSDS_Mag { magazine = "OPTRE_4Rnd_145x114_APFSDS_Mag"; count = 10; };
     };
     class TransportWeapons {};
@@ -189,6 +197,30 @@ class CfgVehicles {
     class TransportWeapons {};
     class TransportItems {
       class _xx_ACE_WaterBottle { name = "ACE_WaterBottle"; count = 10; };
+    };
+  };
+
+  // Define Equipment Supply Pod
+  class twelfth_supply_pod_eq: twelfth_supply_pod_empty {
+    displayName = "[12th] Supply Pod (Equipment)";
+    hiddenSelectionsTextures[] = {
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"
+    };
+    class TransportMagazines {};
+    class TransportWeapons {};
+    class TransportItems {
+      class _xx_ToolKit { name = "ToolKit"; count = 5; };
+      class _xx_ACE_DefusalKit { name = "ACE_DefusalKit"; count = 5; };
+      class _xx_ACE_wirecutter { name = "ACE_wirecutter"; count = 5; };
+      class _xx_ItemcTab { name = "ItemcTab"; count = 10; };
+      class _xx_ItemAndroid { name = "ItemAndroid"; count = 10; };
+      class _xx_ItemMicroDAGR { name = "ItemMicroDAGR"; count = 10; };
+      class _xx_ACRE_PRC343 { name = "ACRE_PRC343"; count = 10; };
+      class _xx_ACRE_PRC148 { name = "ACRE_PRC148"; count = 10; };
+      class _xx_ACRE_PRC117F { name = "ACRE_PRC117F"; count = 2; };
+      class _xx_ACRE_VHF30108SPIKE { name = "ACRE_VHF30108SPIKE"; count = 2; };
+      class _xx_ACRE_VHF30108MAST { name = "ACRE_VHF30108MAST"; count = 2; };
+      class _xx_Laserbatteries { name = "Laserbatteries"; count = 2; };
     };
   };
 
@@ -233,6 +265,7 @@ class CfgVehicles {
           class n26 { name = "[12th] Mortar Supply Pod"; value = "twelfth_supply_pod_mortar"; };
           class n27 { name = "[12th] Rifle Supply Pod"; value = "twelfth_supply_pod_rifle"; };
           class n28 { name = "[12th] Machine Gun Supply Pod"; value = "twelfth_supply_pod_mg"; };
+          class n29 { name = "[12th] Equipment Supply Pod"; value = "twelfth_supply_pod_eq"; };
         };
       };
     };
