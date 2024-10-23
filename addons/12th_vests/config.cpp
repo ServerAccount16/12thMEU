@@ -8,10 +8,10 @@
 
 // Configuration for CfgPatches, which defines the mod's dependencies and included content.
 class CfgPatches {
-  class 12th_vests {
+  class twelfth_vests {
     units[]= {};
     weapons[]= { 
-      "12th_invis_vest"
+      "twelfth_invis_vest"
     };
     requiredVersion=0.1;
   };
@@ -20,7 +20,7 @@ class CfgPatches {
 // Begin CfgVehicles.
 class CfgVehicles {
   class ContainerSupply;
-  class 12th_vest_supply : ContainerSupply {
+  class twelfth_vest_supply : ContainerSupply {
     maximumLoad=VEST_MAXLOAD;  // Setting the maximum load capacity using the VEST_MAXLOAD macro.
   };
 };
@@ -32,7 +32,7 @@ class CfgWeapons {
   class OPTRE_UNSC_M52A_Armor2_MAR; // This is only used for the invisible Vest. Thank you Kelp
 
   // Base class for UNSC Foundries vests.
-  class 12th_unscf_vest_base : ItemCore {
+  class twelfth_unscf_vest_base : ItemCore {
     scope=0;  // Not visible in-game.
     scopeArsenal=0;  // Not available in the Arsenal.
     author="Weber";
@@ -45,7 +45,7 @@ class CfgWeapons {
   };
 
   // Class for the invisible vest.
-  class 12th_invis_vest: OPTRE_UNSC_M52A_Armor2_MAR {
+  class twelfth_invis_vest: OPTRE_UNSC_M52A_Armor2_MAR {
     author="Weber"; 
     scope=2;  // Visible in-game.
     scopeArsenal=2;  // Available in the Arsenal.
@@ -57,10 +57,10 @@ class CfgWeapons {
   };
 
   // Defining all variants of the UNSC Foundries standard (std) camo vests.
-  UNSCF_VEST_ALL_VARIANTS(12th_unscf_vest_std,std,[12th][S])
+  UNSCF_VEST_ALL_VARIANTS(twelfth_unscf_vest_std,std,[12th][S])
 
   // Defining all variants of the UNSC Foundries winter (winter) camo vests.
-  UNSCF_VEST_ALL_VARIANTS(12th_unscf_vest_win,winter,[12th][W])
+  UNSCF_VEST_ALL_VARIANTS(twelfth_unscf_vest_win,winter,[12th][W])
 };
 
 // Thank you Kelp for making a baseline for me to build off of :kisses:

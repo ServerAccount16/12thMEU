@@ -2,10 +2,10 @@
 #include "config_macros.hpp"
 
 class CfgPatches {
-    class 12th_tagging {
+    class twelfth_tagging {
         units[] = {""};
         weapons[] = {
-            "12th_spray_hq"
+            "twelfth_spray_hq"
         };
         requiredAddons[] = {
             "ace_interaction",
@@ -24,7 +24,7 @@ class CfgWeapons {
     class CBA_MiscItem_ItemInfo; // Base class for item information
 
     // Define spray cans for each platoon
-    class 12th_spray_hq: ACE_SpraypaintBlack {
+    class twelfth_spray_hq: ACE_SpraypaintBlack {
         displayName = "HQ Spray";
         descriptionShort = "HQ Spray";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -32,7 +32,7 @@ class CfgWeapons {
         };
     };
 
-    class 12th_spray_1stplt: ACE_SpraypaintBlack {
+    class twelfth_spray_1stplt: ACE_SpraypaintBlack {
         displayName = "1st Platoon Spray";
         descriptionShort = "1st Platoon Spray";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -40,7 +40,7 @@ class CfgWeapons {
         };
     };
 
-    class 12th_spray_2ndplt: ACE_SpraypaintBlack {
+    class twelfth_spray_2ndplt: ACE_SpraypaintBlack {
         displayName = "2nd Platoon Spray";
         descriptionShort = "2nd Platoon Spray";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -48,7 +48,7 @@ class CfgWeapons {
         };
     };
 
-    class 12th_spray_misc: ACE_SpraypaintBlack {
+    class twelfth_spray_misc: ACE_SpraypaintBlack {
         displayName = "Miscellaneous Spray";
         descriptionShort = "Miscellaneous Spray";
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -63,61 +63,61 @@ class ACE_Tags {
     class hq {
         displayName = "HQ";
         texture = "path\to\hq\texture.paa";
-        weapon = "12th_spray_hq";
+        weapon = "twelfth_spray_hq";
     };
 
     class 1stplt {
         displayName = "1st Platoon";
         texture = "path\to\1stplt\texture.paa";
-        weapon = "12th_spray_1stplt";
+        weapon = "twelfth_spray_1stplt";
     };
 
     class 2ndplt {
         displayName = "2nd Platoon";
         texture = "path\to\2ndplt\texture.paa";
-        weapon = "12th_spray_2ndplt";
+        weapon = "twelfth_spray_2ndplt";
     };
 
     // Define miscellaneous tags that can be used with the misc spray can
     class misc_lb {
         displayName = "12th Logo (Black)";
         texture = "path\to\misc\12thLogoBlack.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_lw {
         displayName = "12th Logo (White)";
         texture = "path\to\misc\12thLogoWhite.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_bs {
         displayName = "Blank Square";
         texture = "path\to\misc\BlankSquare.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_au {
         displayName = "Arrow Up";
         texture = "path\to\misc\ArrowUp.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_ar {
         displayName = "Arrow Right";
         texture = "path\to\misc\ArrowRight.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_ad {
         displayName = "Arrow Down";
         texture = "path\to\misc\ArrowDown.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 
     class misc_al {
         displayName = "Arrow Left";
         texture = "path\to\misc\ArrowLeft.paa";
-        weapon = "12th_spray_misc";
+        weapon = "twelfth_spray_misc";
     };
 };

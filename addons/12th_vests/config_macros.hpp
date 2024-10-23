@@ -1,100 +1,107 @@
-// Macros for defining paths, stringifying input, and concatenating tokens.
-#define P(PATH) \x\12thMEU\addons\12th_vests\##PATH   // P is used to prepend a path to the given file or directory name.
-#define Q(INPUT) #INPUT                              // Q is used to stringify the input.
-#define GLUE(A,B) A##B                               // GLUE concatenates two tokens, A and B.
+#define P(PATH) \x\12thMEU\addons\12th_vests\##PATH
+#define Q(INPUT) #INPUT
+#define GLUE(A,B) A##B
 
-// Definitions for vest mass and maximum load capacity.
 #define VEST_MASS 80
 #define VEST_MAXLOAD 200
 
-// Macro defining the hitpoint protection information for a vest.
-#define VEST_HITPOINT_INFO        \
-class HitpointsProtectionInfo {   \
-  class Neck {                    \
-    hitpointName="HitNeck";       \
-    armor=20;                     \
-    passThrough=0.30000001;       \
-  };                              \
-  class Arms {                    \
-    hitpointName="HitArms";       \
-    armor=10;                     \
-    passThrough=0.60000002;       \
-  };                              \
-  class Chest {                   \
-    hitpointName="HitChest";      \
-    armor=20;                     \
-    passThrough=0.30000001;       \
-  };                              \
-  class Diaphragm {               \
-    hitpointName="HitDiaphragm";  \
-    armor=20;                     \
-    passThrough=0.30000001;       \
-  };                              \
-  class Abdomen {                 \
-    hitpointName="HitAbdomen";    \
-    armor=20;                     \
-    passThrough=0.30000001;       \
-  };                              \
-  class Body {                    \
-    hitpointName="HitBody";       \
-    passThrough=0.30000001;       \
-    armor=20;                     \
-  };                              \
-  class Legs {                    \
-    hitpointName="HitLegs";       \
-    armor=10;                     \
-    passThrough=0.60000002;       \
-  };                              \
+#define VEST_HITPOINT_INFO       \
+class HitpointsProtectionInfo {  \
+  class Neck {                   \
+    hitpointName="HitNeck";      \
+    armor=20;                    \
+    passThrough=0.30000001;      \
+  };                             \
+  class Arms {                   \
+    hitpointName="HitArms";      \
+    armor=10;                    \
+    passThrough=0.60000002;      \
+  };                             \
+  class Chest {                  \
+    hitpointName="HitChest";     \
+    armor=20;                    \
+    passThrough=0.30000001;      \
+  };                             \
+  class Diaphragm {              \
+    hitpointName="HitDiaphragm"; \
+    armor=20;                    \
+    passThrough=0.30000001;      \
+  };                             \
+  class Abdomen {                \
+    hitpointName="HitAbdomen";   \
+    armor=20;                    \
+    passThrough=0.30000001;      \
+  };                             \
+  class Body {                   \
+    hitpointName="HitBody";      \
+    passThrough=0.30000001;      \
+    armor=20;                    \
+  };                             \
+  class Legs {                   \
+    hitpointName="HitLegs";      \
+    armor=10;                    \
+    passThrough=0.60000002;      \
+  };                             \
 };
 
-// Macro for invisible vest item information.
-#define INVIS_VEST_ITEM_INFO              \
-class ItemInfo: VestItem {                \
-  vestType="Rebreather";                  \
+#define INVIS_VEST_ITEM_INFO \
+class ItemInfo: VestItem { \
+  vestType="Rebreather"; \
   uniformModel = "\halo_marine\null.p3d"; \
-  containerClass="12th_vest_supply";      \
-  mass=VEST_MASS;                         \
-  VEST_HITPOINT_INFO                      \
+  containerClass="twelfth_vest_supply"; \
+  mass=VEST_MASS; \
+  VEST_HITPOINT_INFO \
 };
 
-// Macro for generating the path to UNSC Foundries textures.
 #define UNSCF_TEXPATH(CAMO,FILE) P(data\unscf_vest\##CAMO\##FILE)
 
-// Macro for defining item info for UNSC Foundries vests.
-#define UNSCF_VEST_ITEM_INFO(SEL_SET,CAMO)                           \
-class ItemInfo: VestItem {                                           \
-  vestType="Rebreather";                                             \
-  uniformModel="\19th_H2A_armor\19th_H2A_marines_vests.p3d";         \
-  containerClass="12th_vest_supply";                                 \
-  mass=VEST_MASS;                                                    \
-  hiddenSelections[] = { SEL_SET };                                  \
-  hiddenSelectionsTextures[] = {Q(UNSCF_TEXPATH(CAMO,misc_co.paa))}; \
-  VEST_HITPOINT_INFO                                                 \
+#define UNSCF_VEST_ITEM_INFO(SEL_SET,CAMO)                          \
+class ItemInfo: VestItem {                                          \
+  vestType="Rebreather";                                            \
+  uniformModel="\19th_H2A_armor\19th_H2A_marines_vests.p3d";        \
+  containerClass="twelfth_vest_supply";                                \
+  mass=VEST_MASS;                                                   \
+  hiddenSelections[] = { SEL_SET };                                 \
+  hiddenSelectionsTextures[] = {Q(UNSCF_TEXPATH(CAMO,misc_co.paa))};\
+  VEST_HITPOINT_INFO                                                \
 };
 
-// Macro to define a single UNSC Foundries vest.
-#define UNSCF_VEST(CNAME,CAMO,SEL_SET,DISPLAY)                      \
-class CNAME : 12th_unscf_vest_base {                                \
-  scope=2;                                                          \
-  scopeArsenal=2;                                                   \
-  displayName=DISPLAY;                                              \
-  hiddenSelections[]={                                              \
-    SEL_SET                                                         \
-  };                                                                \
-  hiddenSelectionsTextures[]={Q(UNSCF_TEXPATH(CAMO,misc_co.paa))};  \
-  UNSCF_VEST_ITEM_INFO(SEL_SET,CAMO)                                \
+/*
+A macro for a single UNSC Foundries vest.
+Input:
+  * CNAME - class name. Can be anything as long as it's unique.
+  * CAMO - Camo type. Supposed to point to a single folder
+           from a set of folders that all contain equally
+           named texture files within.
+  * DISPLAY - Display value. This gets displayed to the end-user
+              in the Arsenal, be it ACE or vanilla.
+*/
+#define UNSCF_VEST(CNAME,CAMO,SEL_SET,DISPLAY)                     \
+class CNAME : twelfth_unscf_vest_base {                               \
+  scope=2;                                                         \
+  scopeArsenal=2;                                                  \
+  displayName=DISPLAY;                                             \
+  hiddenSelections[]={                                             \
+    SEL_SET                                                        \
+  };                                                               \
+  hiddenSelectionsTextures[]={Q(UNSCF_TEXPATH(CAMO,misc_co.paa))}; \
+  UNSCF_VEST_ITEM_INFO(SEL_SET,CAMO)                               \
 };
 
-/* Include file containing definitions for selection sets of UNSC Foundries vests. */
+/* Include the thing */
 #include "unscf_vest_sel.hpp"
 
 /*
-Macro to define all possible variants for the UNSC Foundries vests.
-This generates multiple classes for each vest variant.
+A macro that contains all possible variants forthe UNSC Foundries
+vest/pouch item.
 Input:
-  * BC - Base class name prefix. All variant class names will start with this value.
-  * CAMO - Camo type, corresponding to a folder with textures.
-  * BD - Base display name, shown in the arsenal.
+  * BC - Base class. Add in your mod tag or something here.
+         All variant class names will start with this value.
+  * CAMO - Camo type. Supposed to point to a single folder
+           from a set of folders that all contain equally
+           named texture files within.
+  * BD - Base Display value. Is attached to the value that gets shown
+         in the arsenal. Usually a unit tag.
 */
 #define UNSCF_VEST_ALL_VARIANTS(BC,CAMO,BD)                                                                                           \
 UNSCF_VEST(GLUE(BC,_rf)      ,CAMO,RIFLEMAN_BASE_SEL,              Q(GLUE(BD, Rifleman Vest)))                                        \
@@ -133,5 +140,3 @@ UNSCF_VEST(GLUE(BC,_gr_c2)   ,CAMO,GRENADIER_CHEST2_SEL,           Q(GLUE(BD, Gr
 UNSCF_VEST(GLUE(BC,_gr_c2l)  ,CAMO,GRENADIER_CHEST2_LEG_SEL,       Q(GLUE(BD, Grenadier Vest (Partial Chest & Leg Pouches))))         \
 UNSCF_VEST(GLUE(BC,_gr_c2h)  ,CAMO,GRENADIER_CHEST2_HEAVY_SEL,     Q(GLUE(BD, Grenadier Vest (Heavy & Partial Chest Pouches))))       \
 UNSCF_VEST(GLUE(BC,_gr_c2hl) ,CAMO,GRENADIER_CHEST2_HEAVY_LEG_SEL, Q(GLUE(BD, Grenadier Vest (Heavy & Partial Chest & Leg Pouches)))) \
-
-// Yet again, thank you Kelp for a baseline!

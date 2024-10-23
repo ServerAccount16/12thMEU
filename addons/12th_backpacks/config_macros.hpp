@@ -3,7 +3,7 @@
 #define BP_MASS 60
 
 // Macro to generate the texture path for a given camo type and file
-#define BP_TEXPATH(CAMOTYPE,FILE) \x\12thMEUAssets\addons\12th_backpacks\backpack\##CAMOTYPE\##FILE
+#define BP_TEXPATH(CAMOTYPE,FILE) \x\12thMEU\addons\12th_backpacks\backpack\##CAMOTYPE\##FILE
 
 // Macros to generate display names for different backpack types
 #define BP_DISP(DISPLAY_TYPE) [12th][DISPLAY_TYPE] Backpack
@@ -13,7 +13,7 @@
 
 // Macro to generate all backpack variants for a given camo type and display type
 #define BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)             \
-class 12th_backpack_##CAMOTYPE : 12th_backpack_base {         \
+class 12th_backpack_##CAMOTYPE : twelfth_backpack_base {         \
   scope=2;                                                    \
   scopeArsenal=2;                                             \
   displayName=#BP_DISP(DISPLAY_TYPE);                         \
@@ -25,7 +25,7 @@ class 12th_backpack_##CAMOTYPE : 12th_backpack_base {         \
   };                                                          \
 };                                                            \
                                                               \
-class 12th_backpack_##CAMOTYPE##_rto : 12th_backpack_base {   \
+class 12th_backpack_##CAMOTYPE##_rto : twelfth_backpack_base {   \
   scope=2;                                                    \
   scopeArsenal=2;                                             \
   displayName=#BP_DISP_RTO(DISPLAY_TYPE);                     \
@@ -37,7 +37,7 @@ class 12th_backpack_##CAMOTYPE##_rto : 12th_backpack_base {   \
   };                                                          \
 };                                                            \
                                                               \
-class 12th_backpack_##CAMOTYPE##_bio : 12th_backpack_base {   \
+class 12th_backpack_##CAMOTYPE##_bio : twelfth_backpack_base {   \
   scope=2;                                                    \
   scopeArsenal=2;                                             \
   displayName=#BP_DISP_BIO(DISPLAY_TYPE);                     \
@@ -49,7 +49,7 @@ class 12th_backpack_##CAMOTYPE##_bio : 12th_backpack_base {   \
   };                                                          \
 };                                                            \
                                                               \
-class 12th_backpack_##CAMOTYPE##_pouch : 12th_backpack_base { \
+class 12th_backpack_##CAMOTYPE##_pouch : twelfth_backpack_base { \
   scope=2;                                                    \
   scopeArsenal=2;                                             \
   displayName=#BP_DISP_POUCH(DISPLAY_TYPE);                   \

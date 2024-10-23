@@ -7,12 +7,12 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {};
-        authors[] = {"Weber"};
-        author = "Weber";
+        authors[] = {"Turner605"};
+        author = "95th Aux Team";
         VERSION_CONFIG;
     };
 };
-/*
+
 class CfgMods {
     class PREFIX {
         dir = "@AUX_95th";
@@ -32,4 +32,3 @@ class CfgMods {
         dlcColor[] = {1, 0.0, 0.86, 1};
     };
 };
-*/

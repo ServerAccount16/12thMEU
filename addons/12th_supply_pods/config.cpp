@@ -1,16 +1,16 @@
 #pragma hemtt suppress pw3_padded_arg config
 
 class CfgPatches {
-  class 12th_supply_pods {
+  class twelfth_supply_pods {
     units[] = {
-      "12th_supply_pod_empty",
-      "12th_supply_pod_medical",
-      "12th_supply_pod_ex",
-      "12th_supply_pod_at",
-      "12th_supply_pod_mortar",
-      "12th_supply_pod_rifle",
-      "12th_supply_pod_mg",
-      "12th_supply_pod_dmr"
+      "twelfth_supply_pod_empty",
+      "twelfth_supply_pod_medical",
+      "twelfth_supply_pod_ex",
+      "twelfth_supply_pod_at",
+      "twelfth_supply_pod_mortar",
+      "twelfth_supply_pod_rifle",
+      "twelfth_supply_pod_mg",
+      "twelfth_supply_pod_dmr"
     };
     requiredVersion = 0.1;
   };
@@ -21,20 +21,20 @@ class CfgVehicles {
   class OPTRE_Ammo_SupplyPod_Empty;
 
   // Define the empty supply pod
-  class 12th_supply_pod_empty: OPTRE_Ammo_SupplyPod_Empty {
+  class twelfth_supply_pod_empty: OPTRE_Ammo_SupplyPod_Empty {
     author = "Weber";
     scope = 2;
     scopeCurator = 2;
     scopeArsenal = 2;
     displayName = "[12th] Supply Pod (Empty)";
-    faction = "12th_MEU";
-    editorCategory = "12th_MEU";
-    editorSubcategory = "12th_MEU_Supplies";
+    faction = "twelfth_MEU";
+    editorCategory = "twelfth_MEU";
+    editorSubcategory = "twelfth_MEU_Supplies";
     transportMaxWeapons = 25;
     transportMaxMagazines = 100;
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"
     };
     class TransportMagazines {};
     class TransportWeapons {};
@@ -42,10 +42,10 @@ class CfgVehicles {
   };
 
   // Define the medical supply pod
-  class 12th_supply_pod_medical: 12th_supply_pod_empty {
+  class twelfth_supply_pod_medical: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Medical)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_medical.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_medical.paa"
     };
     class TransportMagazines {};
     class TransportWeapons {};
@@ -79,10 +79,10 @@ class CfgVehicles {
   };
 
   // Define the explosives supply pod
-  class 12th_supply_pod_ex: 12th_supply_pod_empty {
+  class twelfth_supply_pod_ex: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Explosives)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_grenades.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_grenades.paa"
     };
     class TransportMagazines {
       class _xx_1Rnd_HE_Grenade_shell { magazine = "1Rnd_HE_Grenade_shell"; count = 40; };
@@ -114,10 +114,10 @@ class CfgVehicles {
   };
 
   // Define the launcher supply pod
-  class 12th_supply_pod_at: 12th_supply_pod_empty {
+  class twelfth_supply_pod_at: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Launchers)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_launchers.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"
     };
     class TransportMagazines {
       class _xx_OPTRE_M41_Twin_HEAT_SACLOS { magazine = "OPTRE_M41_Twin_HEAT_SACLOS"; count = 4; };
@@ -130,16 +130,16 @@ class CfgVehicles {
       class _xx_TCF_2Rnd_50x137_SACLOS { magazine = "TCF_2Rnd_50x137_SACLOS"; count = 4; };
     };
     class TransportWeapons {
-      class _xx_12th_m96 { weapon = "12th_m96"; count = 10; };
+      class _xx_twelfth_m96 { weapon = "twelfth_m96"; count = 10; };
     };
     class TransportItems {};
   };
 
   // Define the mortar supply pod
-  class 12th_supply_pod_mortar: 12th_supply_pod_empty {
+  class twelfth_supply_pod_mortar: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Mortars)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_mortar.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_mortar.paa"
     };
     class TransportMagazines {
       class _xx_avm224_M_6Rnd_60mm_HE_0_csw { magazine = "avm224_M_6Rnd_60mm_HE_0_csw"; count = 20; };
@@ -154,10 +154,10 @@ class CfgVehicles {
   };
 
   // Define the rifle ammo supply pod
-  class 12th_supply_pod_rifle: 12th_supply_pod_empty {
+  class twelfth_supply_pod_rifle: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Rifle Ammo)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_rifle.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_rifle.paa"
     };
     class TransportMagazines {
       class _xx_OPTRE_32Rnd_762x51_Mag { magazine = "OPTRE_32Rnd_762x51_Mag"; count = 50; };
@@ -173,17 +173,17 @@ class CfgVehicles {
   };
 
   // Define the MG ammo supply pod
-  class 12th_supply_pod_mg: 12th_supply_pod_empty {
+  class twelfth_supply_pod_mg: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (MG Ammo)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEUAssets\addons\12th_supply_pods\data\pod_co_gunner.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_gunner.paa"
     };
     class TransportMagazines {
-      class _xx_12th_95x40_100rnd { magazine = "12th_95x40_100rnd"; count = 10; };
-      class _xx_12th_95x40_100rnd_T { magazine = "12th_95x40_100rnd_T"; count = 10; };
-      class _xx_12th_762x51_200rnd { magazine = "12th_762x51_200rnd"; count = 10; };
-      class _xx_12th_762x51_200rnd_T { magazine = "12th_762x51_200rnd_T"; count = 10; };
-      class _xx_12th_762x51_400rnd_T { magazine = "OPTRE_400Rnd_762x51_Box_Tracer"; count = 5; };
+      class _xx_twelfth_95x40_100rnd { magazine = "twelfth_95x40_100rnd"; count = 10; };
+      class _xx_twelfth_95x40_100rnd_T { magazine = "twelfth_95x40_100rnd_T"; count = 10; };
+      class _xx_twelfth_762x51_200rnd { magazine = "twelfth_762x51_200rnd"; count = 10; };
+      class _xx_twelfth_762x51_200rnd_T { magazine = "twelfth_762x51_200rnd_T"; count = 10; };
+      class _xx_twelfth_762x51_400rnd_T { magazine = "OPTRE_400Rnd_762x51_Box_Tracer"; count = 5; };
       class _xx_ACE_SpareBarrel { magazine = "ACE_SpareBarrel"; count = 5; };
     };
     class TransportWeapons {};
@@ -227,12 +227,12 @@ class CfgVehicles {
           class n18 { name = "M37GL Supply Pod"; value = "OPTRE_Ammo_SupplyPod_37_GL"; };
           class n19 { name = "MA5BGL Supply Pod"; value = "OPTRE_Ammo_SupplyPod_AR_GL"; };
           class n20 { name = "CUSTOM Supply Pod"; value = "OPTRE_Ammo_SupplyPod_Empty"; };
-          class n21 { name = "[12th] Medical Supply Pod"; value = "12th_supply_pod_medical"; };
-          class n23 { name = "[12th] Explosives Supply Pod"; value = "12th_supply_pod_ex"; };
-          class n25 { name = "[12th] Launcher Supply Pod"; value = "12th_supply_pod_at"; };
-          class n26 { name = "[12th] Mortar Supply Pod"; value = "12th_supply_pod_mortar"; };
-          class n27 { name = "[12th] Rifle Supply Pod"; value = "12th_supply_pod_rifle"; };
-          class n28 { name = "[12th] Machine Gun Supply Pod"; value = "12th_supply_pod_mg"; };
+          class n21 { name = "[12th] Medical Supply Pod"; value = "twelfth_supply_pod_medical"; };
+          class n23 { name = "[12th] Explosives Supply Pod"; value = "twelfth_supply_pod_ex"; };
+          class n25 { name = "[12th] Launcher Supply Pod"; value = "twelfth_supply_pod_at"; };
+          class n26 { name = "[12th] Mortar Supply Pod"; value = "twelfth_supply_pod_mortar"; };
+          class n27 { name = "[12th] Rifle Supply Pod"; value = "twelfth_supply_pod_rifle"; };
+          class n28 { name = "[12th] Machine Gun Supply Pod"; value = "twelfth_supply_pod_mg"; };
         };
       };
     };

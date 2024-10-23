@@ -1,8 +1,8 @@
 
-/*
+
 #define WARTHOG_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {        \
-  class 12th_ground_spawner {     \
+  class twelfth_ground_spawner {     \
     priority=PRI;                 \
     spawner = "12th Ground";      \
     scope = 1;                    \
@@ -12,10 +12,10 @@ class VehicleSpawnerInfo {        \
     cost=0;                       \
   };                              \
 };
-
+/*
 #define SCORPION_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {         \
-  class 12th_ground_spawner {      \
+  class twelfth_ground_spawner {      \
     priority=PRI;                  \
     spawner = "12th Ground";       \
     scope = 1;                     \
@@ -28,7 +28,7 @@ class VehicleSpawnerInfo {         \
 
 #define ORYX_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {     \
-  class 12th_ground_spawner {  \
+  class twelfth_ground_spawner {  \
     priority=PRI;              \
     spawner = "12th Ground";   \
     scope = 1;                 \
@@ -38,10 +38,10 @@ class VehicleSpawnerInfo {     \
     cost=0;                    \
   };                           \
 };
-
+*/
 #define HEMTT_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {      \
-  class 12th_ground_spawner {   \
+  class twelfth_ground_spawner {   \
     priority=PRI;               \
     spawner = "12th Ground";    \
     scope = 1;                  \
@@ -51,10 +51,10 @@ class VehicleSpawnerInfo {      \
     cost=0;                     \
   };                            \
 };
-
+/*
 #define TEMPEST_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {        \
-  class 12th_ground_spawner {     \
+  class twelfth_ground_spawner {     \
     priority=PRI;                 \
     spawner = "12th Ground";      \
     scope = 1;                    \
@@ -67,7 +67,7 @@ class VehicleSpawnerInfo {        \
 
 #define LYNX_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {     \
-  class 12th_ground_spawner {  \
+  class twelfth_ground_spawner {  \
     priority=PRI;              \
     spawner = "12th Ground";   \
     scope = 1;                 \
@@ -80,7 +80,7 @@ class VehicleSpawnerInfo {     \
 
 #define MARSHALL_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {         \
-  class 12th_ground_spawner {      \
+  class twelfth_ground_spawner {      \
     priority=PRI;                  \
     spawner = "12th Ground";       \
     scope = 1;                     \
@@ -94,7 +94,7 @@ class VehicleSpawnerInfo {         \
 
 #define STOMPER_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {        \
-  class 12th_ground_spawner {     \
+  class twelfth_ground_spawner {     \
     priority=PRI;                 \
     spawner = "12th Ground";      \
     scope = 1;                    \
@@ -103,4 +103,4 @@ class VehicleSpawnerInfo {        \
     type=#TYPE;                   \
     cost=0;                       \
   };                              \
-};
+};*/

@@ -1,10 +1,9 @@
 #define P(PATH) \x\12thMEU\addons\12th_aircraft\##PATH
 #define QP(PATH) #P(PATH)
 
-// This is a macro that defines the aircraft portion of the spawner
-#define Air_SP_Info(VEH,PRI,TYPE) \
+#define AIR_SP_INFO(VEH,PRI,TYPE) \
 class VehicleSpawnerInfo {        \
-  class 12th_air_spawner {        \
+  class twelfth_air_spawner {        \
     priority=PRI;                 \
     spawner = "12th Aircraft";    \
     scope = 1;                    \
@@ -15,134 +14,248 @@ class VehicleSpawnerInfo {        \
   };                              \
 };
 
-// This is the macro that defines the Pelicans textures
+//--------------------------------------------------------------------
 
-#define Pelican_TextureSets                         \
-hiddenSelections[] = {                              \
-  "camo1",                                          \
-  "camo2",                                          \
-  "camo3",                                          \
-  "troop_bay",                                      \
-  "doors",                                          \
-  "hall_and_cockpit"                                \
-};                                                  \
-hiddenSelectionsTextures[] = {                      \
-  QP(pelican\default\body_co.paa),                  \
-  QP(pelican\default\wings_and_gear_co.paa),        \
-  QP(pelican\default\weaponry_co.paa),                 \
-  QP(pelican\default\troop_bay_co.paa),             \
-  QP(pelican\default\doors_co.paa),                 \
-  QP(pelican\default\hall_and_cockpit_co.paa)       \
-};                                                  \
-class textureSources {                              \
-  class 12th_D77TC_Tex_Woodland {                   \
-    displayName = "Woodland";                       \
-    author = "Weber";                               \
-    textures[] = {                                  \
-      QP(pelican\woodland\body_co.paa),             \
-      QP(pelican\woodland\wings_and_gear_co.paa),   \
-      QP(pelican\woodland\weaponry_co.paa),            \
-      QP(pelican\default\troop_bay_co.paa),         \
-      QP(pelican\default\doors_co.paa),             \
-      QP(pelican\default\hall_and_cockpit_co.paa)   \
-    };                                              \
-    factions[] = {"12th_MEU"};                      \
-  };                                                \
-  class 12th_D77TC_Tex_Desert {                     \
-    displayName = "Desert";                         \
-    author = "Weber";                               \
-    textures[] = {                                  \
-      QP(pelican\desert\body_co.paa),               \
-      QP(pelican\desert\wings_and_gear_co.paa),     \
-      QP(pelican\desert\weaponry_co.paa),              \
-      QP(pelican\default\troop_bay_co.paa),         \
-      QP(pelican\default\doors_co.paa),             \
-      QP(pelican\default\hall_and_cockpit_co.paa)   \
-    };                                              \
-    factions[] = {"12th_MEU"};                      \
-  };                                                \
-  class 12th_D77TC_Tex_Urban {                     \
-    displayName = "Urban";                         \
-    author = "Weber";                               \
-    textures[] = {                                  \
-      QP(pelican\urban\body_co.paa),               \
-      QP(pelican\urban\wings_and_gear_co.paa),     \
-      QP(pelican\urban\weaponry_co.paa),              \
-      QP(pelican\default\troop_bay_co.paa),         \
-      QP(pelican\default\doors_co.paa),             \
-      QP(pelican\default\hall_and_cockpit_co.paa)   \
-    };                                              \
-    factions[] = {"12th_MEU"};                      \
-  };                                                \
+#define PELICAN_TEXTURESETS                       \
+hiddenSelections[] = {                            \
+  "camo1",                                        \
+  "camo2",                                        \
+  "camo3",                                        \
+  "troop_bay",                                    \
+  "doors",                                        \
+  "hall_and_cockpit"                              \
+};                                                \
+hiddenSelectionsTextures[] = {                    \
+  QP(pelican\default\body_co.paa),                \
+  QP(pelican\default\wings_and_gear_co.paa),      \
+  QP(pelican\default\weaponry_co.paa),            \
+  QP(pelican\default\troop_bay_co.paa),           \
+  QP(pelican\default\doors_co.paa),               \
+  QP(pelican\default\hall_and_cockpit_co.paa)     \
+};                                                \
+class textureSources {                            \
+  class twelfth_d77tc_tex_default {                  \
+    displayName = "Default";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\default\body_co.paa),            \
+      QP(pelican\default\wings_and_gear_co.paa),  \
+      QP(pelican\default\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_urban {                  \
+    displayName = "Urban";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\urban\body_co.paa),            \
+      QP(pelican\urban\wings_and_gear_co.paa),  \
+      QP(pelican\urban\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_splinter {                  \
+    displayName = "Splinter Jungle";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\jsplinter\body_co.paa),            \
+      QP(pelican\jsplinter\wings_and_gear_co.paa),  \
+      QP(pelican\jsplinter\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_asg {                  \
+    displayName = "Air Superiority Grey";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\asg\body_co.paa),            \
+      QP(pelican\asg\wings_and_gear_co.paa),  \
+      QP(pelican\asg\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_woodland {                  \
+    displayName = "Woodland";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\woodland\body_co.paa),            \
+      QP(pelican\woodland\wings_and_gear_co.paa),  \
+      QP(pelican\woodland\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_oni {                  \
+    displayName = "ONI";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\oni\body_co.paa),            \
+      QP(pelican\oni\wings_and_gear_co.paa),  \
+      QP(pelican\oni\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_police {                  \
+    displayName = "Police";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\police\body_co.paa),            \
+      QP(pelican\police\wings_and_gear_co.paa),  \
+      QP(pelican\police\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_jotun {                  \
+    displayName = "Jotun";                      \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\jotun\body_co.paa),            \
+      QP(pelican\jotun\wings_and_gear_co.paa),  \
+      QP(pelican\jotun\weaponry_co.paa),        \
+      QP(pelican\default\troop_bay_co.paa),       \
+      QP(pelican\default\doors_co.paa),           \
+      QP(pelican\default\hall_and_cockpit_co.paa) \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
+  class twelfth_d77tc_tex_winter {                   \
+    displayName = "Winter";                       \
+    author = "Weber";                            \
+    textures[] = {                                \
+      QP(pelican\winter\body_co.paa),             \
+      QP(pelican\winter\wings_and_gear_co.paa),   \
+      QP(pelican\winter\weaponry_co.paa),         \
+      QP(pelican\winter\troop_bay_co.paa),        \
+      QP(pelican\winter\doors_co.paa),            \
+      QP(pelican\winter\hall_and_cockpit_co.paa)  \
+    };                                            \
+    factions[] = {"twelfth_MEU"};                    \
+  };                                              \
 };
 
-// This is the macro that defines the Falcon
-
-#define Falcon_TextureSets                   \
+#define FALCON_TEXTURESETS                   \
 hiddenSelectionsTextures[] = {               \
     QP(falcon\default\main_co.paa),          \
     QP(falcon\default\attachments_co.paa),   \
     QP(falcon\default\interior_co.paa),      \
 };                                           \
 class textureSources {                       \
-  class 12th_falcon_tex_woodland {           \
-    displayName = "Woodland";                \
-    author = "Weber";                        \
+  class twelfth_falcon_tex_default {            \
+    displayName = "Default";                 \
+    author = "Weber";                       \
     textures[] = {                           \
       QP(falcon\default\main_co.paa),        \
       QP(falcon\default\attachments_co.paa), \
       QP(falcon\default\interior_co.paa),    \
     };                                       \
   };                                         \
-  class 12th_falcon_tex_woodland {           \
-    displayName = "Woodland";                \
-    author = "Weber";                        \
+  class twelfth_falcon_tex_medical {            \
+    displayName = "Medical";                 \
+    author = "Weber";                       \
     textures[] = {                           \
-      QP(falcon\default\main_co.paa),        \
+      QP(falcon\medical\main_co.paa),        \
       QP(falcon\default\attachments_co.paa), \
       QP(falcon\default\interior_co.paa),    \
     };                                       \
   };                                         \
+  class twelfth_falcon_tex_winter {             \
+    displayName = "Winter";                  \
+    author = "Weber";                       \
+    textures[] = {                           \
+      QP(falcon\winter\main_co.paa),         \
+      QP(falcon\winter\attachments_co.paa),  \
+      QP(falcon\winter\interior_co.paa),     \
+    };                                       \
+  };                                         \
+  class twelfth_falcon_tex_winter_medical {     \
+    displayName = "Winter Medical";          \
+    author = "Weber";                       \
+    textures[] = {                           \
+      QP(falcon\winter_medical\main_co.paa), \
+      QP(falcon\winter\attachments_co.paa),  \
+      QP(falcon\winter\interior_co.paa),     \
+    };                                       \
+  };                                         \
+  textureList[]={                            \
+      "twelfth_falcon_tex_default", 1,          \
+      "twelfth_falcon_tex_medical", 1,          \
+      "twelfth_falcon_tex_winter", 1,           \
+      "twelfth_falcon_tex_winter_medical", 1    \
+  };                                         \
 };
 
-// This is the Sparrowhawk macro. Updated to match the others
-
-#define SPARROWHAWK_TEXTURESETS                  \
-hiddenSelectionsTextures[] = {                   \
-  QP(sparrowhawk\default\body_01_co.paa),        \
-  QP(sparrowhawk\default\body_02_co.paa),        \
-  QP(sparrowhawk\default\body_03_co.paa),        \
-  QP(sparrowhawk\default\body_04_co.paa),        \
-  QP(sparrowhawk\default\body_05_co.paa),        \
-  QP(sparrowhawk\default\autocannon_co.paa),     \
-  QP(sparrowhawk\default\feed_autocannon_co.paa),\
-  QP(sparrowhawk\default\decal_01_co.paa),       \
-  QP(sparrowhawk\default\decal_01_co.paa)        \
-};                                               \
-class textureSources {                           \
-  class 12th_sph_tex_woodland {                   \
-    displayName = "Woodland";                     \
-    author = "Weber";                           \
-    textures[] = {                               \
-      QP(sparrowhawk\woodland\body_01_co.paa),    \
-      QP(sparrowhawk\woodland\body_02_co.paa),    \
-      QP(sparrowhawk\woodland\body_03_co.paa),    \
-      QP(sparrowhawk\woodland\body_04_co.paa),    \
-      QP(sparrowhawk\woodland\body_05_co.paa),    \
-      QP(sparrowhawk\woodland\autocannon_co.paa), \
-      QP(sparrowhawk\woodland\feed_autocannon_co.paa),\
-      QP(sparrowhawk\woodland\decal_01_co.paa),   \
-      QP(sparrowhawk\woodland\decal_01_co.paa)    \
-    };                                           \
-  };                                             \
-};                                               \
-textureList[] = {                                \
-  "12th_sph_tex_default", 1                     \
+#define SPARROWHAWK_TEXTURESETS \
+hiddenSelectionsTextures[]= { \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_01_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_02_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_03_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_04_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_05_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\autocannon_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\feed_autocannon_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa", \
+  "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa" \
+}; \
+class textureSources { \
+  class twelfth_sph_tex_default { \
+     displayName="Default"; \
+     author="Weber"; \
+     textures[] = { \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_01_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_02_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_03_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_04_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\body_05_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\feed_autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa" \
+     }; \
+     factions[] = {"twelfth_MEU"}; \
+  }; \
+  class twelfth_sph_tex_winter { \
+     displayName="Winter"; \
+     author="Weber"; \
+     textures[] = { \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_01_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_02_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_03_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_04_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_05_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\feed_autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa" \
+     }; \
+     factions[] = {"twelfth_MEU"}; \
+  }; \
+}; \
+textureList[] = { \
+  "twelfth_sph_tex_default", 1, \
+  "twelfth_sph_tex_winter", 1 \
 };
 
-// Start Blackfish macro
-
-#define Blackfish_TextureSets \
+#define BLACKFISH_TEXTURESETS \
 hiddenSelections[]={"Camo_1", "Camo_2", "Camo_3", "Camo_4", "Camo_5"}; \
 hiddenSelectionsTextures[]={ \
   QP(blackfish\default\ext01_co.paa), \
@@ -152,15 +265,26 @@ hiddenSelectionsTextures[]={ \
   QP(blackfish\default\signs_ca.paa) \
 }; \
 class textureSources { \
-  class 12th_blackfish_tex_woodland { \
-    displayName="Woodland"; \
+  class twelfth_blackfish_tex_default { \
+    displayName="Default"; \
     author="Weber"; \
     textures[]= { \
-      QP(blackfish\woodland\ext01_co.paa), \
-      QP(blackfish\woodland\ext02_co.paa), \
-      QP(blackfish\woodland\ext03_co.paa), \
-      QP(blackfish\woodland\ext04_co.paa), \
-      QP(blackfish\woodland\signs_ca.paa) \
+      QP(blackfish\default\ext01_co.paa), \
+      QP(blackfish\default\ext02_co.paa), \
+      QP(blackfish\default\ext03_co.paa), \
+      QP(blackfish\default\ext04_co.paa), \
+      QP(blackfish\default\signs_ca.paa) \
+    }; \
+  }; \
+  class twelfth_blackfish_tex_winter { \
+    displayName="Winter"; \
+    author="Weber"; \
+    textures[]= { \
+      QP(blackfish\winter\ext01_co.paa), \
+      QP(blackfish\winter\ext02_co.paa), \
+      QP(blackfish\winter\ext03_co.paa), \
+      QP(blackfish\winter\ext04_co.paa), \
+      QP(blackfish\default\signs_ca.paa) \
     }; \
   }; \
 };

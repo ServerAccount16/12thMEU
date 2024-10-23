@@ -1,28 +1,24 @@
-// Define the base path for textures and models
+
 #define P(PATH) \x\12thMEU\addons\12th_armor\##PATH
 #define QP(PATH) #P(PATH)
 #define GLUE(A,B) A##B
 
-// Define the path for pilot helmet textures
 #define PILOT_H_TEX(CAMOTYPE,FILENAME) P(helmets\pilot\##CAMOTYPE\##FILENAME)
 
-// Define class name for uniform weapons
-#define UNIFORM_WEP_CLASSNAME(SUFFIX) 12th_uni_ng_##SUFFIX##_veh
+#define UNIFORM_WEP_CLASSNAME(SUFFIX) twelfth_uni_ng_##SUFFIX##_veh
 
-// Define the path for old uniform vehicle textures and classes
 #define UNIFORM_OLD_VEH_TEXPATH(SUFFIX) P(uniforms\armor_old\Uniform_co_##SUFFIX.paa)
-#define UNIFORM_OLD_WEP_CLASSPATH(SUFFIX) 12th_uni_##SUFFIX##_veh
+#define UNIFORM_OLD_WEP_CLASSPATH(SUFFIX) twelfth_uni_##SUFFIX##_veh
 
-// Define the path for helmet and cap textures
 #define HELM_TEX_PATH(SUFFIX) P(helmets\infantry\Helm_co_##SUFFIX.paa)
 #define CAP_TEX_PATH(SUFFIX) P(helmets\cap_b\cap_co_##SUFFIX.paa)
 
-// Define the extended path for background images in extended arsenal icons
+// stands for 'extended path', used to denote background image
+// paths for extended arsenal icon backgrounds
 #define XTP(SFX) QP(xtd_icons\##SFX.paa)
 
-// Define a macro for creating uniform vehicle classes
 #define UNIFORM_VEH(CSFX,ARMS,BASE,DISPLAY)             \
-class 12th_uni_ng_##CSFX##_veh : 12th_uni_ng_base_veh { \
+class twelfth_uni_ng_##CSFX##_veh : twelfth_uni_ng_base_veh { \
   author="Kelp";                                        \
   picture="";                                           \
   scope=1;                                              \
@@ -37,9 +33,8 @@ class 12th_uni_ng_##CSFX##_veh : 12th_uni_ng_base_veh { \
   };                                                    \
 };
 
-// Define a macro for creating uniform weapon classes
 #define UNIFORM_WEP(SUFFIX,DISPLAY)                       \
-class 12th_uni_ng_##SUFFIX##_wep : 12th_uni_ng_base_wep { \
+class twelfth_uni_ng_##SUFFIX##_wep : twelfth_uni_ng_base_wep { \
   author="Kelp";                                          \
   picture="";                                             \
   scope=1;                                                \
@@ -57,21 +52,32 @@ class 12th_uni_ng_##SUFFIX##_wep : 12th_uni_ng_base_wep { \
   };                                                      \
 };
 
-// Define a macro for uniform gear info
+/* Stands for uniform gear info. */
 #define UNIFORM_GI(CSFX,CAMO,EL,ROLE) \
-class 12th_uni_ng_##CSFX##_wep {      \
-  model="12th_base_uniforms";         \
+class twelfth_uni_ng_##CSFX##_wep {      \
+  model="twelfth_base_uniforms";         \
   camo=#CAMO;                         \
   element=#EL;                        \
   role=#ROLE;                         \
   visor="No";                         \
 };
 
-// Define a macro for creating no-visor helmets
+
+/*
+  Defines a no-visor helmet.
+  Input:
+  - SUFFIX:
+    defines the texture name suffix in the `helmets/infantry` folder.
+    I.e sets the texture path in this format:
+    `twelfth_armor/helmets/infantry/Helm_co_[SUFFIX].paa`
+  - DISPLAY:
+    the string that gets displayed in the ACE arsenal.
+    Provide in quotes.
+*/
 #define HELM_NV(SUFFIX,DISPLAY)                 \
-class 12th_helm_##SUFFIX##_nv: 12th_helm_base { \
+class twelfth_helm_##SUFFIX##_nv: twelfth_helm_base { \
   scope=2;                                      \
-  author="Waylen";                              \
+  author="Kelp";                                \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
@@ -101,11 +107,21 @@ class 12th_helm_##SUFFIX##_nv: 12th_helm_base { \
   };                                            \
 };
 
-// Define a macro for creating standard-visor helmets
+/*
+  Defines a standard-visor helmet.
+  Input:
+  - SUFFIX:
+    defines the texture name suffix in the `helmets/infantry` folder.
+    I.e sets the texture path in this format:
+    `twelfth_armor/helmets/infantry/Helm_co_[SUFFIX].paa`
+  - DISPLAY:
+    the string that gets displayed in the ACE arsenal.
+    Provide in quotes.
+*/
 #define HELM_SV(SUFFIX,DISPLAY)                 \
-class 12th_helm_##SUFFIX##: 12th_helm_base {    \
+class twelfth_helm_##SUFFIX##: twelfth_helm_base {    \
   scope=2;                                      \
-  author="Waylen";                              \
+  author="Kelp";                                \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
@@ -133,29 +149,28 @@ class 12th_helm_##SUFFIX##: 12th_helm_base {    \
   };                                            \
 };
 
-// Define a macro for no-visor helmet gear info
+/* Stands for helm, no visor, gear info. */
 #define HELM_NV_GI(CSFX,CAMO,EL,ROLE) \
-class 12th_helm_##CSFX##_nv {         \
-  model="12th_base_helms";            \
+class twelfth_helm_##CSFX##_nv {         \
+  model="twelfth_base_helms";            \
   camo=#CAMO;                         \
   element=#EL;                        \
   role=#ROLE;                         \
   visor="No";                         \
 };
 
-// Define a macro for standard-visor helmet gear info
+/* Stands for helm, no visor, gear info. */
 #define HELM_SV_GI(CSFX,CAMO,EL,ROLE) \
-class 12th_helm_##CSFX## {            \
-  model="12th_base_helms";            \
+class twelfth_helm_##CSFX## {            \
+  model="twelfth_base_helms";            \
   camo=#CAMO;                         \
   element=#EL;                        \
   role=#ROLE;                         \
-  visor="Yes";                        \
+  visor="Yes";                         \
 };
 
-// Define a macro for creating cap classes
 #define CAP_B(SUFFIX,DISPLAY)                         \
-class 12th_cap_##SUFFIX: H_Cap_oli {                  \
+class twelfth_cap_##SUFFIX: H_Cap_oli {                  \
   picture="";                                         \
   scope=2;                                            \
   scopeArsenal=2;                                     \
@@ -163,9 +178,22 @@ class 12th_cap_##SUFFIX: H_Cap_oli {                  \
   hiddenselectionstextures[]={#CAP_TEX_PATH(SUFFIX)}; \
 };
 
-// Define a macro for the IAHDS Pilot helmet
+/*
+For those of you peeking around, sorry, couldn't
+have made this macro work cleanly without carrying
+a local copy of the base textures from UNSCF around here.
+*/
+
+/*
+  A Macro for the IAHDS Pilot helmet.
+  Input:
+  * SUFFIX - A class name suffix, to avoid clashing.
+  * DISPLAY - What gets displayed in the Arsenal, format "like this".
+  * C1 through 5 - Arguments that define from which folder a specific
+                   hidden selection is going to be pulling from.
+*/
 #define PILOT_HELM(SUFFIX,DISPLAY,C1,C2,C3,C4,C5)                         \
-class 12th_pilot_h_##SUFFIX : H_HelmetB {                                 \
+class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
   author="Kelp";                                                          \
   scope=2;                                                                \
   scopeArsenal=2;                                                         \

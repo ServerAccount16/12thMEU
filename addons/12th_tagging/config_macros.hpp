@@ -9,7 +9,7 @@
   - Adds a basic prefix to indicate a spray class.
   - CSFX: Class suffix, used to create a unique class name for the spray item.
 */
-#define SPRAY_CLASS(CSFX) 12th_spray_##CSFX
+#define SPRAY_CLASS(CSFX) twelfth_spray_##CSFX
 
 /*
   TPATH(TYPE, FILE):
@@ -47,7 +47,7 @@ class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                     \
   - TEXPATH: Full texture path to the texture that will be painted on the surface.
 */
 #define TAG(SUFFIX, REQ_ITEM, DISPLAY, TEXPATH) \
-class 12th_tag_##SUFFIX {                       \
+class twelfth_tag_##SUFFIX {                       \
   displayName = DISPLAY;                        \
   requiredItem = REQ_ITEM;                      \
   textures[] = { #TEXPATH };                    \

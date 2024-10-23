@@ -11,7 +11,7 @@
 #define W_PREFIX [12th][Inf][W][Cstm]
 
 #define CUSTOM_HELM_S_AV(SUFFIX)                       \
-class 12th_ch_std_##SUFFIX##: 12th_custom_helm_base {  \
+class twelfth_ch_std_##SUFFIX##: twelfth_custom_helm_base {  \
     scope=2;                                           \
     author="Kelp";                                     \
     picture="";                                        \
@@ -39,7 +39,7 @@ class 12th_ch_std_##SUFFIX##: 12th_custom_helm_base {  \
       };                                               \
     };                                                 \
 };                                                     \
-class 12th_ch_std_##SUFFIX##_nv: 12th_custom_helm_base { \
+class twelfth_ch_std_##SUFFIX##_nv: twelfth_custom_helm_base { \
     scope=2;                                           \
     author="Kelp";                                     \
     picture="";                                        \
@@ -73,14 +73,14 @@ class 12th_ch_std_##SUFFIX##_nv: 12th_custom_helm_base { \
 #define CH_HELM_S_GI(SFX) CH_HELM_AV_GI(SFX,std)
 
 #define CH_HELM_AV_GI(SFX,CAMO)       \
-class 12th_ch_##CAMO##_##SFX {        \
-  model="12th_custom_helms";          \
+class twelfth_ch_##CAMO##_##SFX {        \
+  model="twelfth_custom_helms";          \
   camo=#CAMO;                         \
   visor="Yes";                        \
   member=#SFX;                        \
 };                                    \
-class 12th_ch_##CAMO##_##SFX##_nv {   \
-  model="12th_custom_helms";          \
+class twelfth_ch_##CAMO##_##SFX##_nv {   \
+  model="twelfth_custom_helms";          \
   camo=#CAMO;                         \
   visor="No";                         \
   member=#SFX;                        \
@@ -88,7 +88,7 @@ class 12th_ch_##CAMO##_##SFX##_nv {   \
 
 /*
 #define CUSTOM_HELM_CV(SUFFIX,DISPLAY,VISOR)      \
-class 12th_ch_##SUFFIX##: 12th_custom_helm_base { \
+class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
     author="Kelp";                                \
     picture="";                                   \
@@ -120,7 +120,7 @@ class 12th_ch_##SUFFIX##: 12th_custom_helm_base { \
 };
 
 #define CUSTOM_HELM_NV(SUFFIX,DISPLAY)            \
-class 12th_ch_##SUFFIX##: 12th_custom_helm_base { \
+class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
     author="Kelp";                                \
     picture="";                                   \
@@ -152,7 +152,7 @@ class 12th_ch_##SUFFIX##: 12th_custom_helm_base { \
 };
 
 #define CUSTOM_HELM_SV(SUFFIX,DISPLAY)            \
-class 12th_ch_##SUFFIX##: 12th_custom_helm_base { \
+class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
     author="Kelp";                                \
     picture="";                                   \
