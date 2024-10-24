@@ -28,6 +28,7 @@ class CfgMagazines
     mass = 40;
     tracersEvery = 0;
     lastRoundsTracer = 6; // Tracer rounds for the last 6 rounds
+    ACE_isBelt = 1;
   };
 
   class twelfth_762x51_200rnd : OPTRE_32Rnd_762x51_Mag
@@ -36,6 +37,7 @@ class CfgMagazines
     displayName = "200rnd 7.62x51mm Box Magazine";
     count = 200;
     mass = 40;
+    ACE_isBelt = 1;
   };
 
   class twelfth_762x51_200rnd_T : OPTRE_400Rnd_762x51_Box_Tracer
@@ -44,6 +46,7 @@ class CfgMagazines
     displayName = "200rnd 7.62x51mm Box Magazine (Tracer)";
     count = 200;
     mass = 40;
+    ACE_isBelt = 1;
   };
 
   class twelfth_br_36Rnd_UW : OPTRE_36Rnd_95x40_Mag
@@ -85,7 +88,7 @@ class CfgMagazines
     displayName = "[12th] 40mm HEAT";
     displaynameshort = "40mm HEAT";
     ammo = "twelfth_40mmG_HEAT"; // 40mm HEAT grenade
-    author = "Waylen";        // Nerd
+    author = "Waylen";        // Nerd (your mother - waylen)
     mass = 8;
   };
 
