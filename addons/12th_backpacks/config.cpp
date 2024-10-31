@@ -12,21 +12,15 @@ class CfgPatches {
   class twelfth_backpacks {
     units[] = {  // List of all custom backpack units.
       "twelfth_backpack_standard",
+      "twelfth_backpack_standard_light",
+      "twelfth_backpack_standard_heavy",
       "twelfth_backpack_standard_rto",
-      "twelfth_backpack_standard_bio",
-      "twelfth_backpack_standard_pouch",
-      "twelfth_backpack_jungle",
-      "twelfth_backpack_jungle_rto",
-      "twelfth_backpack_jungle_bio",
-      "twelfth_backpack_jungle_pouch",
-      "twelfth_backpack_desert",
-      "twelfth_backpack_desert_rto",
-      "twelfth_backpack_desert_bio",
-      "twelfth_backpack_desert_pouch",
-      "twelfth_backpack_winter",
-      "twelfth_backpack_winter_rto",
-      "twelfth_backpack_winter_bio",
-      "twelfth_backpack_winter_pouch",
+      "twelfth_backpack_standard_medic",
+      "twelfth_backpack_forest",
+      "twelfth_backpack_forest_light",
+      "twelfth_backpack_forest_heavy",
+      "twelfth_backpack_forest_rto",
+      "twelfth_backpack_forest_medic",
       "twelfth_backpack_alt_rto"  // Alternative RTO backpack.
     };
     weapons[] = {};  // No weapons defined.
@@ -40,17 +34,17 @@ class CfgVehicles {
 
   // Base class for all custom backpacks.
   class twelfth_backpack_base : B_AssaultPack_Base {
-    author = "Kelp";
+    author = "19th; Sammy";
     scope = 0;  // Not visible in the editor.
     scopeArsenal = 0;  // Not visible in the arsenal.
     picture = "";  // No picture defined.
     displayName = "[12th] Backpack Base (DON'T USE)";
-    model = "\x\12thMEU\addons\12th_backpacks\backpack\12thKelpbackpack.p3d";
+    model = "\19th_H2A_armor\19th_H2A_marines_backpacks";
     hiddenSelections[] = {  // Available texture selections.
-      "Main",
-      "Pouches",
-      "Biofoam",
-      "Antenna"
+      "main",
+      "pouches",
+      "roll",
+      "radio"
     };
     maximumLoad = BP_MAXLOAD;  // Load capacity macro.
     mass = BP_MASS;  // Backpack mass macro.
@@ -60,7 +54,7 @@ class CfgVehicles {
 
   // Invisible backpack class for special use cases.
   class twelfth_backpack_invis : twelfth_backpack_base {
-    author = "Kelp";
+    author = "Waylen";
     scope = 2;
     scopeArsenal = 2;
     displayName = "[12th] Invisible Backpack";
@@ -71,7 +65,7 @@ class CfgVehicles {
   // Alternative RTO backpack due to popular demand.
   class twelfth_backpack_alt_rto : 19th_Bag_Base {
     scope = 2;
-    author = "Kelp";
+    author = "19th";
     scopeArsenal = 2;
     displayName = "[12th][Alt] Backpack RTO";
     maximumLoad = BP_MAXLOAD;  // Load capacity macro.
@@ -85,5 +79,6 @@ class CfgVehicles {
   };
 
   // Generate all backpack types (standard, jungle, desert, winter) using macros.
-  BACKPACK_ALLTYPES(standard, Standard)
+  BACKPACK_ALLTYPES(standard,Standard)
+  BACKPACK_ALLTYPES(forest,Forest)
 };

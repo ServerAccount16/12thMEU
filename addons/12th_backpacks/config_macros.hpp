@@ -7,56 +7,66 @@
 
 // Macros to generate display names for different backpack types
 #define BP_DISP(DISPLAY_TYPE) [12th][DISPLAY_TYPE] Backpack
-#define BP_DISP_RTO(DISPLAY_TYPE) [12th][DISPLAY_TYPE] Backpack RTO
-#define BP_DISP_BIO(DISPLAY_TYPE) [12th][DISPLAY_TYPE] Backpack Biofoam
-#define BP_DISP_POUCH(DISPLAY_TYPE) [12th][DISPLAY_TYPE] Backpack Pouches
+#define BP_DISP_RTO(DISPLAY_TYPE) [12th][DISPLAY_TYPE][RTO] Backpack
+#define BP_DISP_LIGHT(DISPLAY_TYPE) [12th][DISPLAY_TYPE][Light] Backpack
+#define BP_DISP_HEAVY(DISPLAY_TYPE) [12th][DISPLAY_TYPE][Heavy] Backpack 
+#define BP_DISP_MEDIC(DISPLAY_TYPE) [12th][DISPLAY_TYPE][Medic] Backpack 
 
 // Macro to generate all backpack variants for a given camo type and display type
-#define BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)             \
-class 12th_backpack_##CAMOTYPE : twelfth_backpack_base {         \
-  scope=2;                                                    \
-  scopeArsenal=2;                                             \
-  displayName=#BP_DISP(DISPLAY_TYPE);                         \
-  hiddenSelectionsTextures[]={                                \
-    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                        \
-    "",                                                       \
-    "",                                                       \
-    ""                                                        \
-  };                                                          \
-};                                                            \
-                                                              \
-class 12th_backpack_##CAMOTYPE##_rto : twelfth_backpack_base {   \
-  scope=2;                                                    \
-  scopeArsenal=2;                                             \
-  displayName=#BP_DISP_RTO(DISPLAY_TYPE);                     \
-  hiddenSelectionsTextures[]={                                \
-    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                        \
-    "",                                                       \
-    "",                                                       \
-    #BP_TEXPATH(base,addon_antenna_ca.paa)                    \
-  };                                                          \
-};                                                            \
-                                                              \
-class 12th_backpack_##CAMOTYPE##_bio : twelfth_backpack_base {   \
-  scope=2;                                                    \
-  scopeArsenal=2;                                             \
-  displayName=#BP_DISP_BIO(DISPLAY_TYPE);                     \
-  hiddenSelectionsTextures[]={                                \
-    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                        \
-    "",                                                       \
-    #BP_TEXPATH(base,addon_biofoam_ca.paa),                   \
-    ""                                                        \
-  };                                                          \
-};                                                            \
-                                                              \
-class 12th_backpack_##CAMOTYPE##_pouch : twelfth_backpack_base { \
-  scope=2;                                                    \
-  scopeArsenal=2;                                             \
-  displayName=#BP_DISP_POUCH(DISPLAY_TYPE);                   \
-  hiddenSelectionsTextures[]={                                \
-    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                        \
-    #BP_TEXPATH(CAMOTYPE,addon_pouch_ca.paa),                 \
-    "",                                                       \
-    ""                                                        \
-  };                                                          \
-};
+// NOTE: DONT GET RID OF THE \'s, THEY ARE NEEDED TO DEFINE A MULTILINE MACRO
+#define BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)                          \
+class twelfth_backpack_##CAMOTYPE : twelfth_backpack_base {                \
+  scope=2;                                                                 \
+  scopeArsenal=2;                                                          \
+  displayName=#BP_DISP(DISPLAY_TYPE);                                      \
+  hiddenSelectionsTextures[]={                                             \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    "",                                                                    \
+    ""                                                                     \
+  };                                                                       \
+};                                                                         \
+class twelfth_backpack_light_##CAMOTYPE : twelfth_backpack_base {          \
+  scope=2;                                                                 \
+  scopeArsenal=2;                                                          \
+  displayName=#BP_DISP_LIGHT(DISPLAY_TYPE);                                \
+  hiddenSelectionsTextures[]={                                             \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    "",                                                                    \
+    "",                                                                    \
+    ""                                                                     \
+  };                                                                       \
+};                                                                         \
+class twelfth_backpack_heavy_##CAMOTYPE : twelfth_backpack_base {          \
+  scope=2;                                                                 \
+  scopeArsenal=2;                                                          \
+  displayName=#BP_DISP_HEAVY(DISPLAY_TYPE);                                \
+  hiddenSelectionsTextures[]={                                             \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    ""                                                                     \
+  };                                                                       \
+};                                                                         \
+class twelfth_backpack_rto_##CAMOTYPE : twelfth_backpack_base {            \
+  scope=2;                                                                 \
+  scopeArsenal=2;                                                          \
+  displayName=#BP_DISP_RTO(DISPLAY_TYPE);                                  \
+  hiddenSelectionsTextures[]={                                             \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa),                                     \
+    #BP_TEXPATH(CAMOTYPE,main_ca.paa)                                      \
+  };                                                                       \
+};                                                                         \
+class twelfth_backpack_medic_##CAMOTYPE : twelfth_backpack_base {          \
+  scope=2;                                                                 \
+  scopeArsenal=2;                                                          \
+  displayName=#BP_DISP_MEDIC(DISPLAY_TYPE);                                \
+  hiddenSelectionsTextures[]={                                             \
+    #BP_TEXPATH(CAMOTYPE,medic_ca.paa),                                    \
+    #BP_TEXPATH(CAMOTYPE,medic_ca.paa),                                    \
+    #BP_TEXPATH(CAMOTYPE,medic_ca.paa),                                    \
+    ""                                                                     \
+  };                                                                       \
+};                                                                         \
