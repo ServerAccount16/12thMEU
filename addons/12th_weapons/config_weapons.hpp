@@ -10,6 +10,8 @@ class CfgWeapons
   class FullAuto;        // Base class for full-auto fire mode
   class Launcher;        // Base class for launcher weapons
   class OPTRE_MA37K;
+  class OPTRE_MA5C;
+  class OPTRE_MA5CGL;
   class OPTRE_BR45;
   class OPTRE_Commando;
   class OPTRE_M247;
@@ -224,38 +226,80 @@ class CfgWeapons
     baseWeapon = "twelfth_M90";
   };
 
-  class twelfth_MA37K : OPTRE_MA37K
-  {
-    author = "Weber";
-    scope = 2;
-    scopeArsenal = 2;
-    canShootInWater = 1;
-    mass = 30;
-    displayName = "[12th] MA37K Carbine";
-    baseWeapon = "twelfth_MA37K";
-    hiddenSelections[] = {"camo"};
-    /*hiddenSelectionsTextures[] = {
-        "\x\12thMEU\addons\12th_weapons\data\ma37k\ma37k_co.paa"};*/ // Commented out until texture is made.
-    magazines[] = COMMON_MA5C_MAGAZINES;
-    class WeaponSlotsInfo : WeaponSlotsInfo
-    {
-      class MuzzleSlot : MuzzleSlot
-      {
-        compatibleitems[] = {"OPTRE_MA37KSuppressor"};
-      };
-      class CowsSlot : CowsSlot
-      {
-        compatibleItems[] = COMMON_SIGHTS;
-      };
-      class PointerSlot : PointerSlot
-      {
-        compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
-      };
-      class UnderBarrelSlot : UnderBarrelSlot
-      {
+    class twelfth_MA5C: OPTRE_MA5C {
+      author = "Waylen";
+      scope = 2;
+      scopeArsenal = 2;
+      displayName = "[12th] MA5C Assault Rifle";
+      baseWeapon = "twelfth_MA5C";
+      canShootInWater = 1;
+      magazines[] = COMMON_MA5C_MAGAZINES;
+
+      class WeaponSlotsInfo: WeaponSlotsInfo {
+          class MuzzleSlot: MuzzleSlot {
+              compatibleitems[] = { "OPTRE_MA5Suppressor" };
+          };
+          class CowsSlot: CowsSlot {};
+          class PointerSlot: PointerSlot {
+              compatibleitems[] = COMMON_SIGHTS;
+          };
+          class UnderBarrelSlot: UnderBarrelSlot {
+              compatibleitems[] = {};
+          };
       };
     };
-  };
+
+    class twelfth_MA5CGL: OPTRE_MA5CGL {
+      author = "Waylen";
+      scope = 2;
+      scopeArsenal = 2;
+      canShootInWater = 1;
+      displayName = "[12th] MA5CGL Assault Rifle";
+      muzzles[] = { "this", "12th_M301UGL" };
+      class 12th_M301UGL: OPTRE_M301UGL {
+          displayName = "M301 Grenade Launcher";
+          descriptionShort = "M301 GL";
+          magazines[] = COMMON_GL_MAGS;
+      };
+      baseWeapon = "twelfth_MA5CGL";
+      magazines[] = COMMON_MA5C_MAGAZINES;        
+
+      class WeaponSlotsInfo: WeaponSlotsInfo {
+          class MuzzleSlot: MuzzleSlot {
+              compatibleitems[] = { "OPTRE_MA5Suppressor" };
+          };
+          class CowsSlot: CowsSlot {};
+          class PointerSlot: PointerSlot {
+              compatibleitems[] = COMMON_SIGHTS;
+          };
+          class UnderBarrelSlot: UnderBarrelSlot {
+              compatibleitems[] = {};
+          };
+      };
+    };
+
+    class twelfth_MA37K: OPTRE_MA37K {
+      author = "Waylen";
+      scope = 2;
+      scopeArsenal = 2;
+      canShootInWater = 1;
+      mass = 30;
+      displayName = "[12th] MA37K Carbine";
+      baseWeapon = "twelfth_MA37K";
+      magazines[] = COMMON_MA5C_MAGAZINES;
+      class WeaponSlotsInfo: WeaponSlotsInfo {
+        class MuzzleSlot: MuzzleSlot {
+            compatibleitems[] = { "OPTRE_MA37KSuppressor" };
+        };
+        class CowsSlot: CowsSlot {};
+        class PointerSlot: PointerSlot {
+            compatibleitems[] = COMMON_SIGHTS;
+        };
+        class UnderBarrelSlot: UnderBarrelSlot {
+            compatibleitems[] = {};
+        };
+      };
+    };
 
     // Training MA5A configuration
 
