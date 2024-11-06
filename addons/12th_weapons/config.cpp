@@ -14,7 +14,7 @@ class CfgPatches
                  "twelfth_br55", "twelfth_br55_gl", "twelfth_br55_HB", "twelfth_br55_HB_gl",
                  "twelfth_M392", "twelfth_MA37K", "twelfth_BR45", "twelfth_Commando",
                  "twelfth_MMG33_T", "twelfth_M33_t", "twelfth_M247", "twelfth_M319",
-                 "twelfth_M319N"};                                                     // Please add your new weapons to this list
+                 "twelfth_M319N, twelfth_MA5C, twelfth_MA5CGL"};                                                     // Please add your new weapons to this list
     ammo[] = {"twelfth_20g_bb", "twelfth_95x40_UW", "twelfth_5x23mm_UW", "twelfth_40mmG_HEAT"}; // Please add your new ammo types to this list
     magazines[] = {"twelfth_20g_mag", "twelfth_95x40_100rnd", "twelfth_762x51_200rnd",
                    "twelfth_762x51_200rnd_T", "twelfth_br_36Rnd_UW", "twelfth_m7_60rnd_UW",

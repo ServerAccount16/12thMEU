@@ -236,16 +236,16 @@ class CfgWeapons
       magazines[] = COMMON_MA5C_MAGAZINES;
 
       class WeaponSlotsInfo: WeaponSlotsInfo {
-          class MuzzleSlot: MuzzleSlot {
-              compatibleitems[] = { "OPTRE_MA5Suppressor" };
-          };
-          class CowsSlot: CowsSlot {};
-          class PointerSlot: PointerSlot {
-              compatibleitems[] = COMMON_SIGHTS;
-          };
-          class UnderBarrelSlot: UnderBarrelSlot {
-              compatibleitems[] = {};
-          };
+        class MuzzleSlot: MuzzleSlot {
+            compatibleitems[] = { "OPTRE_MA5Suppressor" };
+        };
+        class CowsSlot: CowsSlot {};
+        class PointerSlot: PointerSlot {
+            compatibleitems[] = COMMON_SIGHTS;
+        };
+        class UnderBarrelSlot: UnderBarrelSlot {
+            compatibleitems[] = {};
+        };
       };
     };
 
@@ -255,8 +255,8 @@ class CfgWeapons
       scopeArsenal = 2;
       canShootInWater = 1;
       displayName = "[12th] MA5CGL Assault Rifle";
-      muzzles[] = { "this", "12th_M301UGL" };
-      class 12th_M301UGL: OPTRE_M301UGL {
+      muzzles[] = { "this", "twelfth_M301UGL" };
+      class twelfth_M301UGL: OPTRE_M301UGL {
           displayName = "M301 Grenade Launcher";
           descriptionShort = "M301 GL";
           magazines[] = COMMON_GL_MAGS;
@@ -265,16 +265,16 @@ class CfgWeapons
       magazines[] = COMMON_MA5C_MAGAZINES;        
 
       class WeaponSlotsInfo: WeaponSlotsInfo {
-          class MuzzleSlot: MuzzleSlot {
-              compatibleitems[] = { "OPTRE_MA5Suppressor" };
-          };
-          class CowsSlot: CowsSlot {};
-          class PointerSlot: PointerSlot {
-              compatibleitems[] = COMMON_SIGHTS;
-          };
-          class UnderBarrelSlot: UnderBarrelSlot {
-              compatibleitems[] = {};
-          };
+        class MuzzleSlot: MuzzleSlot {
+            compatibleitems[] = { "OPTRE_MA5Suppressor" };
+        };
+        class CowsSlot: CowsSlot {};
+        class PointerSlot: PointerSlot {
+            compatibleitems[] = COMMON_SIGHTS;
+        };
+        class UnderBarrelSlot: UnderBarrelSlot {
+            compatibleitems[] = {};
+        };
       };
     };
 
@@ -340,7 +340,7 @@ class CfgWeapons
         descriptionShort = "M301 GL";
         useModelOptics=1;
         useExternalOptic=0;
-        magazines[] = {COMMON_GL_MAGS}; // Grenade launcher magazines
+        magazines[] = COMMON_GL_MAGS; // Grenade launcher magazines
         magazineWell[]=
         {
             "UGL_40x36"
@@ -424,7 +424,7 @@ class CfgWeapons
       {
         displayName = "M301 Grenade Launcher";
         descriptionShort = "M301 GL";
-        magazines[] = {COMMON_GL_MAGS}; // Grenade launcher mags
+        magazines[] = COMMON_GL_MAGS; // Grenade launcher mags
       };
       baseWeapon = "twelfth_BR55_gl";
       magazines[] = COMMON_BR_MAGAZINES;
@@ -485,7 +485,7 @@ class CfgWeapons
       {
         displayName = "M301 Grenade Launcher";
         descriptionShort = "M301 GL";
-        magazines[] = {COMMON_GL_MAGS}; // Grenade launcher mags
+        magazines[] = COMMON_GL_MAGS; // Grenade launcher mags
       };
       baseWeapon = "twelfth_BR55_HB_gl";
       magazines[] = COMMON_BR_MAGAZINES;
