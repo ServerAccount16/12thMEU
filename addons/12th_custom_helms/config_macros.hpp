@@ -13,7 +13,7 @@
 #define CUSTOM_HELM_S_AV(SUFFIX)                       \
 class twelfth_ch_std_##SUFFIX##: twelfth_custom_helm_base {  \
     scope=2;                                           \
-    author="Kelp";                                     \
+    author="Waylen";                                     \
     picture="";                                        \
     scopeArsenal=2;                                    \
     displayName=#GLUE3(S_PREFIX,[SV] ,SUFFIX);         \
@@ -41,7 +41,7 @@ class twelfth_ch_std_##SUFFIX##: twelfth_custom_helm_base {  \
 };                                                     \
 class twelfth_ch_std_##SUFFIX##_nv: twelfth_custom_helm_base { \
     scope=2;                                           \
-    author="Kelp";                                     \
+    author="Waylen";                                     \
     picture="";                                        \
     scopeArsenal=2;                                    \
     displayName=#GLUE3(S_PREFIX,[NV] ,SUFFIX);         \
@@ -90,7 +90,7 @@ class twelfth_ch_##CAMO##_##SFX##_nv {   \
 #define CUSTOM_HELM_CV(SUFFIX,DISPLAY,VISOR)      \
 class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
-    author="Kelp";                                \
+    author="Waylen";                                \
     picture="";                                   \
     scopeArsenal=2;                               \
     displayName=DISPLAY;                          \
@@ -122,7 +122,7 @@ class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
 #define CUSTOM_HELM_NV(SUFFIX,DISPLAY)            \
 class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
-    author="Kelp";                                \
+    author="Waylen";                                \
     picture="";                                   \
     scopeArsenal=2;                               \
     displayName=DISPLAY;                          \
@@ -154,7 +154,7 @@ class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
 #define CUSTOM_HELM_SV(SUFFIX,DISPLAY)            \
 class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
     scope=2;                                      \
-    author="Kelp";                                \
+    author="Waylen";                                \
     picture="";                                   \
     scopeArsenal=2;                               \
     displayName=DISPLAY;                          \
@@ -188,7 +188,7 @@ class twelfth_ch_##SUFFIX##: twelfth_custom_helm_base { \
 */
 #define CUSTOM_PILOT_HELM(SUFFIX,DISPLAY,C1,C2,C3,C4,C5)                  \
 class 12th_pilot_ch_##SUFFIX : H_HelmetB {                                \
-  author="Kelp";                                                          \
+  author="Waylen";                                                          \
   scope=2;                                                                \
   scopeArsenal=2;                                                         \
   picture="";                                                             \

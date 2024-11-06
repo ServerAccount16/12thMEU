@@ -29,7 +29,7 @@ class CfgVehicles {
 class CfgWeapons {
   class ItemCore;
   class VestItem;
-  class OPTRE_UNSC_M52A_Armor2_MAR; // This is only used for the invisible Vest. Thank you Kelp
+  class OPTRE_UNSC_M52A_Armor2_MAR; // This is only used for the invisible Vest.
 
   // Base class for UNSC Foundries vests.
   class twelfth_unscf_vest_base : ItemCore {
@@ -63,4 +63,3 @@ class CfgWeapons {
   UNSCF_VEST_ALL_VARIANTS(twelfth_unscf_vest_win,winter,[12th][W])
 };
 
-// Thank you Kelp for making a baseline for me to build off of :kisses:

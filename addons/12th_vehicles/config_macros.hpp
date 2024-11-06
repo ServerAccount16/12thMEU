@@ -489,7 +489,7 @@ class CLASS: BASE_CLASS { \
   side=1; \
   scope=2; \
   scopeCurator=2; \
-  author="Kelp"; \
+  author="Waylen"; \
   displayName=DISPLAY; \
   vehicleClass="OPTRE_UNSC_Vehicle_class"; \
   faction="twelfth_MEU"; \
@@ -532,7 +532,7 @@ class CLASS: BASE_CLASS { \
   side=1; \
   scope=2; \
   scopeCurator=2; \
-  author="Kelp"; \
+  author="Waylen"; \
   displayName=DISPLAY; \
   vehicleClass="OPTRE_UNSC_Vehicle_class"; \
   faction="twelfth_MEU"; \
@@ -578,7 +578,7 @@ class CLASS: BASE_CLASS { \
   side=1; \
   scope=2; \
   scopeCurator=2; \
-  author="Kelp"; \
+  author="Waylen"; \
   displayName=DISPLAY; \
   vehicleClass="OPTRE_UNSC_Vehicle_class"; \
   faction="twelfth_MEU"; \
@@ -628,7 +628,7 @@ class CLASS: BASE_CLASS { \
 class CLASS: BASE_CLASS { \
   scope=2; \
   scopeCurator=2; \
-  author="Kelp"; \
+  author="Waylen"; \
   displayName=DISPLAY; \
   vehicleClass="OPTRE_UNSC_Vehicle_class"; \
   faction="twelfth_MEU"; \
@@ -670,7 +670,7 @@ class CLASS: BASE_CLASS { \
 class CLASS: BASE_CLASS { \
   scope=2; \
   scopeCurator=2; \
-  author="Kelp"; \
+  author="Waylen"; \
   displayName=DISPLAY; \
   vehicleClass="OPTRE_UNSC_Vehicle_class"; \
   faction="twelfth_MEU"; \

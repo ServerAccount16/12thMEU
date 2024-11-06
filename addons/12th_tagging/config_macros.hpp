@@ -27,7 +27,7 @@
 */
 #define SPRAY_ITEM(CSFX, DSFX)                                       \
 class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                     \
-  author = "Kelp; Gepard";                                          \
+  author = "Waylen";                                          \
   displayName = #GLUE([12th] Spray Can, DSFX);                      \
   picture = "\z\ace\addons\tagging\UI\items\itemSpraypaintBlack.paa"; \
   hiddenSelectionsTextures[] = {                                    \

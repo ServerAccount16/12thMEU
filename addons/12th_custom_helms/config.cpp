@@ -128,7 +128,7 @@ class CfgWeapons {
   class twelfth_custom_helm_base : H_HelmetB {
     scope=0;
     scopeArsenal=0;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Custom Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0.30000001;

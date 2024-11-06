@@ -200,7 +200,7 @@ class CfgVehicles {
   class twelfth_uni_ng_base_veh: B_Soldier_base_F {
     scope=0;
     scopeArsenal=0;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Armor Base (DON'T USE)";
     model="\19th_H2A_armor\19th_H2A_marines.p3d";
     hiddenSelections[] = {
@@ -221,7 +221,7 @@ class CfgVehicles {
 
   /*class twelfth_dress_navy_veh: OPTRE_UNSC_Army_Soldier_DressGray {
     dlc="OPTRE";
-    author="Kelp";
+    author="Waylen";
     uniformClass="twelfth_dress_navy_wep";
     hiddenSelections[] = {"camo1", "insignia", "clan", "ODST"};
     hiddenSelectionsTextures[] = {
@@ -247,7 +247,7 @@ class CfgVehicles {
   class twelfth_odst_uniform_veh: 19th_ODST {
     scope=1;
     scopeArsenal=0;
-    author="Kelp";
+    author="Waylen";
     model="ODST\ODST_Uniform_F.p3d";
     hiddenSelections[]={"camo1", "camo2"};
     hiddenSelectionsTextures[]= {
@@ -302,7 +302,7 @@ class CfgVehicles {
   };
 
   class twelfth_clothes_desert_veh: OPTRE_UNSC_Army_Soldier_WDL {
-    author="Kelp";
+    author="Waylen";
     uniformClass="twelfth_clothes_desert_wep";
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
@@ -318,7 +318,7 @@ class CfgVehicles {
   };
 
   class twelfth_clothes_desert_short_veh: OPTRE_UNSC_Army_Soldier_S_WDL {
-    author="Kelp";
+    author="Waylen";
     uniformClass="twelfth_clothes_desert_short_wep";
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
@@ -334,7 +334,7 @@ class CfgVehicles {
   };
 
   class twelfth_clothes_desert_rolled_veh: OPTRE_UNSC_Army_Soldier_R_WDL {
-    author="Kelp";
+    author="Waylen";
     uniformClass="twelfth_clothes_desert_rolled_wep";
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_armor\uniforms\clothes\clothes_desert_co.paa",
@@ -354,9 +354,12 @@ class CfgVehicles {
   // UNIFORM_VEH(CSFX,ARMS,BASE,DISPLAY) - example args
 
   // Macro Calls for Vehicles (UNIFORM_VEH)
-  ALL_UNI_VEH(std)
-  ALL_UNI_VEH(drk)
-  ALL_UNI_VEH(forest)
+  // CAMO, ARM CAMO
+  ALL_UNI_VEH(std,std)
+  ALL_UNI_VEH(drk,drk)
+  ALL_UNI_VEH(forest,std)
+  ALL_UNI_VEH(urban,drk)
+  ALL_UNI_VEH(forest90,std)
 
 };
 
@@ -377,7 +380,7 @@ class CfgWeapons {
   //-UNIFORMS---------------------------------------------------------
 
   class twelfth_uni_ng_base_wep: Uniform_Base {
-    author="Kelp";
+    author="Waylen";
     scope=0;
     scopeArsenal=0;
     displayName="[12th] Armor Base Weapon (DON'T USE)";
@@ -397,7 +400,7 @@ class CfgWeapons {
 
   /*class twelfth_dress_navy_wep: OPTRE_UNSC_Dress_Uniform_gray {
     dlc="OPTRE";
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Dress Uniform (Navy)";
     picture="";
     class ItemInfo: ItemInfo {
@@ -425,7 +428,7 @@ class CfgWeapons {
   class twelfth_odst_uniform_wep: Uniform_Base {
     scope=2;
     scopeArsenal=2;
-    author="Kelp";
+    author="Waylen";
     picture="";
     model="\A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
     displayName="[12th][ODST] Armor";
@@ -511,7 +514,7 @@ class CfgWeapons {
   // TODO: CLEAN THIS (the clothes section) UP
 
   /*class twelfth_clothes_std_wep: OPTRE_UNSC_Army_Uniform_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes] Uniform";
     picture="";
     class ItemInfo: ItemInfo {
@@ -522,7 +525,7 @@ class CfgWeapons {
   };
 
   class twelfth_clothes_std_short_wep: OPTRE_UNSC_Army_Uniform_S_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes] Uniform Short";
     picture="";
     class ItemInfo: ItemInfo {
@@ -533,7 +536,7 @@ class CfgWeapons {
   };
 
   class twelfth_clothes_std_rolled_wep: OPTRE_UNSC_Army_Uniform_R_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes] Uniform Rolled";
     picture="";
     class ItemInfo: ItemInfo {
@@ -544,7 +547,7 @@ class CfgWeapons {
   };
 
   class twelfth_clothes_desert_wep: OPTRE_UNSC_Army_Uniform_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes][Desert] Uniform";
     picture="";
     class ItemInfo: ItemInfo {
@@ -555,7 +558,7 @@ class CfgWeapons {
   };
 
   class twelfth_clothes_desert_short_wep: OPTRE_UNSC_Army_Uniform_S_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes][Desert] Uniform Short";
     picture="";
     class ItemInfo: ItemInfo {
@@ -566,7 +569,7 @@ class CfgWeapons {
   };
 
   class twelfth_clothes_desert_rolled_wep: OPTRE_UNSC_Army_Uniform_R_WDL {
-    author="Kelp";
+    author="Waylen";
     displayName="[12th][Clothes][Desert] Uniform Rolled";
     picture="";
     class ItemInfo: ItemInfo {
@@ -579,7 +582,7 @@ class CfgWeapons {
   //-CAPS-------------------------------------------------------------
 
   class twelfth_cap_std: OPTRE_UNSC_PatrolCap_Army {
-    author="Kelp";
+    author="Waylen";
     picture="";
     displayName="[12th][Caps] Patrol Cap";
     hiddenSelections[] = { "camo1", "hide_army" };
@@ -595,7 +598,7 @@ class CfgWeapons {
   };
 
   class twelfth_cap_desert: OPTRE_UNSC_PatrolCap_Army {
-    author="Kelp";
+    author="Waylen";
     picture="";
     displayName="[12th][Caps][Desert] Patrol Cap";
     hiddenSelections[] = { "camo1", "hide_army" };
@@ -615,7 +618,7 @@ class CfgWeapons {
   class twelfth_boonie_std: H_HelmetB {
     scope=2;
     scopeArsenal=2;
-    author="Kelp";
+    author="Waylen";
     picture="";
     displayName="[12th][Caps] Boonie Hat (Standard)";
     model = "\a3\characters_f\Common\booniehat";
@@ -636,7 +639,7 @@ class CfgWeapons {
   class twelfth_odst_helm: H_HelmetB {
     scope=2;
     scopeArsenal=2;
-    author="Kelp";
+    author="Waylen";
     picture="";
     displayName="[12th][ODST] Helmet";
     ace_hearing_protection=1;
@@ -667,7 +670,7 @@ class CfgWeapons {
 
   class twelfth_helm_base: H_HelmetB {
     scope=0;
-    author="Kelp";
+    author="Waylen";
     scopeArsenal=0;
     displayName="[12th] Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
@@ -691,7 +694,7 @@ class CfgWeapons {
 
   class twelfth_pilot_helm_base: H_HelmetB {
     scope=0;
-    author="Kelp";
+    author="Waylen";
     scopeArsenal=0;
     displayName="[12th] Pilot Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
@@ -725,7 +728,11 @@ class CfgWeapons {
   ALL_UNI_WEP(std)
   ALL_UNI_WEP(forest)
   ALL_UNI_WEP(drk)
+  ALL_UNI_WEP(forest90)
+  ALL_UNI_WEP(urban)
 
+
+  // this shit is silly and will get rewritten below
 
   // Macro Calls for Helmets
   // standard - no plt - visor
@@ -920,6 +927,8 @@ class XtdGearInfos {
     ALL_UNI_GI(std)
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
+    ALL_UNI_GI(forest90)
+    ALL_UNI_GI(urban)
     
 
     //-------------------------------------- Helmets

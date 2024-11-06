@@ -89,7 +89,7 @@ class CfgVehicles {
     scopeCurator = 2;
     side = 1;
     vehicleClass = "Air";
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] AV-14 Hornet";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -101,7 +101,7 @@ class CfgVehicles {
     class textureSources {
       class twelfth_hornet_tex_def {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
         };
@@ -167,7 +167,7 @@ class CfgVehicles {
   };
 
   /*class twelfth_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -194,7 +194,7 @@ class CfgVehicles {
   };
 
   class twelfth_sparrowhawk_l: OPTRE_AV22A_Sparrowhawk {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -221,7 +221,7 @@ class CfgVehicles {
   };
 
   class twelfth_sparrowhawk_ml: OPTRE_AV22B_Sparrowhawk {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -248,7 +248,7 @@ class CfgVehicles {
   };
 
   class twelfth_sparrowhawk: OPTRE_AV22C_Sparrowhawk {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -275,7 +275,7 @@ class CfgVehicles {
   };
 
   class twelfth_wyvern_inf: O_T_VTOL_02_infantry_dynamicLoadout_F {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -301,7 +301,7 @@ class CfgVehicles {
     class TextureSources {
       class twelfth_wyvern_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
@@ -315,7 +315,7 @@ class CfgVehicles {
   };
 
   class twelfth_wyvern_veh: O_T_VTOL_02_vehicle_dynamicLoadout_F {
-    author="Kelp";
+    author="Waylen";
     scope = 2;
     scopeCurator = 2;
     side = 1;
@@ -341,7 +341,7 @@ class CfgVehicles {
     class TextureSources {
       class twelfth_wyvern_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
@@ -358,7 +358,7 @@ class CfgVehicles {
     side=1;
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] AL-6 Prime";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -376,7 +376,7 @@ class CfgVehicles {
     class TextureSources {
       class twelfth_prime_tex_default {
         displayname="Default";
-        author="Gepard";
+        author="Waylen";
         factions[] = {"twelfth_MEU"};
         textures[]={
           QP(prime\medical\main_co.paa),
@@ -393,7 +393,7 @@ class CfgVehicles {
   class twelfth_blackfish_inf: B_T_VTOL_01_infantry_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Infantry)";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -405,7 +405,7 @@ class CfgVehicles {
   class twelfth_blackfish_veh: B_T_VTOL_01_vehicle_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Vehicle)";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -417,7 +417,7 @@ class CfgVehicles {
   class twelfth_blackfish_armed: B_T_VTOL_01_armed_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Blackfish (Armed)";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";

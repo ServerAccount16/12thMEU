@@ -226,159 +226,159 @@ class CfgWeapons
     baseWeapon = "twelfth_M90";
   };
 
-    class twelfth_MA5C: OPTRE_MA5C {
-      author = "Waylen";
-      scope = 2;
-      scopeArsenal = 2;
-      displayName = "[12th] MA5C Assault Rifle";
-      baseWeapon = "twelfth_MA5C";
-      canShootInWater = 1;
-      magazines[] = COMMON_MA5C_MAGAZINES;
+   class twelfth_MA5C: OPTRE_MA5C {
+     author = "Waylen";
+     scope = 2;
+     scopeArsenal = 2;
+     displayName = "[12th] MA5C Assault Rifle";
+     baseWeapon = "twelfth_MA5C";
+     canShootInWater = 1;
+     magazines[] = COMMON_MA5C_MAGAZINES;
 
-      class WeaponSlotsInfo: WeaponSlotsInfo {
-        class MuzzleSlot: MuzzleSlot {
-            compatibleitems[] = { "OPTRE_MA5Suppressor" };
-        };
-        class CowsSlot: CowsSlot {};
-        class PointerSlot: PointerSlot {
-            compatibleitems[] = COMMON_SIGHTS;
-        };
-        class UnderBarrelSlot: UnderBarrelSlot {
-            compatibleitems[] = {};
-        };
-      };
-    };
+     class WeaponSlotsInfo: WeaponSlotsInfo {
+       class MuzzleSlot: MuzzleSlot {
+           compatibleitems[] = { "OPTRE_MA5Suppressor" };
+       };
+       class CowsSlot: CowsSlot {};
+       class PointerSlot: PointerSlot {
+           compatibleitems[] = COMMON_SIGHTS;
+       };
+       class UnderBarrelSlot: UnderBarrelSlot {
+           compatibleitems[] = {};
+       };
+     };
+   };
 
-    class twelfth_MA5CGL: OPTRE_MA5CGL {
-      author = "Waylen";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] MA5CGL Assault Rifle";
-      muzzles[] = { "this", "twelfth_M301UGL" };
-      class twelfth_M301UGL: OPTRE_M301UGL {
-          displayName = "M301 Grenade Launcher";
-          descriptionShort = "M301 GL";
-          magazines[] = COMMON_GL_MAGS;
-      };
-      baseWeapon = "twelfth_MA5CGL";
-      magazines[] = COMMON_MA5C_MAGAZINES;        
-
-      class WeaponSlotsInfo: WeaponSlotsInfo {
-        class MuzzleSlot: MuzzleSlot {
-            compatibleitems[] = { "OPTRE_MA5Suppressor" };
-        };
-        class CowsSlot: CowsSlot {};
-        class PointerSlot: PointerSlot {
-            compatibleitems[] = COMMON_SIGHTS;
-        };
-        class UnderBarrelSlot: UnderBarrelSlot {
-            compatibleitems[] = {};
-        };
-      };
-    };
-
-    class twelfth_MA37K: OPTRE_MA37K {
-      author = "Waylen";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      mass = 30;
-      displayName = "[12th] MA37K Carbine";
-      baseWeapon = "twelfth_MA37K";
-      magazines[] = COMMON_MA5C_MAGAZINES;
-      class WeaponSlotsInfo: WeaponSlotsInfo {
-        class MuzzleSlot: MuzzleSlot {
-            compatibleitems[] = { "OPTRE_MA37KSuppressor" };
-        };
-        class CowsSlot: CowsSlot {};
-        class PointerSlot: PointerSlot {
-            compatibleitems[] = COMMON_SIGHTS;
-        };
-        class UnderBarrelSlot: UnderBarrelSlot {
-            compatibleitems[] = {};
-        };
-      };
-    };
-
-    // Training MA5A configuration
-
-    class twelfth_MA5A_BB : 19_UNSC_MA5A
-    {
-      author = "Weber";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] Training MA5A";
-      baseWeapon = "twelfth_MA5A_BB";
-      magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
-    };
-
-    class twelfth_MA5A : 19_UNSC_MA5A
-    {
-      author = "Weber";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] MA5A";
-      baseWeapon = "twelfth_MA5A";
-      magazines[] = COMMON_MA5C_MAGAZINES;
-    };
-
-    class twelfth_MA5A_gl : 19_UNSC_MA5A_gl
-    {
-      author = "Weber";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] MA5A W/ M301";
-      baseWeapon = "twelfth_MA5A_gl";
-      muzzles[] = {"this", "twelfth_M301UGL"}; // This is the portion of code that adds the UGL. Basically it has 2 muzzles to fire from
-      class twelfth_M301UGL: UGL_F
-      {
+  class twelfth_MA5CGL: OPTRE_MA5CGL {
+    author = "Waylen";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    displayName = "[12th] MA5CGL Assault Rifle";
+    muzzles[] = { "this", "twelfth_M301UGL" };
+    class twelfth_M301UGL: OPTRE_M301UGL {
         displayName = "M301 Grenade Launcher";
         descriptionShort = "M301 GL";
-        useModelOptics=1;
-        useExternalOptic=0;
-        magazines[] = COMMON_GL_MAGS; // Grenade launcher magazines
-        magazineWell[]=
-        {
-            "UGL_40x36"
-        };
-        cameraDir="OP_look";
-        discreteDistance[]={100,150,200,250,300,350};
-        discreteDistanceCameraPoint[]=
-        {
-            "OP_eye2",
-            "OP_eye3",
-            "OP_eye4",
-            "OP_eye5",
-            "OP_eye6",
-            "OP_eye8"
-        };
-        discreteDistanceInitIndex=1;
-        reloadAction="GestureReloadMXUGL";
-        reloadMagazineSound[]=
-        {
-            "A3\Sounds_F\arsenal\weapons\Rifles\MX\Mx_UGL_reload",
-            1,
-            1,
-            10
-        };
-      };
-      magazines[] = COMMON_MA5C_MAGAZINES;
+        magazines[] = COMMON_GL_MAGS;
     };
+    baseWeapon = "twelfth_MA5CGL";
+    magazines[] = COMMON_MA5C_MAGAZINES;        
 
-    class twelfth_MA5B : 19_UNSC_MA5B
-    {
-      author = "Weber";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] MA5B";
-      baseWeapon = "twelfth_MA5B";
-      magazines[] = {"OPTRE_60Rnd_762x51_Mag"};
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: MuzzleSlot {
+          compatibleitems[] = { "OPTRE_MA5Suppressor" };
+      };
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {
+          compatibleitems[] = COMMON_SIGHTS;
+      };
+      class UnderBarrelSlot: UnderBarrelSlot {
+          compatibleitems[] = {};
+      };
     };
+  };
+
+  class twelfth_MA37K: OPTRE_MA37K {
+    author = "Waylen";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    mass = 30;
+    displayName = "[12th] MA37K Carbine";
+    baseWeapon = "twelfth_MA37K";
+    magazines[] = COMMON_MA5C_MAGAZINES;
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: MuzzleSlot {
+          compatibleitems[] = { "OPTRE_MA37KSuppressor" };
+      };
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {
+          compatibleitems[] = COMMON_SIGHTS;
+      };
+      class UnderBarrelSlot: UnderBarrelSlot {
+          compatibleitems[] = {};
+      };
+    };
+  };
+
+ // Training MA5A configuration
+
+  class twelfth_MA5A_BB : 19_UNSC_MA5A
+  {
+    author = "Weber";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    displayName = "[12th] Training MA5A";
+    baseWeapon = "twelfth_MA5A_BB";
+    magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
+  };
+
+   class twelfth_MA5A : 19_UNSC_MA5A
+   {
+     author = "Weber";
+     scope = 2;
+     scopeArsenal = 2;
+     canShootInWater = 1;
+     displayName = "[12th] MA5A";
+     baseWeapon = "twelfth_MA5A";
+     magazines[] = COMMON_MA5C_MAGAZINES;
+   };
+
+   class twelfth_MA5A_gl : 19_UNSC_MA5A_gl
+   {
+     author = "Weber";
+     scope = 2;
+     scopeArsenal = 2;
+     canShootInWater = 1;
+     displayName = "[12th] MA5A W/ M301";
+     baseWeapon = "twelfth_MA5A_gl";
+     muzzles[] = {"this", "twelfth_M301UGL"}; // This is the portion of code that adds the UGL. Basically it has 2 muzzles to fire from
+     class twelfth_M301UGL: UGL_F
+     {
+       displayName = "M301 Grenade Launcher";
+       descriptionShort = "M301 GL";
+       useModelOptics=1;
+       useExternalOptic=0;
+       magazines[] = COMMON_GL_MAGS; // Grenade launcher magazines
+       magazineWell[]=
+       {
+           "UGL_40x36"
+       };
+       cameraDir="OP_look";
+       discreteDistance[]={100,150,200,250,300,350};
+       discreteDistanceCameraPoint[]=
+       {
+           "OP_eye2",
+           "OP_eye3",
+           "OP_eye4",
+           "OP_eye5",
+           "OP_eye6",
+           "OP_eye8"
+       };
+       discreteDistanceInitIndex=1;
+       reloadAction="GestureReloadMXUGL";
+       reloadMagazineSound[]=
+       {
+           "A3\Sounds_F\arsenal\weapons\Rifles\MX\Mx_UGL_reload",
+           1,
+           1,
+           10
+       };
+     };
+     magazines[] = COMMON_MA5C_MAGAZINES;
+   };
+
+  class twelfth_MA5B : 19_UNSC_MA5B
+  {
+    author = "Weber";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    displayName = "[12th] MA5B";
+    baseWeapon = "twelfth_MA5B";
+    magazines[] = {"OPTRE_60Rnd_762x51_Mag"};
+  };
 
     // BR55 Rifle configuration with attachments
     // I want to come back through this later and update this so that these are maybe a macro since they're so similar

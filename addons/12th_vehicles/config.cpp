@@ -91,7 +91,7 @@ class CfgVehicles {
   /*class twelfth_warthog_fav: OPTRE_M12_FAV {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog FAV";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -118,7 +118,7 @@ class CfgVehicles {
   class twelfth_warthog_fav_apc: OPTRE_M12_FAV_APC {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog APC";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -147,7 +147,7 @@ class CfgVehicles {
   class twelfth_warthog_fav_medical: OPTRE_M12_FAV_APC_MED {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog Medical";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -175,7 +175,7 @@ class CfgVehicles {
   class twelfth_warthog_tt: OPTRE_M813_TT {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog TT";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -204,7 +204,7 @@ class CfgVehicles {
   class twelfth_warthog_mg: OPTRE_M12_LRV {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog MG";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -232,7 +232,7 @@ class CfgVehicles {
   class twelfth_warthog_atgm: OPTRE_M12A1_LRV {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog ATGM";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -260,7 +260,7 @@ class CfgVehicles {
   class twelfth_warthog_gauss: OPTRE_M12G1_LRV {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog Gauss";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -289,7 +289,7 @@ class CfgVehicles {
   class twelfth_warthog_aa: OPTRE_M12R_AA {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog AA";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -318,7 +318,7 @@ class CfgVehicles {
   class twelfth_warthog_mlms: SAG6_M12_MLMS {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Warthog MLMS";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -349,7 +349,7 @@ class CfgVehicles {
   /*class twelfth_scorpion: OPTRE_M808B_UNSC {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] M808B Scorpion MBT";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -370,7 +370,7 @@ class CfgVehicles {
   class twelfth_scorpion_m: OPTRE_M808BM_UNSC {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] M808BM Scorpion MBT";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -394,7 +394,7 @@ class CfgVehicles {
   /*class twelfth_oryx: OPTRE_M494 {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] M494 Oryx IFV";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -414,7 +414,7 @@ class CfgVehicles {
     class TextureSources {
       class twelfth_oryx_tex_default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           "\x\12thMEU\addons\12th_vehicles\oryx\default\armor_co.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\default\main_co.paa",
@@ -429,7 +429,7 @@ class CfgVehicles {
       };
       class twelfth_oryx_tex_winter {
         displayName="Winter";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           "\x\12thMEU\addons\12th_vehicles\oryx\winter\armor_co.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\winter\main_co.paa",
@@ -462,7 +462,7 @@ class CfgVehicles {
   /*class twelfth_marshall: B_APC_Wheeled_01_cannon_F {
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Marshall IFV";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -490,7 +490,7 @@ class CfgVehicles {
     class textureSources {
       class default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[] = {
           QP(marshall\default\base_co.paa),
           QP(marshall\default\adds_co.paa),
@@ -501,7 +501,7 @@ class CfgVehicles {
       };
       class winter {
         displayName="Winter";
-        author="Gepard";
+        author="Waylen";
         textures[] = {
           QP(marshall\winter\base_co.paa),
           QP(marshall\winter\adds_co.paa),
@@ -519,7 +519,7 @@ class CfgVehicles {
     scope=2;
     scopeCurator=2;
     displayName="[12th] Stomper UGV";
-    author="Kelp";
+    author="Waylen";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Drones";
@@ -538,7 +538,7 @@ class CfgVehicles {
     class textureSources {
       class default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           QP(stomper\default\ext_co.paa),
           QP(stomper\default\int_co.paa),
@@ -553,7 +553,7 @@ class CfgVehicles {
     scope=2;
     scopeCurator=2;
     displayName="[12th] Stomper RCWS";
-    author="Kelp";
+    author="Waylen";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -573,7 +573,7 @@ class CfgVehicles {
     class textureSources {
       class default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[]= {
           QP(stomper\default\ext_co.paa),
           QP(stomper\default\int_co.paa),
@@ -589,7 +589,7 @@ class CfgVehicles {
     side=1;
     scope=2;
     scopeCurator=2;
-    author="Kelp";
+    author="Waylen";
     displayName="[12th] Lynx";
     vehicleClass="OPTRE_UNSC_Vehicle_class";
     faction="twelfth_MEU";
@@ -607,7 +607,7 @@ class CfgVehicles {
     class textureSources {
       class default {
         displayName="Default";
-        author="Gepard";
+        author="Waylen";
         textures[] = {
           QP(lynx\default\main_co.paa),
           QP(lynx\default\cannon_co.paa)

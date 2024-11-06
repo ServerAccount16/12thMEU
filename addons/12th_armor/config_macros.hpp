@@ -29,7 +29,7 @@ class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep {     \
   visor="No";                                             \
 };                                                        \
 
-#define UNIFORM_VEH(CAMO,PLATOON,ROLE,DISPLAYNAME)                              \
+#define UNIFORM_VEH(CAMO,PLATOON,ROLE,ARM,DISPLAYNAME)                          \
 class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh: twelfth_uni_ng_base_veh{   \
   author="Waylen";                                                              \
   picture="";                                                                   \
@@ -39,7 +39,7 @@ class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh: twelfth_uni_ng_base_veh{   
   hiddenSelectionsTextures[] =                                                  \
   {                                                                             \
     QP(uniforms\armor\bases\##CAMO\##PLATOON##_chest_co.paa),                   \
-    QP(uniforms\armor\arms\##CAMO\##PLATOON##_##ROLE##_arms_co.paa),            \
+    QP(uniforms\armor\arms\##ARM\##PLATOON##_##ROLE##_arms_co.paa),             \
     QP(uniforms\armor\bases\##CAMO\##PLATOON##_legs_co.paa),                    \
     QP(uniforms\armor\bases\##CAMO\bdu_co.paa),                                 \
     QP(uniforms\armor\bases\##CAMO\misc_co.paa)                                 \
@@ -77,17 +77,17 @@ UNIFORM_WEP(CAMO,hq,med,"[12th][HQ][Inf][Med] Armor")       \
 UNIFORM_WEP(CAMO,lpl,na,"[12th][LOGI][Inf] Armor")          \
 UNIFORM_WEP(CAMO,lpl,med,"[12th][LOGI][Inf][Med] Armor")    \
 
-#define ALL_UNI_VEH(CAMO)                                  \
-UNIFORM_VEH(CAMO,na,na,"[12th][N/A][Inf] Armor")          \
-UNIFORM_VEH(CAMO,na,med,"[12th][N/A][Inf][Med] Armor")     \
-UNIFORM_VEH(CAMO,1pl,na,"[12th][1PL][Inf] Armor")         \
-UNIFORM_VEH(CAMO,1pl,med,"[12th][1PL][Inf][Med] Armor")    \
-UNIFORM_VEH(CAMO,2pl,na,"[12th][2PL][Inf] Armor")         \
-UNIFORM_VEH(CAMO,2pl,med,"[12th][2PL][Inf][Med] Armor")    \
-UNIFORM_VEH(CAMO,hq,na,"[12th][HQ][Inf] Armor")           \
-UNIFORM_VEH(CAMO,hq,med,"[12th][HQ][Inf][Med] Armor")      \
-UNIFORM_VEH(CAMO,lpl,na,"[12th][LOGI][Inf] Armor")        \
-UNIFORM_VEH(CAMO,lpl,med,"[12th][LOGI][Inf][Med] Armor")   \
+#define ALL_UNI_VEH(CAMO,ARM)                                  \
+UNIFORM_VEH(CAMO,na,na,ARM,"[12th][N/A][Inf] Armor")          \
+UNIFORM_VEH(CAMO,na,med,ARM,"[12th][N/A][Inf][Med] Armor")     \
+UNIFORM_VEH(CAMO,1pl,na,ARM,"[12th][1PL][Inf] Armor")         \
+UNIFORM_VEH(CAMO,1pl,med,ARM,"[12th][1PL][Inf][Med] Armor")    \
+UNIFORM_VEH(CAMO,2pl,na,ARM,"[12th][2PL][Inf] Armor")         \
+UNIFORM_VEH(CAMO,2pl,med,ARM,"[12th][2PL][Inf][Med] Armor")    \
+UNIFORM_VEH(CAMO,hq,na,ARM,"[12th][HQ][Inf] Armor")           \
+UNIFORM_VEH(CAMO,hq,med,ARM,"[12th][HQ][Inf][Med] Armor")      \
+UNIFORM_VEH(CAMO,lpl,na,ARM,"[12th][LOGI][Inf] Armor")        \
+UNIFORM_VEH(CAMO,lpl,med,ARM,"[12th][LOGI][Inf][Med] Armor")   \
 
 #define ALL_UNI_GI(CAMO)      \
 UNIFORM_GI(CAMO,na,na)        \
@@ -115,7 +115,7 @@ UNIFORM_GI(CAMO,lpl,med)      \
 #define HELM_NV(SUFFIX,DISPLAY)                 \
 class twelfth_helm_##SUFFIX##_nv: twelfth_helm_base { \
   scope=2;                                      \
-  author="Kelp";                                \
+  author="Weber";                               \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
@@ -159,7 +159,7 @@ class twelfth_helm_##SUFFIX##_nv: twelfth_helm_base { \
 #define HELM_SV(SUFFIX,DISPLAY)                 \
 class twelfth_helm_##SUFFIX##: twelfth_helm_base {    \
   scope=2;                                      \
-  author="Kelp";                                \
+  author="Weber";                                \
   picture="";                                   \
   scopeArsenal=2;                               \
   displayName=DISPLAY;                          \
@@ -232,7 +232,7 @@ a local copy of the base textures from UNSCF around here.
 */
 #define PILOT_HELM(SUFFIX,DISPLAY,C1,C2,C3,C4,C5)                         \
 class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
-  author="Kelp";                                                          \
+  author="Weber";                                                          \
   scope=2;                                                                \
   scopeArsenal=2;                                                         \
   picture="";                                                             \
