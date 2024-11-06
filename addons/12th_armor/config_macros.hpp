@@ -5,7 +5,7 @@
 
 #define PILOT_H_TEX(CAMOTYPE,FILENAME) P(helmets\pilot\##CAMOTYPE\##FILENAME)
 
-#define UNIFORM_WEP_CLASSNAME(SUFFIX) twelfth_uni_ng_##SUFFIX##_veh
+#define UNIFORM_WEP_CLASSNAME(CAMO,PLATOON,ROLE) twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh
 
 #define UNIFORM_OLD_VEH_TEXPATH(SUFFIX) P(uniforms\armor_old\Uniform_co_##SUFFIX.paa)
 #define UNIFORM_OLD_WEP_CLASSPATH(SUFFIX) twelfth_uni_##SUFFIX##_veh
@@ -13,55 +13,93 @@
 #define HELM_TEX_PATH(SUFFIX) P(helmets\infantry\Helm_co_##SUFFIX.paa)
 #define CAP_TEX_PATH(SUFFIX) P(helmets\cap_b\cap_co_##SUFFIX.paa)
 
+#define INF_UNI_DISP(CAMO,PLATOON,ROLE) [12th][INF][CAMO][PLATOON][ROLE] Armor
+
 // stands for 'extended path', used to denote background image
 // paths for extended arsenal icon backgrounds
 #define XTP(SFX) QP(xtd_icons\##SFX.paa)
 
-#define UNIFORM_VEH(CSFX,ARMS,BASE,DISPLAY)             \
-class twelfth_uni_ng_##CSFX##_veh : twelfth_uni_ng_base_veh { \
-  author="Kelp";                                        \
-  picture="";                                           \
-  scope=1;                                              \
-  scopeArsenal=2;                                       \
-  displayName=DISPLAY;                                  \
-  hiddenSelectionsTextures[]={                          \
-    QP(uniforms\armor\bases\##BASE\chest_co.paa),       \
-    QP(uniforms\armor\arms\arms_co_##ARMS.paa),         \
-    QP(uniforms\armor\bases\##BASE\legs_co.paa),        \
-    QP(uniforms\armor\bases\##BASE\bdu_co.paa),         \
-    QP(uniforms\armor\bases\##BASE\misc_co.paa)         \
-  };                                                    \
-};
-
-#define UNIFORM_WEP(SUFFIX,DISPLAY)                       \
-class twelfth_uni_ng_##SUFFIX##_wep : twelfth_uni_ng_base_wep { \
-  author="Kelp";                                          \
-  picture="";                                             \
-  scope=1;                                                \
-  scopeArsenal=2;                                         \
-  displayName=DISPLAY;                                    \
-  ACE_GForceCoef=0.4;                                     \
-  class ItemInfo: UniformItem {                           \
-    uniformModel="-";                                     \
-    uniformType="Neopren";                                \
-    uniformClass = #UNIFORM_WEP_CLASSNAME(SUFFIX);        \
-    containerClass="Supply100";                           \
-    mass=1;                                               \
-    allowedSlots[]={"701","801","901"};                   \
-    armor=20;                                             \
-  };                                                      \
-};
-
 /* Stands for uniform gear info. */
-#define UNIFORM_GI(CSFX,CAMO,EL,ROLE) \
-class twelfth_uni_ng_##CSFX##_wep {      \
-  model="twelfth_base_uniforms";         \
-  camo=#CAMO;                         \
-  element=#EL;                        \
-  role=#ROLE;                         \
-  visor="No";                         \
-};
+#define UNIFORM_GI(CAMO,PLATOON,ROLE)                     \
+class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep {     \
+  model="twelfth_base_uniforms";                          \
+  camo=#CAMO;                                             \
+  element=#PLATOON;                                       \
+  role=#ROLE;                                             \
+  visor="No";                                             \
+};                                                        \
 
+#define UNIFORM_VEH(CAMO,PLATOON,ROLE,DISPLAYNAME)                              \
+class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh: twelfth_uni_ng_base_veh{   \
+  author="Waylen";                                                              \
+  picture="";                                                                   \
+  scope=1;                                                                      \
+  scopeArsenal=2;                                                               \
+  displayName=DISPLAYNAME;                                                      \
+  hiddenSelectionsTextures[] =                                                  \
+  {                                                                             \
+    QP(uniforms\armor\bases\##CAMO\##PLATOON##_chest_co.paa),                   \
+    QP(uniforms\armor\arms\##CAMO\##PLATOON##_##ROLE##_arms_co.paa),            \
+    QP(uniforms\armor\bases\##CAMO\##PLATOON##_legs_co.paa),                    \
+    QP(uniforms\armor\bases\##CAMO\bdu_co.paa),                                 \
+    QP(uniforms\armor\bases\##CAMO\misc_co.paa)                                 \
+  };                                                                            \
+};                                                                              \
+
+#define UNIFORM_WEP(CAMO,PLATOON,ROLE,DISPLAYNAME)                              \
+class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep : twelfth_uni_ng_base_wep { \
+  author="Waylen";                                                              \
+  picture="";                                                                   \
+  scope=1;                                                                      \
+  scopeArsenal=2;                                                               \
+  displayName=DISPLAYNAME;                                                      \
+  ACE_GForceCoef=0.4;                                                           \
+  class ItemInfo: UniformItem {                                                 \
+    uniformModel="-";                                                           \
+    uniformType="Neopren";                                                      \
+    uniformClass = #UNIFORM_WEP_CLASSNAME(CAMO,PLATOON,ROLE);                   \
+    containerClass="Supply100";                                                 \
+    mass=1;                                                                     \
+    allowedSlots[]={"701","801","901"};                                         \
+    armor=20;                                                                   \
+  };                                                                            \
+};                                                                              \
+
+#define ALL_UNI_WEP(CAMO)                                  \
+UNIFORM_WEP(CAMO,na,na,"[12th][N/A][Inf] Armor")          \
+UNIFORM_WEP(CAMO,na,med,"[12th][N/A][Inf][Med] Armor")     \
+UNIFORM_WEP(CAMO,1pl,na,"[12th][1PL][Inf] Armor")         \
+UNIFORM_WEP(CAMO,1pl,med,"[12th][1PL][Inf][Med] Armor")    \
+UNIFORM_WEP(CAMO,2pl,na,"[12th][2PL][Inf] Armor")           \
+UNIFORM_WEP(CAMO,2pl,med,"[12th][2PL][Inf][Med] Armor")     \
+UNIFORM_WEP(CAMO,hq,na,"[12th][HQ][Inf] Armor")             \
+UNIFORM_WEP(CAMO,hq,med,"[12th][HQ][Inf][Med] Armor")       \
+UNIFORM_WEP(CAMO,lpl,na,"[12th][LOGI][Inf] Armor")          \
+UNIFORM_WEP(CAMO,lpl,med,"[12th][LOGI][Inf][Med] Armor")    \
+
+#define ALL_UNI_VEH(CAMO)                                  \
+UNIFORM_VEH(CAMO,na,na,"[12th][N/A][Inf] Armor")          \
+UNIFORM_VEH(CAMO,na,med,"[12th][N/A][Inf][Med] Armor")     \
+UNIFORM_VEH(CAMO,1pl,na,"[12th][1PL][Inf] Armor")         \
+UNIFORM_VEH(CAMO,1pl,med,"[12th][1PL][Inf][Med] Armor")    \
+UNIFORM_VEH(CAMO,2pl,na,"[12th][2PL][Inf] Armor")         \
+UNIFORM_VEH(CAMO,2pl,med,"[12th][2PL][Inf][Med] Armor")    \
+UNIFORM_VEH(CAMO,hq,na,"[12th][HQ][Inf] Armor")           \
+UNIFORM_VEH(CAMO,hq,med,"[12th][HQ][Inf][Med] Armor")      \
+UNIFORM_VEH(CAMO,lpl,na,"[12th][LOGI][Inf] Armor")        \
+UNIFORM_VEH(CAMO,lpl,med,"[12th][LOGI][Inf][Med] Armor")   \
+
+#define ALL_UNI_GI(CAMO)      \
+UNIFORM_GI(CAMO,na,na)        \
+UNIFORM_GI(CAMO,na,med)       \
+UNIFORM_GI(CAMO,1pl,na)       \
+UNIFORM_GI(CAMO,1pl,med)      \
+UNIFORM_GI(CAMO,2pl,na)       \
+UNIFORM_GI(CAMO,2pl,med)      \
+UNIFORM_GI(CAMO,hq,na)        \
+UNIFORM_GI(CAMO,hq,med)       \
+UNIFORM_GI(CAMO,lpl,na)       \
+UNIFORM_GI(CAMO,lpl,med)      \
 
 /*
   Defines a no-visor helmet.

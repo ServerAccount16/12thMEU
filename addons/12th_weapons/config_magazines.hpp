@@ -5,6 +5,7 @@ class CfgMagazines
   class OPTRE_400Rnd_762x51_Box_Tracer; // Base class for 7.62x51mm tracer box
   class OPTRE_60Rnd_5x23mm_Mag;         // Base class for 5x23mm magazine
   class M319_HEAT_Grenade_Shell;        // Base class for 40mm HEAT shell
+  class CA_LauncherMagazine;
   class RPG32_HE_F;
 
   // Training magazine configuration
@@ -92,18 +93,23 @@ class CfgMagazines
     mass = 8;
   };
 
-  class 12th_m96_heat: RPG32_HE_F {
-        displayName = "M96 HEAT Disposable Rockets";
-        displaynameshort = "HEAT";
-        descriptionShort = "High Explosive Anti Tank<br/>Un-guided";
-        ammo = "12th_m96_rocket_heat";
-        picture = "\DMNS\Weapons\Launchers\icons\gear_rpg32_rocket_ca.paa";
-        model = "\a3\weapons_f\ammo\rocket_01_f.p3d";
-        hiddenSelections[] = { "camo" };
-        hiddenSelectionsTextures[] = { "" };
-        count = 1;
-        mass = 45;
-        initSpeed = 650;
-        allowedSlots[] = { 901, 701 };
-    };
+  class twelfth_m96_magazine: RPG32_HE_F {
+    scope = 2;
+    allowedSlots[] = {};
+    displayName = "M96 HEAT Disposable Rockets";
+    displaynameshort = "HEAT";
+    descriptionShort = "High Explosive Anti Tank<br/>Un-guided";
+    ammo = "twelfth_m96_rocket_heat"; 
+    picture = "\DMNS\Weapons\Launchers\icons\gear_rpg32_rocket_ca.paa";
+    model = "\a3\weapons_f\ammo\rocket_01_f.p3d";
+    count = 1;
+    /*
+    hiddenSelections[] = { "camo" };
+    hiddenSelectionsTextures[] = { "" };
+    mass = 45;
+    initSpeed = 650;
+    allowedSlots[] = { 901, 701 };
+    */
+  };
+
 };

@@ -8,7 +8,7 @@ class CfgPatches
   class twelfth_weapons
   {
     units[] = {}; // No specific units are associated with this patch
-    weapons[] = {"twelfth_M96_LAW", "twelfth_M96_LAW_Ready", "twelfth_M96_LAW_Used",
+    weapons[] = {"twelfth_M96", "twelfth_M96_LAW_Ready", "twelfth_M96_LAW_Used",
                  "twelfth_M6C", "twelfth_M7_Test", "twelfth_M7_Test_Folded", "twelfth_M90",
                  "twelfth_MA5A_BB", "twelfth_MA5A", "twelfth_MA5A_gl", "twelfth_MA5B",
                  "twelfth_br55", "twelfth_br55_gl", "twelfth_br55_HB", "twelfth_br55_HB_gl",
@@ -23,4 +23,8 @@ class CfgPatches
     requiredAddons[] = {"Dmns_Weapons", "OPTRE_Weapons", "Dmns_Weapons_F_MachineGuns",
                         "A3_Weapons_F", "A3_Weapons_F_Exp", "19_UNSC_Weapons"}; // **THIS NEEDS TO BE UPDATED**
   };
+};
+
+class CBA_DisposableLaunchers {
+    twelfth_m96_READY[] = {"twelfth_m96", "twelfth_m96_USED"};
 };

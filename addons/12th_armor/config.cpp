@@ -40,6 +40,7 @@ class CfgPatches {
       "twelfth_clothes_std_rolled_veh",
       "twelfth_clothes_desert_veh",
       "twelfth_clothes_desert_rolled_veh",
+      "twelfth_instructor_uniform_veh",
       "twelfth_dress_navy_veh"
     };
     weapons[]= {
@@ -165,7 +166,8 @@ class CfgPatches {
       "twelfth_clothes_std_rolled_wep",
       "twelfth_clothes_desert_wep",
       "twelfth_clothes_desert_rolled_wep",
-      "twelfth_dress_navy_wep"
+      "twelfth_dress_navy_wep",
+      "twelfth_instructor_uniform_wep"
     };
     requiredAddons[]= {
       "A3_Armor_F_Beta",
@@ -193,7 +195,7 @@ class CfgVehicles {
   class OPTRE_UNSC_CH252A_Helmet_Base;
   class OPTRE_UNSC_CH252A_Helmet_dp;
   class 19th_ODST;
-
+  
   // base class for our new and cool uniforms
   class twelfth_uni_ng_base_veh: B_Soldier_base_F {
     scope=0;
@@ -226,6 +228,18 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_armor\uniforms\dress\dress_uni_navy_co.paa"
     };
   };*/
+
+	//class twelfth_instructor_uniform_veh: B_Soldier_base_F
+	//{
+	//	author = "Sammy";
+	//	displayName = "";
+	//	uniformClass = "twelfth_instructor_uniform_wep";
+  //
+	//	model = "\A3\characters_F\BLUFOR\b_soldier_02.p3d";
+  //
+	//	hiddenSelections[] = {"Camo","Camo2","insignia"};
+	//	hiddenSelectionsTextures[] = { "\x\12thMEU\addons\12th_armor\uniforms\extra\aic_instructor.paa","a3\characters_f\common\data\basicbody_black_co.paa"};
+	//};
 
   // DON'T COPY + PASTE THIS IF YOU NEED NEW ODST ARMOR.
   // INSTEAD, USE MACROS AND DO THE SAME THING AS IS
@@ -337,76 +351,12 @@ class CfgVehicles {
 
   //-MACRO CALLS (VEH)------------------------------------------------
 
-
+  // UNIFORM_VEH(CSFX,ARMS,BASE,DISPLAY) - example args
 
   // Macro Calls for Vehicles (UNIFORM_VEH)
-  UNIFORM_VEH(std,std,std,                 "[12th][Inf][S] Armor")
-  UNIFORM_VEH(std_med,std_med,std,         "[12th][Inf][S] Armor (Corpsman)")
-  UNIFORM_VEH(std_1pl,std_1pl,std,         "[12th][Inf][S][1Plt] Armor")
-  UNIFORM_VEH(std_1pl_med,std_1pl_med,std, "[12th][Inf][S][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(std_2pl,std_2pl,std,         "[12th][Inf][S][2Plt] Armor")
-  UNIFORM_VEH(std_2pl_med,std_2pl_med,std, "[12th][Inf][S][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(std_lpl,std_lpl,std,         "[12th][Inf][S][Logi] Armor")
-  UNIFORM_VEH(std_lpl_med,std_lpl_med,std, "[12th][Inf][S][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(std_hq,std_hq,std,           "[12th][Inf][S][HQ] Armor")
-  UNIFORM_VEH(std_hq_med,std_hq_med,std,   "[12th][Inf][S][HQ] Armor (Corpsman)")
-
-  /*
-  UNIFORM_VEH(win,win,win,                 "[12th][Inf][W] Armor")
-  UNIFORM_VEH(win_med,win_med,win,         "[12th][Inf][W] Armor (Corpsman)")
-  UNIFORM_VEH(win_1pl,win_1pl,win,         "[12th][Inf][W][1Plt] Armor")
-  UNIFORM_VEH(win_1pl_med,win_1pl_med,win, "[12th][Inf][W][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(win_2pl,win_2pl,win,         "[12th][Inf][W][2Plt] Armor")
-  UNIFORM_VEH(win_2pl_med,win_2pl_med,win, "[12th][Inf][W][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(win_lpl,win_lpl,win,         "[12th][Inf][W][Logi] Armor")
-  UNIFORM_VEH(win_lpl_med,win_lpl_med,win, "[12th][Inf][W][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(win_hq,win_hq,win,           "[12th][Inf][W][HQ] Armor")
-  UNIFORM_VEH(win_hq_med,win_hq_med,win,   "[12th][Inf][W][HQ] Armor (Corpsman)")
-  */
-
-  UNIFORM_VEH(forest,forest,forest,           "[12th][Inf][F] Armor")
-  UNIFORM_VEH(forest_med,forest_med,forest,         "[12th][Inf][F] Armor (Corpsman)")
-  UNIFORM_VEH(forest_1pl,forest_1pl,forest,         "[12th][Inf][F][1Plt] Armor")
-  UNIFORM_VEH(forest_1pl_med,forest_1pl_med,forest, "[12th][Inf][F][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(forest_2pl,forest_2pl,forest,         "[12th][Inf][F][2Plt] Armor")
-  UNIFORM_VEH(forest_2pl_med,forest_2pl_med,forest, "[12th][Inf][F][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(forest_lpl,forest_lpl,forest,         "[12th][Inf][F][Logi] Armor")
-  UNIFORM_VEH(forest_lpl_med,forest_lpl_med,forest, "[12th][Inf][F][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(forest_hq,forest_hq,forest,           "[12th][Inf][F][HQ] Armor")
-  UNIFORM_VEH(forest_hq_med,forest_hq_med,forest,   "[12th][Inf][F][HQ] Armor (Corpsman)")
-
-  UNIFORM_VEH(forest90,forest90,forest90,       "[12th][Inf][F90] Armor")
-  UNIFORM_VEH(forest90_med,forest90_med,forest90,         "[12th][Inf][F90] Armor (Corpsman)")
-  UNIFORM_VEH(forest90_1pl,forest90_1pl,forest90,         "[12th][Inf][F90][1Plt] Armor")
-  UNIFORM_VEH(forest90_1pl_med,forest90_1pl_med,forest90, "[12th][Inf][F90][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(forest90_2pl,forest90_2pl,forest90,         "[12th][Inf][F90][2Plt] Armor")
-  UNIFORM_VEH(forest90_2pl_med,forest90_2pl_med,forest90, "[12th][Inf][F90][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(forest90_lpl,forest90_lpl,forest90,         "[12th][Inf][F90][Logi] Armor")
-  UNIFORM_VEH(forest90_lpl_med,forest90_lpl_med,forest90, "[12th][Inf][F90][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(forest90_hq,forest90_hq,forest90,           "[12th][Inf][F90][HQ] Armor")
-  UNIFORM_VEH(forest90_hq_med,forest90_hq_med,forest90,   "[12th][Inf][F90][HQ] Armor (Corpsman)")
-
-  UNIFORM_VEH(urban,urban,urban,             "[12th][Inf][U] Armor")
-  UNIFORM_VEH(urban_med,urban_med,urban,         "[12th][Inf][U] Armor (Corpsman)")
-  UNIFORM_VEH(urban_1pl,urban_1pl,urban,         "[12th][Inf][U][1Plt] Armor")
-  UNIFORM_VEH(urban_1pl_med,urban_1pl_med,urban, "[12th][Inf][U][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(urban_2pl,urban_2pl,urban,         "[12th][Inf][U][2Plt] Armor")
-  UNIFORM_VEH(urban_2pl_med,urban_2pl_med,urban, "[12th][Inf][U][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(urban_lpl,urban_lpl,urban,         "[12th][Inf][U][Logi] Armor")
-  UNIFORM_VEH(urban_lpl_med,urban_lpl_med,urban, "[12th][Inf][U][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(urban_hq,urban_hq,urban,           "[12th][Inf][U][HQ] Armor")
-  UNIFORM_VEH(urban_hq_med,urban_hq_med,urban,   "[12th][Inf][U][HQ] Armor (Corpsman)")
-
-  UNIFORM_VEH(drk,drk,drk,                 "[12th][Inf][D] Armor")
-  UNIFORM_VEH(drk_med,drk_med,drk,         "[12th][Inf][D] Armor (Corpsman)")
-  UNIFORM_VEH(drk_1pl,drk_1pl,drk,         "[12th][Inf][D][1Plt] Armor")
-  UNIFORM_VEH(drk_1pl_med,drk_1pl_med,drk, "[12th][Inf][D][1Plt] Armor (Corpsman)")
-  UNIFORM_VEH(drk_2pl,drk_2pl,drk,         "[12th][Inf][D][2Plt] Armor")
-  UNIFORM_VEH(drk_2pl_med,drk_2pl_med,drk, "[12th][Inf][D][2Plt] Armor (Corpsman)")
-  UNIFORM_VEH(drk_lpl,drk_lpl,drk,         "[12th][Inf][D][Logi] Armor")
-  UNIFORM_VEH(drk_lpl_med,drk_lpl_med,drk, "[12th][Inf][D][Logi] Armor (Corpsman)")
-  UNIFORM_VEH(drk_hq,drk_hq,drk,           "[12th][Inf][D][HQ] Armor")
-  UNIFORM_VEH(drk_hq_med,drk_hq_med,drk,   "[12th][Inf][D][HQ] Armor (Corpsman)")
+  ALL_UNI_VEH(std)
+  ALL_UNI_VEH(drk)
+  ALL_UNI_VEH(forest)
 
 };
 
@@ -422,6 +372,7 @@ class CfgWeapons {
   class OPTRE_UNSC_Army_Uniform_R_WDL;
   class OPTRE_UNSC_Army_Uniform_S_WDL;
   class OPTRE_UNSC_Dress_Uniform_gray;
+  class U_B_CombatUniform_mcam_tshirt;
 
   //-UNIFORMS---------------------------------------------------------
 
@@ -453,6 +404,23 @@ class CfgWeapons {
       uniformClass="twelfth_dress_navy_veh";
     };
   };*/ //Awaiting textures
+
+  //class twelfth_instructor_uniform_wep: U_B_CombatUniform_mcam_tshirt {
+  //  author="Sammy";
+  //  displayName="[12th] AIC Instructor Uniform";
+  //  picture="";
+  //  scope = 2;
+  //  scopeArsenal = 2;
+  //  class ItemInfo: ItemInfo {
+  //    uniformModel = "-";
+  //    uniformClass = "twelfth_instructor_uniform_veh";
+  //    containerClass = "Supply100";
+  //    mass = 1;
+  //    uniformType = "Neopren";
+  //    allowedSlots[] = {"701","801","901"};
+  //    armor=20;
+  //  };
+  //};
 
   class twelfth_odst_uniform_wep: Uniform_Base {
     scope=2;
@@ -754,38 +722,9 @@ class CfgWeapons {
   CAP_B(pale_horse_2, "[12th][Caps] Cap (Pale Horse 2)")*/
 
   //-UNIFORM-WEPS-----------------------------------------------------
-  UNIFORM_WEP(std,         "[12th][Inf][S] Armor")
-  UNIFORM_WEP(std_med,     "[12th][Inf][S] Armor (Corpsman)")
-  UNIFORM_WEP(std_1pl,     "[12th][Inf][S][1Plt] Armor")
-  UNIFORM_WEP(std_1pl_med, "[12th][Inf][S][1Plt] Armor (Corpsman)")
-  UNIFORM_WEP(std_2pl,     "[12th][Inf][S][2Plt] Armor")
-  UNIFORM_WEP(std_2pl_med, "[12th][Inf][S][2Plt] Armor (Corpsman)")
-  UNIFORM_WEP(std_lpl,     "[12th][Inf][S][Logi] Armor")
-  UNIFORM_WEP(std_lpl_med, "[12th][Inf][S][Logi] Armor (Corpsman)")
-  UNIFORM_WEP(std_hq,      "[12th][Inf][S][HQ] Armor")
-  UNIFORM_WEP(std_hq_med,  "[12th][Inf][S][HQ] Armor (Corpsman)")
-
-  UNIFORM_WEP(win,         "[12th][Inf][W] Armor")
-  UNIFORM_WEP(win_med,     "[12th][Inf][W] Armor (Corpsman)")
-  UNIFORM_WEP(win_1pl,     "[12th][Inf][W][1Plt] Armor")
-  UNIFORM_WEP(win_1pl_med, "[12th][Inf][W][1Plt] Armor (Corpsman)")
-  UNIFORM_WEP(win_2pl,     "[12th][Inf][W][2Plt] Armor")
-  UNIFORM_WEP(win_2pl_med, "[12th][Inf][W][2Plt] Armor (Corpsman)")
-  UNIFORM_WEP(win_lpl,     "[12th][Inf][W][Logi] Armor")
-  UNIFORM_WEP(win_lpl_med, "[12th][Inf][W][Logi] Armor (Corpsman)")
-  UNIFORM_WEP(win_hq,      "[12th][Inf][W][HQ] Armor")
-  UNIFORM_WEP(win_hq_med,  "[12th][Inf][W][HQ] Armor (Corpsman)")
-
-  UNIFORM_WEP(drk,         "[12th][Inf][D] Armor")
-  UNIFORM_WEP(drk_med,     "[12th][Inf][D] Armor (Corpsman)")
-  UNIFORM_WEP(drk_1pl,     "[12th][Inf][D][1Plt] Armor")
-  UNIFORM_WEP(drk_1pl_med, "[12th][Inf][D][1Plt] Armor (Corpsman)")
-  UNIFORM_WEP(drk_2pl,     "[12th][Inf][D][2Plt] Armor")
-  UNIFORM_WEP(drk_2pl_med, "[12th][Inf][D][2Plt] Armor (Corpsman)")
-  UNIFORM_WEP(drk_lpl,     "[12th][Inf][D][Logi] Armor")
-  UNIFORM_WEP(drk_lpl_med, "[12th][Inf][D][Logi] Armor (Corpsman)")
-  UNIFORM_WEP(drk_hq,      "[12th][Inf][D][HQ] Armor")
-  UNIFORM_WEP(drk_hq_med,  "[12th][Inf][D][HQ] Armor (Corpsman)")
+  ALL_UNI_WEP(std)
+  ALL_UNI_WEP(forest)
+  ALL_UNI_WEP(drk)
 
 
   // Macro Calls for Helmets
@@ -978,73 +917,10 @@ class XtdGearModels {
 class XtdGearInfos {
   class CfgWeapons {
     //-------------------------------------- Uniforms
-    UNIFORM_GI(std,std,na,na)
-    UNIFORM_GI(std_med,std,na,med)
-    UNIFORM_GI(std_1pl,std,1pl,na)
-    UNIFORM_GI(std_1pl_med,std,1pl,med)
-    UNIFORM_GI(std_2pl,std,2pl,na)
-    UNIFORM_GI(std_2pl_med,std,2pl,med)
-    UNIFORM_GI(std_lpl,std,lpl,na)
-    UNIFORM_GI(std_lpl_med,std,lpl,med)
-    UNIFORM_GI(std_hq,std,hq,na)
-    UNIFORM_GI(std_hq_med,std,hq,med)
-
-    // Dark
-    UNIFORM_GI(drk,drk,na,na)
-    UNIFORM_GI(drk_med,drk,na,med)
-    UNIFORM_GI(drk_1pl,drk,1pl,na)
-    UNIFORM_GI(drk_1pl_med,drk,1pl,med)
-    UNIFORM_GI(drk_2pl,drk,2pl,na)
-    UNIFORM_GI(drk_2pl_med,drk,2pl,med)
-    UNIFORM_GI(drk_lpl,drk,lpl,na)
-    UNIFORM_GI(drk_lpl_med,drk,lpl,med)
-    UNIFORM_GI(drk_hq,drk,hq,na)
-    UNIFORM_GI(drk_hq_med,drk,hq,med)
-
-    // Winter
-    UNIFORM_GI(win,win,na,na)
-    UNIFORM_GI(win_med,win,na,med)
-    UNIFORM_GI(win_1pl,win,1pl,na)
-    UNIFORM_GI(win_1pl_med,win,1pl,med)
-    UNIFORM_GI(win_2pl,win,2pl,na)
-    UNIFORM_GI(win_2pl_med,win,2pl,med)
-    UNIFORM_GI(win_lpl,win,lpl,na)
-    UNIFORM_GI(win_lpl_med,win,lpl,med)
-    UNIFORM_GI(win_hq,win,hq,na)
-    UNIFORM_GI(win_hq_med,win,hq,med)
-
-    UNIFORM_GI(urban,urban,na,na)
-    UNIFORM_GI(urban_med,urban,na,med)
-    UNIFORM_GI(urban_1pl,urban,1pl,na)
-    UNIFORM_GI(urban_1pl_med,urban,1pl,med)
-    UNIFORM_GI(urban_2pl,urban,2pl,na)
-    UNIFORM_GI(urban_2pl_med,urban,2pl,med)
-    UNIFORM_GI(urban_lpl,urban,lpl,na)
-    UNIFORM_GI(urban_lpl_med,urban,lpl,med)
-    UNIFORM_GI(urban_hq,urban,hq,na)
-    UNIFORM_GI(urban_hq_med,urban,hq,med)
-
-    UNIFORM_GI(forest,forest,na,na)
-    UNIFORM_GI(forest_med,forest,na,med)
-    UNIFORM_GI(forest_1pl,forest,1pl,na)
-    UNIFORM_GI(forest_1pl_med,forest,1pl,med)
-    UNIFORM_GI(forest_2pl,forest,2pl,na)
-    UNIFORM_GI(forest_2pl_med,forest,2pl,med)
-    UNIFORM_GI(forest_lpl,forest,lpl,na)
-    UNIFORM_GI(forest_lpl_med,forest,lpl,med)
-    UNIFORM_GI(forest_hq,forest,hq,na)
-    UNIFORM_GI(forest_hq_med,forest,hq,med)
-
-    UNIFORM_GI(forest90,forest90,na,na)
-    UNIFORM_GI(forest90_med,forest90,na,med)
-    UNIFORM_GI(forest90_1pl,forest90,1pl,na)
-    UNIFORM_GI(forest90_1pl_med,forest90,1pl,med)
-    UNIFORM_GI(forest90_2pl,forest90,2pl,na)
-    UNIFORM_GI(forest90_2pl_med,forest90,2pl,med)
-    UNIFORM_GI(forest90_lpl,forest90,lpl,na)
-    UNIFORM_GI(forest90_lpl_med,forest90,lpl,med)
-    UNIFORM_GI(forest90_hq,forest90,hq,na)
-    UNIFORM_GI(forest90_hq_med,forest90,hq,med)
+    ALL_UNI_GI(std)
+    ALL_UNI_GI(drk)
+    ALL_UNI_GI(forest)
+    
 
     //-------------------------------------- Helmets
     HELM_NV_GI(std,std,na,na)

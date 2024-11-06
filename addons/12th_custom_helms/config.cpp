@@ -129,7 +129,7 @@ class CfgWeapons {
     scope=0;
     scopeArsenal=0;
     author="Kelp";
-    displayName="[twelfth] Custom Helmet Base (DON'T USE)";
+    displayName="[12th] Custom Helmet Base (DON'T USE)";
     ace_hearing_protection=1;
     ace_hearing_lowerVolume=0.30000001;
     model="\halo_marine\halo_helm_01";

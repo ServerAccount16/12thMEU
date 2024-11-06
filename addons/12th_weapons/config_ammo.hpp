@@ -4,7 +4,7 @@ class CfgAmmo
   class OPTRE_B_95x40_Ball;    // Base class for 9.5x40mm Ball ammo
   class OPTRE_B_5x23_Caseless; // Base class for 5x23mm Caseless ammo
   class M319_HEAT;             // Base class for 40mm HEAT grenades
-  class M_NLAW_AT_F;
+  class R_PG32V_F;
 
   // Training ammunition configuration
   class twelfth_20g_bb : BulletBase
@@ -57,35 +57,8 @@ class CfgAmmo
     hit = 470; // Damage caused by the explosion
   };
 
-  class 12th_m96_rocket_heat: M_NLAW_AT_F {
-        model = "DMNS\Weapons\Launchers\M96_rocket.p3d";
-        hit = 600;
-        indirectHit = 20;
-        indirectHitRange = 2;
-        explosive = 0.8;
-        cost = 500;
-        airFriction = 0;
-        sideairFriction = 0;
-        coefGravity = 0;
-        maxSpeed = 450;
-        typicalSpeed = 250;
-        initTime = 0.2;
-        thrustTime = 0.8;
-        thrust = 100;
-        fuseDistance = 20;
-        simulationStep = 0.02;
-        timeToLive = 30;
-        effectsMissile = "missile3";
-        whistleDist = 20;
-        aiAmmoUsageFlags = "64 + 128 + 256 + 512";
-        submunitionAmmo = "ammo_Penetrator_Titan_AT";
-        submunitionDirectionType = "SubmunitionModelDirection";
-        submunitionInitSpeed = 1000;
-        submunitionParentSpeedCoef = 0;
-        submunitionInitialOffset[] = { 0, 0, -0.2 };
-        triggerOnImpact = 1;
-        deleteParentWhenTriggered = 0;
-        flightProfiles[] = { "Direct" };
-        class Direct {};
-    };
+  class twelfth_m96_rocket_heat: R_PG32V_F {
+    model = "DMNS\Weapons\Launchers\M96_rocket.p3d";
+    hit = 300;
+  };
 };
