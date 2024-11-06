@@ -29,6 +29,9 @@ class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep {     \
   visor="No";                                             \
 };                                                        \
 
+
+// LATER ME NOTE
+// REWRITE THIS TO PULL ARMOR TEXTURES FROM ONE FOLDER PER TYPE OF ARMOR (EX STD VS DRK)
 #define UNIFORM_VEH(CAMO,PLATOON,ROLE,ARM,DISPLAYNAME)                          \
 class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh: twelfth_uni_ng_base_veh{   \
   author="Waylen";                                                              \
@@ -248,7 +251,6 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
       #PILOT_H_TEX(C2,EXT_co.paa),                                        \
       #PILOT_H_TEX(C3,INT_co.paa),                                        \
       #PILOT_H_TEX(C4,MID_co.paa),                                        \
-      #PILOT_H_TEX(C5,Visor_co.paa)                                       \
   };                                                                      \
   class ItemInfo : HeadgearItem {                                         \
     mass = 25;                                                            \
@@ -260,7 +262,6 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
       #PILOT_H_TEX(C2,EXT_co.paa),                                        \
       #PILOT_H_TEX(C3,INT_co.paa),                                        \
       #PILOT_H_TEX(C4,MID_co.paa),                                        \
-      #PILOT_H_TEX(C5,Visor_co.paa)                                       \
     };                                                                    \
     class HitpointsProtectionInfo {                                       \
       class Head {                                                        \
