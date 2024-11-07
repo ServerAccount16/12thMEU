@@ -1,5 +1,6 @@
 // Configuration for custom weapons
 
+
 class CfgWeapons
 {
   class WeaponSlotsInfo; // Base class for weapon slots
@@ -12,6 +13,7 @@ class CfgWeapons
   class OPTRE_MA37K;
   class OPTRE_MA5C;
   class OPTRE_MA5CGL;
+  class OPTRE_MA5K;
   class OPTRE_BR45;
   class OPTRE_Commando;
   class OPTRE_M247;
@@ -155,7 +157,7 @@ class CfgWeapons
         scopeArsenal = 1;
         baseWeapon = "twelfth_m96";
         magazines[] = { "twelfth_m96_magazine" };
-        magazineReloadTime = 0.1;
+        magazineReloadTime = 500.0;
         reloadMagazineSound[] = {"",1,1};
 
         class EventHandlers {
@@ -301,6 +303,29 @@ class CfgWeapons
     };
   };
 
+    class twelfth_MA5K: OPTRE_MA5K {
+    author = "Waylen";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    mass = 30;
+    displayName = "[12th] MA5K Carbine";
+    baseWeapon = "twelfth_MA5K";
+    magazines[] = COMMON_MA5C_MAGAZINES;
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: MuzzleSlot {
+          compatibleitems[] = { "OPTRE_MA5KSuppressor" };
+      };
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {
+          compatibleitems[] = COMMON_SIGHTS;
+      };
+      class UnderBarrelSlot: UnderBarrelSlot {
+          compatibleitems[] = {};
+      };
+    };
+  };
+
  // Training MA5A configuration
 
   class twelfth_MA5A_BB : 19_UNSC_MA5A
@@ -311,6 +336,17 @@ class CfgWeapons
     canShootInWater = 1;
     displayName = "[12th] Training MA5A";
     baseWeapon = "twelfth_MA5A_BB";
+    magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
+  };
+
+    class twelfth_MA5C_BB : OPTRE_MA5C
+  {
+    author = "Weber";
+    scope = 2;
+    scopeArsenal = 2;
+    canShootInWater = 1;
+    displayName = "[12th] Training MA5C";
+    baseWeapon = "twelfth_MA5C_BB";
     magazines[] = {"twelfth_20g_mag"}; // Training ammunition magazine
   };
 

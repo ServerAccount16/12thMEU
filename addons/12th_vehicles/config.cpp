@@ -15,7 +15,6 @@ class CfgPatches {
       "twelfth_warthog_gauss",
       "twelfth_warthog_mlms",
       "twelfth_scorpion",
-      "twelfth_scorpion_m",
       "twelfth_oryx",
       "twelfth_hemtt",
       "twelfth_hemtt_transport",
@@ -57,8 +56,8 @@ class CfgVehicles {
   class SAG6_M12_MLMS;
 
   // scorpion base classes
-  class OPTRE_M808B_UNSC;
-  class OPTRE_M808BM_UNSC;
+  class DMNS_M808B_F;
+
 
   // oryx
   class OPTRE_M494;
@@ -88,7 +87,7 @@ class CfgVehicles {
 
   //-WARTHOGS---------------------------------------------------------
 
-  /*class twelfth_warthog_fav: OPTRE_M12_FAV {
+  class twelfth_warthog_fav: OPTRE_M12_FAV {
     scope=2;
     scopeCurator=2;
     author="Waylen";
@@ -104,13 +103,6 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1
-      WARTHOG_TEX_STD_V2
-      WARTHOG_TEX_STD_V3
-      WARTHOG_TEX_FLAMES
-      WARTHOG_TEX_POLICE
-      WARTHOG_TEX_WINTER
-      WARTHOG_TEX_WINTER_V2
-      WARTHOG_TEX_WINTER_V3
     };
     WARTHOG_SP_INFO(0,FAV)
   };
@@ -134,12 +126,6 @@ class CfgVehicles {
     // NOTE: the police texture here would look too weird
     class TextureSources {
       WARTHOG_TEX_STD_V1_APC
-      WARTHOG_TEX_STD_V2_APC
-      WARTHOG_TEX_STD_V3_APC
-      WARTHOG_TEX_FLAMES
-      WARTHOG_TEX_WINTER_APC
-      WARTHOG_TEX_WINTER_V2_APC
-      WARTHOG_TEX_WINTER_V3_APC
     };
     WARTHOG_SP_INFO(1,APC)
   };
@@ -158,16 +144,10 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\troop_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\medical\apc_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_MED
-      WARTHOG_TEX_STD_V2_MED
-      WARTHOG_TEX_STD_V3_MED
-      WARTHOG_TEX_FLAMES
-      WARTHOG_TEX_WINTER_MED
-      WARTHOG_TEX_WINTER_V2_MED
-      WARTHOG_TEX_WINTER_V3_MED
     };
     WARTHOG_SP_INFO(2,Medical APC)
   };
@@ -191,12 +171,6 @@ class CfgVehicles {
     // NOTE: the police texture here would look too weird
     class TextureSources {
       WARTHOG_TEX_STD_V1_APC
-      WARTHOG_TEX_STD_V2_APC
-      WARTHOG_TEX_STD_V3_APC
-      WARTHOG_TEX_FLAMES
-      WARTHOG_TEX_WINTER_APC
-      WARTHOG_TEX_WINTER_V2_APC
-      WARTHOG_TEX_WINTER_V3_APC
     };
     WARTHOG_SP_INFO(3,Troop Transport)
   };
@@ -218,13 +192,6 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M12
-      WARTHOG_TEX_STD_V2_M12
-      WARTHOG_TEX_STD_V3_M12
-      WARTHOG_TEX_FLAMES_M12
-      WARTHOG_TEX_POLICE_M12
-      WARTHOG_TEX_WINTER
-      WARTHOG_TEX_WINTER_V2
-      WARTHOG_TEX_WINTER_V3
     };
     WARTHOG_SP_INFO(4,MG)
   };
@@ -246,13 +213,6 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M12
-      WARTHOG_TEX_STD_V2_M12
-      WARTHOG_TEX_STD_V3_M12
-      WARTHOG_TEX_FLAMES_M12
-      WARTHOG_TEX_POLICE_M12
-      WARTHOG_TEX_WINTER
-      WARTHOG_TEX_WINTER_V2
-      WARTHOG_TEX_WINTER_V3
     };
     WARTHOG_SP_INFO(5,ATGM)
   };
@@ -275,13 +235,6 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M68
-      WARTHOG_TEX_STD_V2_M68
-      WARTHOG_TEX_STD_V3_M68
-      WARTHOG_TEX_FLAMES_M68
-      WARTHOG_TEX_POLICE_M68
-      WARTHOG_TEX_WINTER_M68
-      WARTHOG_TEX_WINTER_V2_M68
-      WARTHOG_TEX_WINTER_V3_M68
     };
     WARTHOG_SP_INFO(6,Gauss)
   };
@@ -304,13 +257,6 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M79
-      WARTHOG_TEX_STD_V2_M79
-      WARTHOG_TEX_STD_V3_M79
-      WARTHOG_TEX_FLAMES_M79
-      WARTHOG_TEX_POLICE_M79
-      WARTHOG_TEX_WINTER_M79
-      WARTHOG_TEX_WINTER_V2_M79
-      WARTHOG_TEX_WINTER_V3_M79
     };
     WARTHOG_SP_INFO(7,AA)
   };
@@ -333,20 +279,13 @@ class CfgVehicles {
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M79
-      WARTHOG_TEX_STD_V2_M79
-      WARTHOG_TEX_STD_V3_M79
-      WARTHOG_TEX_FLAMES_M79
-      WARTHOG_TEX_POLICE_M79
-      WARTHOG_TEX_WINTER_M79
-      WARTHOG_TEX_WINTER_V2_M79
-      WARTHOG_TEX_WINTER_V3_M79
     };
     WARTHOG_SP_INFO(8,MLMS)
-  };*/ //Waiting on textures
+  };
 
   //-SCORPIONS--------------------------------------------------------
 
-  /*class twelfth_scorpion: OPTRE_M808B_UNSC {
+  class twelfth_scorpion: DMNS_M808B_F {
     scope=2;
     scopeCurator=2;
     author="Waylen";
@@ -356,45 +295,27 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Armor";
     hiddenSelections[]= {
       "camo1",
-      "camo2",
-      "camo3",
-      "camo4",
-      "camo5",
-      "camo6",
-      "camo7"
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"clan",
+			"clan_text",
+			"insignia"
     };
     SCORPION_TEXTURESET
     SCORPION_SP_INFO(0,Base)
   };
 
-  class twelfth_scorpion_m: OPTRE_M808BM_UNSC {
-    scope=2;
-    scopeCurator=2;
-    author="Waylen";
-    displayName="[12th] M808BM Scorpion MBT";
-    faction="twelfth_MEU";
-    editorCategory="twelfth_MEU";
-    editorSubcategory="twelfth_MEU_Armor";
-    hiddenSelections[]= {
-      "camo1",
-      "camo2",
-      "camo3",
-      "camo4",
-      "camo5",
-      "camo6",
-      "camo7",
-      "camo8"
-    };
-    SCORPION_TEXTURESET
-    SCORPION_SP_INFO(1,MG)
-  };*/ // Need replacing by foundries
-
   //-ORYX-------------------------------------------------------------
 
-  /*class twelfth_oryx: OPTRE_M494 {
+  class twelfth_oryx: OPTRE_M494 {
     scope=2;
     scopeCurator=2;
-    author="Waylen";
+    author="OPTRE; Waylen";
     displayName="[12th] M494 Oryx IFV";
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
@@ -403,13 +324,13 @@ class CfgVehicles {
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_vehicles\oryx\default\armor_co.paa",
       "\x\12thMEU\addons\12th_vehicles\oryx\default\main_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
+      "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
+      "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
+      "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
       "\x\12thMEU\addons\12th_vehicles\oryx\default\turret_co.paa",
       "\x\12thMEU\addons\12th_vehicles\oryx\default\mg_co.paa",
       "\x\12thMEU\addons\12th_vehicles\oryx\default\decal_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\oryx\default\det2_co.paa"
+      ""
     };
     class TextureSources {
       class twelfth_oryx_tex_default {
@@ -418,32 +339,17 @@ class CfgVehicles {
         textures[]= {
           "\x\12thMEU\addons\12th_vehicles\oryx\default\armor_co.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\default\main_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\net_co.paa",
+          "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
+          "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
+          "\OPTRE_Vehicles_Tracked\Oryx\data\texture\oryx_net_ca.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\default\turret_co.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\default\mg_co.paa",
           "\x\12thMEU\addons\12th_vehicles\oryx\default\decal_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\det2_co.paa"
-        };
-      };
-      class twelfth_oryx_tex_winter {
-        displayName="Winter";
-        author="Waylen";
-        textures[]= {
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\armor_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\main_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\net_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\net_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\net_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\turret_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\winter\mg_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\decal_co.paa",
-          "\x\12thMEU\addons\12th_vehicles\oryx\default\det2_co.paa"
+          ""
         };
       };
     };
-  };*/ // Waiting on textures
+  };
 
   //-HEMTT------------------------------------------------------------
 
@@ -583,6 +489,7 @@ class CfgVehicles {
       Camouflage=0;
     };
   };
+  */
 
   // LYNX ------------------------------------------------------------
   class twelfth_lynx: I_LT_01_cannon_F {
@@ -607,7 +514,7 @@ class CfgVehicles {
     class textureSources {
       class default {
         displayName="Default";
-        author="Waylen";
+        author="Wolfe";
         textures[] = {
           QP(lynx\default\main_co.paa),
           QP(lynx\default\cannon_co.paa)
@@ -631,5 +538,5 @@ class CfgVehicles {
   TEMPEST_4(4,Ammo,twelfth_tempest_ammo,O_Truck_03_ammo_F,"[12th] Tempest Ammo",cargo_co.paa,ammo_co.paa)
   TEMPEST_3(5,Fuel,twelfth_tempest_fuel,O_Truck_03_fuel_F,"[12th] Tempest Fuel",fuel_co.paa)
   TEMPEST_4(6,Medical,twelfth_tempest_medical,O_Truck_03_medical_F,"[12th] Tempest Medical",cargo_co.paa,cover_co.paa)
-  TEMPEST_5(7,Device,twelfth_tempest_device,O_Truck_03_device_F,"[12th] Tempest Device",cargo_co.paa,cover_co.paa,device03_co.paa)*/
-}; //Waiting on textures
+  //TEMPEST_5(7,Device,twelfth_tempest_device,O_Truck_03_device_F,"[12th] Tempest Device",cargo_co.paa,cover_co.paa,device03_co.paa)
+}; 

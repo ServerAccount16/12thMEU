@@ -12,7 +12,7 @@ class VehicleSpawnerInfo {        \
     cost=0;                       \
   };                              \
 };
-/*
+
 #define SCORPION_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {         \
   class twelfth_ground_spawner {      \
@@ -38,7 +38,7 @@ class VehicleSpawnerInfo {     \
     cost=0;                    \
   };                           \
 };
-*/
+
 #define HEMTT_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {      \
   class twelfth_ground_spawner {   \
@@ -51,7 +51,7 @@ class VehicleSpawnerInfo {      \
     cost=0;                     \
   };                            \
 };
-/*
+
 #define TEMPEST_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {        \
   class twelfth_ground_spawner {     \
@@ -77,7 +77,7 @@ class VehicleSpawnerInfo {     \
     cost=0;                    \
   };                           \
 };
-
+/*
 #define MARSHALL_SP_INFO(PRI,TYPE) \
 class VehicleSpawnerInfo {         \
   class twelfth_ground_spawner {      \

@@ -99,9 +99,16 @@ class CfgVehicles {
       "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
     };
     class textureSources {
-      class twelfth_hornet_tex_def {
+      class twelfth_hornet_tex_default {
         displayName="Default";
         author="Waylen";
+        textures[]= {
+          "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
+        };
+      };
+      class twelfth_hornet_tex_asg {
+        displayName="Air Superiority Grey";
+        author="Wolfe";
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\hornet\default\hull_co.paa"
         };
@@ -119,7 +126,6 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144 Falcon Unarmed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3", "attach_gun"};
     AIR_SP_INFO(Falcon,0,Unarmed)
     FALCON_TEXTURESETS
   };
@@ -133,7 +139,6 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144 Falcon Armed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3"};
     AIR_SP_INFO(Falcon,1,20mm Cannon)
     FALCON_TEXTURESETS
   };
@@ -147,7 +152,6 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144S Falcon Unarmed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3", "attach_gun"};
     AIR_SP_INFO(Falcon,2,Unarmed w/ Side Gun)
     FALCON_TEXTURESETS
   };
@@ -161,12 +165,11 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Rotary";
     vehicleClass = "Air";
     displayName = "[12th] UH-144S Falcon Armed";
-    hiddenSelections[] = {"camo1", "camo2", "camo3"};
     AIR_SP_INFO(Falcon,3,20mm w/ Side Gun)
     FALCON_TEXTURESETS
   };
 
-  /*class twelfth_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
+  class twelfth_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
     author="Waylen";
     scope = 2;
     scopeCurator = 2;
@@ -354,7 +357,7 @@ class CfgVehicles {
     AIR_SP_INFO(Wyvern,1,Vehicle)
   };
 
-  class twelfth_prime: B_UAV_06_F {
+  /*class twelfth_prime: B_UAV_06_F {
     side=1;
     scope=2;
     scopeCurator=2;
@@ -386,7 +389,7 @@ class CfgVehicles {
     };
     Camouflage=0;
     AIR_SP_INFO(Prime UAV,0,Base)
-  };
+  };*/
 
 
 
@@ -424,16 +427,16 @@ class CfgVehicles {
     editorSubcategory="twelfth_MEU_Rotary";
     BLACKFISH_TEXTURESETS
     AIR_SP_INFO(Blackfish,2,Gunship)
-  };*/
-
-  class twelfth_nandao: MEU_F29_Nandao_VTOL {
-    scope=2;
-    scopeCurator=2;
-    author="Weber";
-    displayName="[12th] F-29 Nandao";
-    faction="twelfth_MEU";
-    editorCategory="twelfth_MEU";
-    editorSubcategory="twelfth_MEU_FixedWing";
-    AIR_SP_INFO(Nandao,0,Base)
   };
+
+  //class twelfth_nandao: MEU_F29_Nandao_VTOL {
+  //  scope=2;
+  //  scopeCurator=2;
+  //  author="Weber";
+  //  displayName="[12th] F-29 Nandao";
+  //  faction="twelfth_MEU";
+  //  editorCategory="twelfth_MEU";
+  //  editorSubcategory="twelfth_MEU_FixedWing";
+  //  AIR_SP_INFO(Nandao,0,Base)
+  //};
 };

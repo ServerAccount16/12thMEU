@@ -251,6 +251,7 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
       #PILOT_H_TEX(C2,EXT_co.paa),                                        \
       #PILOT_H_TEX(C3,INT_co.paa),                                        \
       #PILOT_H_TEX(C4,MID_co.paa),                                        \
+      #PILOT_H_TEX(C5,Visor_co.paa)                                       \
   };                                                                      \
   class ItemInfo : HeadgearItem {                                         \
     mass = 25;                                                            \
@@ -262,6 +263,7 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
       #PILOT_H_TEX(C2,EXT_co.paa),                                        \
       #PILOT_H_TEX(C3,INT_co.paa),                                        \
       #PILOT_H_TEX(C4,MID_co.paa),                                        \
+      #PILOT_H_TEX(C5,Visor_co.paa)                                       \
     };                                                                    \
     class HitpointsProtectionInfo {                                       \
       class Head {                                                        \

@@ -153,56 +153,48 @@ class textureSources {                            \
   };                                              \
 };
 
+//////////////////////////////////////////////////////////////////
+
 #define FALCON_TEXTURESETS                   \
+hiddenSelections[] = {"camo1", "camo2", "camo3", "camoGlass", "camoGlassPilot", "camoDecal"}; \
 hiddenSelectionsTextures[] = {               \
     QP(falcon\default\main_co.paa),          \
     QP(falcon\default\attachments_co.paa),   \
     QP(falcon\default\interior_co.paa),      \
+    "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+		"\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+		QP(falcon\default\empty.paa)      \
 };                                           \
 class textureSources {                       \
-  class twelfth_falcon_tex_default {            \
+  class twelfth_falcon_tex_default {         \
     displayName = "Default";                 \
-    author = "Weber";                       \
+    author = "Waylen";                        \
     textures[] = {                           \
       QP(falcon\default\main_co.paa),        \
       QP(falcon\default\attachments_co.paa), \
-      QP(falcon\default\interior_co.paa),    \
-    };                                       \
-  };                                         \
-  class twelfth_falcon_tex_medical {            \
-    displayName = "Medical";                 \
-    author = "Weber";                       \
+      QP(falcon\default\interior_co.paa),\
+      "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+			"\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+			QP(falcon\default\empty.paa) \
+      };                                       \
+    };                                         \
+    class twelfth_falcon_tex_asg {         \
+    displayName = "Air Superiority Grey";                 \
+    author = "Wolfe";                        \
     textures[] = {                           \
-      QP(falcon\medical\main_co.paa),        \
+      QP(falcon\default\main_co.paa),        \
       QP(falcon\default\attachments_co.paa), \
-      QP(falcon\default\interior_co.paa),    \
-    };                                       \
-  };                                         \
-  class twelfth_falcon_tex_winter {             \
-    displayName = "Winter";                  \
-    author = "Weber";                       \
-    textures[] = {                           \
-      QP(falcon\winter\main_co.paa),         \
-      QP(falcon\winter\attachments_co.paa),  \
-      QP(falcon\winter\interior_co.paa),     \
-    };                                       \
-  };                                         \
-  class twelfth_falcon_tex_winter_medical {     \
-    displayName = "Winter Medical";          \
-    author = "Weber";                       \
-    textures[] = {                           \
-      QP(falcon\winter_medical\main_co.paa), \
-      QP(falcon\winter\attachments_co.paa),  \
-      QP(falcon\winter\interior_co.paa),     \
-    };                                       \
-  };                                         \
-  textureList[]={                            \
-      "twelfth_falcon_tex_default", 1,          \
-      "twelfth_falcon_tex_medical", 1,          \
-      "twelfth_falcon_tex_winter", 1,           \
-      "twelfth_falcon_tex_winter_medical", 1    \
-  };                                         \
-};
+      QP(falcon\default\interior_co.paa),\
+      "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+			"\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
+			QP(falcon\default\empty.paa) \
+      };                                       \
+    };                                         \
+  };                                          \
+  textureList[]={                             \
+      "twelfth_falcon_tex_default", 1,        \
+      "twelfth_falcon_tex_asg", 1,        \
+  };                                          \
 
 #define SPARROWHAWK_TEXTURESETS \
 hiddenSelectionsTextures[]= { \
@@ -233,17 +225,17 @@ class textureSources { \
      }; \
      factions[] = {"twelfth_MEU"}; \
   }; \
-  class twelfth_sph_tex_winter { \
-     displayName="Winter"; \
+  class twelfth_sph_tex_asg { \
+     displayName="Air Superiority Grey"; \
      author="Weber"; \
      textures[] = { \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_01_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_02_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_03_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_04_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\body_05_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\autocannon_co.paa", \
-       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\winter\feed_autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_01_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_02_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_03_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_04_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\body_05_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\autocannon_co.paa", \
+       "\x\12thMEU\addons\12th_aircraft\sparrowhawk\asg\feed_autocannon_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa", \
        "\x\12thMEU\addons\12th_aircraft\sparrowhawk\default\decal_01_co.paa" \
      }; \
@@ -252,7 +244,7 @@ class textureSources { \
 }; \
 textureList[] = { \
   "twelfth_sph_tex_default", 1, \
-  "twelfth_sph_tex_winter", 1 \
+  "twelfth_sph_tex_asg", 1 \
 };
 
 #define BLACKFISH_TEXTURESETS \
@@ -267,7 +259,7 @@ hiddenSelectionsTextures[]={ \
 class textureSources { \
   class twelfth_blackfish_tex_default { \
     displayName="Default"; \
-    author="Weber"; \
+    author="Wolfe"; \
     textures[]= { \
       QP(blackfish\default\ext01_co.paa), \
       QP(blackfish\default\ext02_co.paa), \
@@ -276,14 +268,14 @@ class textureSources { \
       QP(blackfish\default\signs_ca.paa) \
     }; \
   }; \
-  class twelfth_blackfish_tex_winter { \
-    displayName="Winter"; \
-    author="Weber"; \
+  class twelfth_blackfish_tex_asg { \
+    displayName="Air Superiority Grey"; \
+    author="Wolfe"; \
     textures[]= { \
-      QP(blackfish\winter\ext01_co.paa), \
-      QP(blackfish\winter\ext02_co.paa), \
-      QP(blackfish\winter\ext03_co.paa), \
-      QP(blackfish\winter\ext04_co.paa), \
+      QP(blackfish\asg\ext01_co.paa), \
+      QP(blackfish\asg\ext02_co.paa), \
+      QP(blackfish\asg\ext03_co.paa), \
+      QP(blackfish\asg\ext04_co.paa), \
       QP(blackfish\default\signs_ca.paa) \
     }; \
   }; \

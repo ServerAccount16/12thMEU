@@ -201,10 +201,11 @@ class CfgVehicles {
   };
 
   // Define Equipment Supply Pod
+  // thanks weber for this <3
   class twelfth_supply_pod_eq: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Equipment)";
     hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co_equipment.paa"
     };
     class TransportMagazines {};
     class TransportWeapons {};

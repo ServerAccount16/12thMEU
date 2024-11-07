@@ -358,8 +358,7 @@ class CfgVehicles {
   ALL_UNI_VEH(std,std)
   ALL_UNI_VEH(drk,drk)
   ALL_UNI_VEH(forest,std)
-  ALL_UNI_VEH(urban,drk)
-  ALL_UNI_VEH(forest90,std)
+  ALL_UNI_VEH(urban,std)
 
 };
 
@@ -728,7 +727,6 @@ class CfgWeapons {
   ALL_UNI_WEP(std)
   ALL_UNI_WEP(forest)
   ALL_UNI_WEP(drk)
-  ALL_UNI_WEP(forest90)
   ALL_UNI_WEP(urban)
 
 
@@ -927,7 +925,6 @@ class XtdGearInfos {
     ALL_UNI_GI(std)
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
-    ALL_UNI_GI(forest90)
     ALL_UNI_GI(urban)
     
 
