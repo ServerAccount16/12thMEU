@@ -64,6 +64,8 @@ class RscDisplayMain: RscStandardDisplay {
     color[]= {1, 1, 1, 0.500000};
     colorActive[]= {1, 1, 1, 1};
   };
+  // TODO -
+  // write this such that it can pick from n amount of random bg's
   class ControlsBackground {
     RSC_PIC(LoadingPic,data\main_menu_bg.jpg)
   };

@@ -87,6 +87,7 @@ class CfgVehicles {
 
   //-WARTHOGS---------------------------------------------------------
 
+  //todo - rewrite this
   class twelfth_warthog_fav: OPTRE_M12_FAV {
     scope=2;
     scopeCurator=2;
@@ -96,10 +97,11 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2"};
+    hiddenSelections[]= {"camo1", "camo2", "camo_doors"};
     hiddenSelectionsTextures[]= {
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa", 
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa", 
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa",
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1
@@ -184,11 +186,12 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo3"};
+    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M12
@@ -205,11 +208,12 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo3"};
+    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M12
@@ -226,12 +230,13 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4"};
+    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\m68_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M68
@@ -248,12 +253,13 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4"};
+    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\m79_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M79
@@ -270,12 +276,13 @@ class CfgVehicles {
     faction="twelfth_MEU";
     editorCategory="twelfth_MEU";
     editorSubcategory="twelfth_MEU_Cars";
-    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4"};
+    hiddenSelections[]= {"camo1", "camo2", "camo3", "camo4", "camo_doors"};
     hiddenSelectionsTextures[] = {
       "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa",
       "\x\12thMEU\addons\12th_vehicles\warthog\default\m79_co.paa",
-      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa"
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",
+      "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"
     };
     class TextureSources {
       WARTHOG_TEX_STD_V1_M79

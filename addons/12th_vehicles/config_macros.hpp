@@ -13,7 +13,8 @@ class twelfth_warthog_tex_std_v1 { \
   displayName="Default"; \
   textures[]= { \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa", \
-    "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa" \
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa", \
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa",\
   }; \
 };
 
@@ -48,7 +49,8 @@ class twelfth_warthog_tex_std_v1 { \
   textures[]= { \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa", \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa", \
-    "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa" \
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa",\
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"\
   }; \
 };
 
@@ -73,7 +75,8 @@ class twelfth_warthog_tex_std_v1 { \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\body_co.paa", \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\under_co.paa", \
     "\x\12thMEU\addons\12th_vehicles\warthog\default\m79_co.paa", \
-    "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa" \
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\m12_co.paa", \
+    "\x\12thMEU\addons\12th_vehicles\warthog\default\apc_co.paa"\
   }; \
 };
 

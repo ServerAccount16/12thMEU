@@ -162,6 +162,7 @@ class CfgPatches {
       "twelfth_cap_pale_horse",
       "twelfth_cap_pale_horse_2",
       "twelfth_boonie_std",
+      "twelfth_boonie_forest",
       "twelfth_clothes_std_wep",
       "twelfth_clothes_std_rolled_wep",
       "twelfth_clothes_desert_wep",
@@ -364,6 +365,7 @@ class CfgVehicles {
 
 class CfgWeapons {
   class H_Cap_oli;
+  class H_Booniehat_oli;
   class UniformItem;
   class ItemInfo;
   class Uniform_Base;
@@ -611,10 +613,11 @@ class CfgWeapons {
       };
     };
   };
+*/
 
-  // NOTE: Move this into a macro if more boonie hat textures get
-  // made.
-  class twelfth_boonie_std: H_HelmetB {
+    //TODO - fix boonie macro :sob:
+
+    class twelfth_boonie_std: H_HelmetB {
     scope=2;
     scopeArsenal=2;
     author="Waylen";
@@ -623,7 +626,7 @@ class CfgWeapons {
     model = "\a3\characters_f\Common\booniehat";
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\boonie_co_marpat.paa"
+      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\std\boonie_co.paa"
     };
     class ItemInfo: HeadgearItem {
         mass = 5;
@@ -631,7 +634,31 @@ class CfgWeapons {
         modelSides[] = {6};
         hiddenSelections[] = {"camo"};
     };
-  };*/ //Awaiting textures
+  };
+
+  class twelfth_boonie_forest: H_HelmetB {
+    scope=2;
+    scopeArsenal=2;
+    author="Waylen";
+    picture="";
+    displayName="[12th][Caps] Boonie Hat (Standard)";
+    model = "\a3\characters_f\Common\booniehat";
+    hiddenSelections[] = {"camo"};
+    hiddenSelectionsTextures[] = {
+      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\forest\boonie_co.paa"
+    };
+    class ItemInfo: HeadgearItem {
+        mass = 5;
+        uniformModel = "\a3\characters_f\Common\booniehat";
+        modelSides[] = {6};
+        hiddenSelections[] = {"camo"};
+    };
+  };
+
+
+  //BOONIE_WEP(std)
+  //BOONIE_WEP(forest)
+
 
   //-HELMETS----------------------------------------------------------
 
@@ -714,6 +741,7 @@ class CfgWeapons {
       };
     };
   };
+  
 
   //-MACRO CALLS------------------------------------------------------
 
@@ -844,6 +872,18 @@ class CfgWeapons {
 class XtdGearModels {
   class CfgWeapons {
     // Helmets
+    class twelfth_boonies {
+      label = "12th Boonie Hats";
+      options[] = {"camo"};
+      class camo {
+        alwaysSelectable = 1;
+        label = "Camoflauge";
+        values[] = {"std", "forest"};
+        class std {label = "Standard"; image=XTP(camo_std);};
+        class forest {label="Forest"; image=XTP(camo_std);};
+      };
+    };
+
     class twelfth_base_helms {
       label="12th Infantry Helmets";
       options[] = {"visor","camo","element","role"};
@@ -893,10 +933,10 @@ class XtdGearModels {
         label="Camouflage";
         values[]={"std", "forest", "forest90", "urban", "drk"};
         class std {label="Standard"; image=XTP(camo_std);};
-        class forest {label="Forest";     image=XTP(camo_std);};
-        class forest90 {label="Forest90";     image=XTP(camo_std);};
-        class urban {label="Urban";     image=XTP(camo_std);};
-        class drk {label="Dark";     image=XTP(camo_std);};
+        class forest {label="Forest";     image=XTP(camo_forest);};
+        class forest90 {label="Forest90";     image=XTP(camo_forest90);};
+        class urban {label="Urban";     image=XTP(camo_urban);}; //maybe winter?? will need to look into new armor pieces
+        class drk {label="VBSS";     image=XTP(camo_vbss);};
       };
       class element {
         alwaysSelectable = 1;
@@ -921,14 +961,20 @@ class XtdGearModels {
 
 class XtdGearInfos {
   class CfgWeapons {
+    // THIS IS WHERE EXTENDED ARSENAL PULLS INFO FOR THE SELECTIONS FROM
     //-------------------------------------- Uniforms
     ALL_UNI_GI(std)
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
     ALL_UNI_GI(urban)
-    
 
-    //-------------------------------------- Helmets
+    // Boonies
+
+    BOONIE_GI(std)
+    BOONIE_GI(forest)    
+
+    //-------------------------------------- Helmets 
+    // TODO rewrite this shit, this is fuckin silly
     HELM_NV_GI(std,std,na,na)
     HELM_NV_GI(std_med,std,na,med)
 

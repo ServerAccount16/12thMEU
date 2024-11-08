@@ -1,14 +1,16 @@
 // Configuration for custom weapons
-
-
-class CfgWeapons
-{
+  class Mode_SemiAuto;
+  class Mode_Burst;
+  class Mode_FullAuto;
   class WeaponSlotsInfo; // Base class for weapon slots
   class MuzzleSlot;      // Base class for muzzle attachments
   class CowsSlot;
   class PointerSlot;     // Base class for pointer attachments
   class UnderBarrelSlot; // Base class for underbarrel attachments
   class FullAuto;        // Base class for full-auto fire mode
+
+class CfgWeapons
+{
   class Launcher;        // Base class for launcher weapons
   class OPTRE_MA37K;
   class OPTRE_MA5C;
@@ -37,9 +39,7 @@ class CfgWeapons
   class 19_UNSC_br55_HB;
   class 19_UNSC_br55_HB_gl;
   class 19_UNSC_M392;
-  class Mode_SemiAuto;
-  class Mode_Burst;
-  class Mode_FullAuto;
+
 
   // M96 LAW Rewrite
   
@@ -64,11 +64,11 @@ class CfgWeapons
           "OFP2_ManSkeleton",
           "\A3\Weapons_F_Exp\Launchers\RPG7\Data\Anim\RPG7V.rtm"
       };
-      /*hiddenSelections[] = { "camo1", "camo2" };
+      hiddenSelections[] = { "camo1", "camo2" };
       hiddenSelectionsTextures[] = {
-          "\x\12thMEU\addons\12th_weapons\data\m96\tube_co.paa",
-          "\x\12thMEU\addons\12th_weapons\data\m96\body_co.paa"
-      };*/
+          "\DMNS\Weapons\Launchers\Data\M96_Tube_co.paa",
+          "\DMNS\Weapons\Launchers\Data\M96_body_co.paa"
+      };
 
       reloadAction = "GestureReloadRPG7";
       recoil = "recoil_nlaw";
@@ -86,6 +86,7 @@ class CfgWeapons
             soundBegin[] = { "begin1", 1 };
         };
 
+        reloadSpeed = 10;
         recoil = "recoil_single_nlaw";
         aiRateOfFire = 7;
         aiRateOfFireDistance = 500;
@@ -157,7 +158,7 @@ class CfgWeapons
         scopeArsenal = 1;
         baseWeapon = "twelfth_m96";
         magazines[] = { "twelfth_m96_magazine" };
-        magazineReloadTime = 500.0;
+        magazineReloadTime = 0.1;
         reloadMagazineSound[] = {"",1,1};
 
         class EventHandlers {
@@ -194,7 +195,7 @@ class CfgWeapons
     scope = 2;
     scopeArsenal = 2;
     author = "Weber";
-    display = "[12th] M6C";
+    displayName = "[12th] M6C";
     baseWeapon = "twelfth_M6C";
     magazines[] = COMMON_M6_MAGAZINES;
   };
@@ -290,6 +291,7 @@ class CfgWeapons
     baseWeapon = "twelfth_MA37K";
     magazines[] = COMMON_MA5C_MAGAZINES;
     class WeaponSlotsInfo: WeaponSlotsInfo {
+      mass = 30;
       class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA37KSuppressor" };
       };
@@ -313,6 +315,7 @@ class CfgWeapons
     baseWeapon = "twelfth_MA5K";
     magazines[] = COMMON_MA5C_MAGAZINES;
     class WeaponSlotsInfo: WeaponSlotsInfo {
+      mass = 30;
       class MuzzleSlot: MuzzleSlot {
           compatibleitems[] = { "OPTRE_MA5KSuppressor" };
       };
@@ -509,39 +512,40 @@ class CfgWeapons
       };
     };
 
-    class twelfth_BR55_HB_gl : 19_UNSC_br55_HB_gl
-    {
-      author = "Weber";
-      scope = 2;
-      scopeArsenal = 2;
-      canShootInWater = 1;
-      displayName = "[12th] BR55HB UGL";
-      muzzles[] = {"this", "twelfth_M301UGL"}; // Attachments
-      class twelfth_m301ugl : GL_3GL_F
-      {
-        displayName = "M301 Grenade Launcher";
-        descriptionShort = "M301 GL";
-        magazines[] = COMMON_GL_MAGS; // Grenade launcher mags
-      };
-      baseWeapon = "twelfth_BR55_HB_gl";
-      magazines[] = COMMON_BR_MAGAZINES;
-      class WeaponSlotsInfo : WeaponSlotsInfo
-      {
-        class MuzzleSlot : MuzzleSlot
-        {
-        };
-        class CowsSlot : CowsSlot
-        {
-          compatibleitems[] = COMMON_BR_SIGHTS;
-        };
-        class PointerSlot : PointerSlot
-        {
-        };
-        class UnderBarrelSlot : UnderBarrelSlot
-        {
-        };
-      };
-    };
+    // commented out cus marksmen DO NOT need a GL lmfao
+    //class twelfth_BR55_HB_gl : 19_UNSC_br55_HB_gl
+    //{
+    //  author = "Weber";
+    //  scope = 2;
+    //  scopeArsenal = 2;
+    //  canShootInWater = 1;
+    //  displayName = "[12th] BR55HB UGL";
+    //  muzzles[] = {"this", "twelfth_M301UGL"}; // Attachments
+    //  class twelfth_m301ugl : GL_3GL_F
+    //  {
+    //    displayName = "M301 Grenade Launcher";
+    //    descriptionShort = "M301 GL";
+    //    magazines[] = COMMON_GL_MAGS; // Grenade launcher mags
+    //  };
+    //  baseWeapon = "twelfth_BR55_HB_gl";
+    //  magazines[] = COMMON_BR_MAGAZINES;
+    //  class WeaponSlotsInfo : WeaponSlotsInfo
+    //  {
+    //    class MuzzleSlot : MuzzleSlot
+    //    {
+    //    };
+    //    class CowsSlot : CowsSlot
+    //    {
+    //      compatibleitems[] = COMMON_BR_SIGHTS;
+    //    };
+    //    class PointerSlot : PointerSlot
+    //    {
+    //    };
+    //    class UnderBarrelSlot : UnderBarrelSlot
+    //    {
+    //    };
+    //  };
+    //};
 
     // M392 DMR configuration
 

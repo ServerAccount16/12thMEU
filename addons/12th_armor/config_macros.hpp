@@ -32,6 +32,7 @@ class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_wep {     \
 
 // LATER ME NOTE
 // REWRITE THIS TO PULL ARMOR TEXTURES FROM ONE FOLDER PER TYPE OF ARMOR (EX STD VS DRK)
+// SINCE ARMOR NOW MATCHES PLT COLORS ANYWAYS, NO NEED FOR DIFFERENTIATION BETWEEN ARM/LEGS/CHEST
 #define UNIFORM_VEH(CAMO,PLATOON,ROLE,ARM,DISPLAYNAME)                          \
 class twelfth_uni_##CAMO##_##PLATOON##_##ROLE##_veh: twelfth_uni_ng_base_veh{   \
   author="Waylen";                                                              \
@@ -89,7 +90,7 @@ UNIFORM_VEH(CAMO,2pl,na,ARM,"[12th][2PL][Inf] Armor")         \
 UNIFORM_VEH(CAMO,2pl,med,ARM,"[12th][2PL][Inf][Med] Armor")    \
 UNIFORM_VEH(CAMO,hq,na,ARM,"[12th][HQ][Inf] Armor")           \
 UNIFORM_VEH(CAMO,hq,med,ARM,"[12th][HQ][Inf][Med] Armor")      \
-UNIFORM_VEH(CAMO,lpl,na,ARM,"[12th][LOGI][Inf] Armor")        \
+UNIFORM_VEH(CAMO,lpl,na,ARM,"[12th][LOGI][Inf] Armor")         \
 UNIFORM_VEH(CAMO,lpl,med,ARM,"[12th][LOGI][Inf][Med] Armor")   \
 
 #define ALL_UNI_GI(CAMO)      \
@@ -284,3 +285,27 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
     };                                                                    \
   };                                                                      \
 };
+
+#define BOONIE_WEP(CAMO) \
+  class twelfth_boonie_##CAMO: H_Booniehat_oli { \
+    scope=2; \
+    scopeArsenal=2;\
+    author="Waylen";\
+    picture="";\
+    displayName="[12th][Caps] Boonie Hat";\
+    model = "\a3\characters_f\Common\booniehat";\
+    hiddenSelections[] = {"camo"};\
+    hiddenSelectionsTextures[] = { "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\##CAMO##\boonie_co.paa" };\
+    class ItemInfo: HeadgearItem {\
+        mass = 5;\
+        uniformModel = "\a3\characters_f\Common\booniehat";\
+        modelSides[] = {6};\
+        hiddenSelections[] = {"camo"};\
+    }; \
+  };
+
+#define BOONIE_GI(CAMO)\
+  class twelfth_boonie_##CAMO## {\
+    model = "twelfth_boonies";\
+    camo = #CAMO;\
+  };\
