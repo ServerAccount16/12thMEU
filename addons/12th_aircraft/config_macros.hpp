@@ -182,19 +182,15 @@ class textureSources {                       \
     displayName = "Air Superiority Grey";                 \
     author = "Wolfe";                        \
     textures[] = {                           \
-      QP(falcon\default\main_co.paa),        \
-      QP(falcon\default\attachments_co.paa), \
-      QP(falcon\default\interior_co.paa),\
+      QP(falcon\asg\main_co.paa),        \
+      QP(falcon\asg\attachments_co.paa), \
+      QP(falcon\asg\interior_co.paa),\
       "\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
 			"\optre_vehicles_air\falcon\data\falcon_glass_ca.paa", \
-			QP(falcon\default\empty.paa) \
+			QP(falcon\asg\empty.paa) \
       };                                       \
     };                                         \
-  };                                          \
-  textureList[]={                             \
-      "twelfth_falcon_tex_default", 1,        \
-      "twelfth_falcon_tex_asg", 1,        \
-  };                                          \
+  };                                          
 
 #define SPARROWHAWK_TEXTURESETS \
 hiddenSelectionsTextures[]= { \
