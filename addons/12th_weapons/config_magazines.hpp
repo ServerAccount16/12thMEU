@@ -32,6 +32,19 @@ class CfgMagazines
     ACE_isBelt = 1;
   };
 
+    class twelfth_95x40_100rnd_T : OPTRE_36Rnd_95x40_Mag
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "100rnd 9.5x40mm Box Magazine (Tracers)";
+    ammo = "OPTRE_B_95x40_Ball";
+    count = 100;
+    mass = 40;
+    tracersEvery = 0;
+    lastRoundsTracer = 100; // Tracers for the last 100 rounds
+    ACE_isBelt = 1;
+  };
+
   class twelfth_762x51_200rnd : OPTRE_32Rnd_762x51_Mag
   {
     author = "Weber";
@@ -41,13 +54,14 @@ class CfgMagazines
     ACE_isBelt = 1;
   };
 
-  class twelfth_762x51_200rnd_T : OPTRE_400Rnd_762x51_Box_Tracer
+  class twelfth_762x51_200rnd_T : OPTRE_32Rnd_762x51_Mag
   {
     author = "Weber";
-    displayName = "200rnd 7.62x51mm Box Magazine (Tracer)";
+    displayName = "200rnd 7.62x51mm Box Magazine (Tracers)";
     count = 200;
     mass = 40;
     ACE_isBelt = 1;
+    lastRoundsTracer = 200; // Tracers for the last 100 rounds
   };
 
   class twelfth_br_36Rnd_UW : OPTRE_36Rnd_95x40_Mag

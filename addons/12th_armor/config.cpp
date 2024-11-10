@@ -879,8 +879,8 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label = "Camoflauge";
         values[] = {"std", "forest"};
-        class std {label = "Standard"; image=XTP(camo_std);};
-        class forest {label="Forest"; image=XTP(camo_std);};
+        class std {label = "Standard"; image=XTP(std);};
+        class forest {label="Forest"; image=XTP(forest);};
       };
     };
 
@@ -890,21 +890,18 @@ class XtdGearModels {
       class camo {
         alwaysSelectable = 1;
         label="Camouflage";
-        values[]={"std", "forest", "forest90", "urban"};
-        class std {label="Standard"; image=XTP(camo_std);};
-        class forest {label="Forest";     image=XTP(camo_std);};
-        class forest90 {label="Forest90";     image=XTP(camo_std);};
-        class urban {label="Urban";     image=XTP(camo_std);};
+        values[]={"std"};
+        class std {label="Standard"; image=XTP(std);};
       };
       class element {
         alwaysSelectable = 1;
         label="Element";
         values[]={"na","hq","1pl","2pl","lpl"};
         class na  {label="None";};
-        class hq  {label="Athena";  image=XTP(el_hq);};
-        class 1pl {label="Warlock"; image=XTP(el_1pl);};
-        class 2pl {label="Demon";   image=XTP(el_2pl);};
-        class lpl {label="Chaos";   image=XTP(el_lpl);};
+        class hq  {label="HQ";  image=XTP(athena);};
+        class 1pl {label="1PLT";image=XTP(1pl);};
+        class 2pl {label="2PLT";image=XTP(2pl);};
+        class lpl {label="LOGI";image=XTP(chaos);};
       };
       class role {
         alwaysSelectable = 1;
@@ -915,7 +912,7 @@ class XtdGearModels {
         class psg {label="PLT SGT";  image=XTP(role_psg);};
         class ftl {label="FTL";      image=XTP(role_ftl);};
         class sl  {label="SQD LDR";  image=XTP(role_sl);};
-        class med {label="Corpsman"; image=XTP(role_med);};
+        class med {label="Corpsman"; image=XTP(med);};
       };
       class visor {
         alwaysSelectable = 1;
@@ -932,28 +929,28 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label="Camouflage";
         values[]={"std", "forest", "forest90", "urban", "drk"};
-        class std {label="Standard"; image=XTP(camo_std);};
-        class forest {label="Forest";     image=XTP(camo_forest);};
-        class forest90 {label="Forest90";     image=XTP(camo_forest90);};
-        class urban {label="Urban";     image=XTP(camo_urban);}; //maybe winter?? will need to look into new armor pieces
-        class drk {label="VBSS";     image=XTP(camo_vbss);};
+        class std {label="Standard"; image=XTP(std);};
+        class forest {label="Forest";     image=XTP(forest);};
+        class forest90 {label="Forest90";     image=XTP(forest90);};
+        class urban {label="Urban";     image=XTP(urban);}; //maybe winter?? will need to look into new armor pieces
+        class drk {label="VBSS";     image=XTP(vbss);};
       };
       class element {
         alwaysSelectable = 1;
         label="Element";
         values[]={"na","hq","1pl","2pl","lpl"};
         class na  {label="None";};
-        class hq  {label="Athena";  image=XTP(el_hq);};
-        class 1pl {label="Warlock"; image=XTP(el_1pl);};
-        class 2pl {label="Demon";   image=XTP(el_2pl);};
-        class lpl {label="Chaos";   image=XTP(el_lpl);};
+        class hq  {label="HQ";  image=XTP(athena);};
+        class 1pl {label="1PLT"; image=XTP(1pl);};
+        class 2pl {label="2PLT";   image=XTP(2pl);};
+        class lpl {label="LOGI";   image=XTP(chaos);};
       };
       class role {
         alwaysSelectable = 1;
         label="MOS";
         values[]={"na","med"};
         class na  {label="None";};
-        class med {label="Corpsman"; image=XTP(role_med);};
+        class med {label="Corpsman"; image=XTP(med);};
       };
     };
   };

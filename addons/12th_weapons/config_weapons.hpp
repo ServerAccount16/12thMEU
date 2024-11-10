@@ -618,14 +618,83 @@ class CfgWeapons
 
     // M33-T Machine Gun configuration
 
+    class twelfth_M33_T: Dmns_M33_T {
+        author = "Jack";
+        displayName = "[12th] M33-T";
+        baseWeapon = "twelfth_M33_T";
+        magazines[] = {
+          "twelfth_762x51_200rnd", "twelfth_762x51_200rnd_T",
+          "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
+          "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow"
+          };
+        modes[] = { "FullAuto", "FullAutoFast" };
+
+        class FullAuto: FullAuto {
+            dispersion = 0.00116;
+            minRange = 0;
+            minRangeProbab = 0.9;
+            midRange = 15;
+            midRangeProbab = 0.7;
+            maxRange = 30;
+            maxRangeProbab = 0.1;
+            aiRateOfFire = 1e-06;
+            reloadTime = 0.15;
+
+            class BaseSoundModType {};
+            class standardsound: BaseSoundModType {
+                soundsetshot[] = {
+                    "MMG01_Shot_SoundSet", "MMG01_Tail_SoundSet",
+                    "MMG01_InteriorTail_SoundSet"
+                };
+            };
+        };
+      class FullAutoFast : FullAuto
+      {
+        reloadTime = 0.077; // 800 RPM
+        textureType = "fastAuto";
+        class BaseSoundModType
+        {
+        };
+        class standardsound : BaseSoundModType
+        {
+          soundsetshot[] = {
+              "MMG01_Shot_SoundSet", "MMG01_Tail_SoundSet",
+              "MMG01_InteriorTail_SoundSet"
+          };
+        };
+      };
+
+        class WeaponSlotsInfo: WeaponSlotsInfo {
+          class MuzzleSlot : MuzzleSlot
+          {
+            compatibleitems[] = {"OPTRE_MA5Suppressor"};
+          };
+          class CowsSlot : CowsSlot
+          {
+            compatibleItems[] = COMMON_SIGHTS;
+          };
+          class PointerSlot : PointerSlot
+          {
+            compatibleitems[] = COMMON_RAIL_ATTACHMENTS;
+          };
+          class UnderBarrelSlot : UnderBarrelSlot
+          {
+            compatibleitems[] = COMMON_HEAVY_BIPOD;
+          };
+        };
+    };
+        
     class twelfth_MMG33_T : Dmns_M33_T
     {
       author = "Jack"; // Thank you!
+      scope = 2;
+      scopeArsenal = 2;
       displayName = "[12th] MMG33-T";
       baseWeapon = "twelfth_MMG33_T";
       magazines[] = {
-          "twelfth_95x40_100rnd", "OPTRE_36Rnd_95x40_Mag",
-          "OPTRE_36Rnd_95x40_Mag_Tracer", "twelfth_95x40_100rnd_T"};
+          "twelfth_95x40_100rnd", "twelfth_95x40_100rnd_T",
+          "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
+          };
       modes[] = {"FullAuto", "FullAutoFast"};
       class FullAuto : FullAuto
       {

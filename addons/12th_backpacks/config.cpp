@@ -82,3 +82,36 @@ class CfgVehicles {
   BACKPACK_ALLTYPES(standard,Standard)
   BACKPACK_ALLTYPES(forest,Forest)
 };
+
+class XtdGearModels {
+  class CfgVehicles{
+    class twelfth_backpacks {
+      label = "12th Backpacks";
+      options[] = {"camo", "type"};
+      class camo {
+        alwaysSelectable = 1;
+        label = "Camoflauge";
+        values[] = {"standard", "forest"};
+        class standard {label = "Standard"; image = XTP(std);};
+        class forest {label = "Forest"; image = XTP(forest);};
+      };
+      class type {
+        alwaysSelectable = 1;
+        label = "Variant";
+        values [] = {"na", "light", "heavy", "medic", "rto"};
+        class na {label = "N/A";};
+        class light {label = "Light";};
+        class heavy {label = "Heavy";};
+        class medic {label = "Corpsman";};
+        class rto {label = "RTO";};
+      };
+    };
+  };
+};
+
+class XtdGearInfos {
+  class CfgVehicles {
+    ALL_GI(standard)
+    ALL_GI(forest)
+  };
+};

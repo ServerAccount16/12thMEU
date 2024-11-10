@@ -108,7 +108,7 @@ class CfgPatches {
       "twelfth_ch_Wulf_nv",
       "twelfth_pilot_ch_base",
       "twelfth_pilot_ch_penquite",
-      "twelfth_pilot_ch_rich"
+      "twelfth_pilot_ch_waylen"
     };
     requiredAddons[]= {
       "A3_Armor_F_Beta",
@@ -221,8 +221,9 @@ class CfgWeapons {
     twelfth_pilot_ch_[SUFFIX]
   */
 
-  CUSTOM_PILOT_HELM(penquite, "[twelfth][Pilot][Customs] Penquite",penquite,penquite,default,default,default)
-  CUSTOM_PILOT_HELM(rich,     "[twelfth][Pilot][Customs] Rich",rich,rich,default,default,default)
+  CUSTOM_PILOT_HELM(penquite, "[12th][Pilot][Customs] Penquite",penquite,penquite,default,default,default)
+  CUSTOM_PILOT_HELM(waylen, "[12th][Pilot][Customs] Waylen",waylen,waylen,default,default,default)
+
 };
 
 class XtdGearModels {
