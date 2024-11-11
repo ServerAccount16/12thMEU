@@ -229,7 +229,7 @@ class CfgWeapons {
 class XtdGearModels {
   class CfgWeapons {
     class twelfth_custom_helms {
-      label="twelfth Custom Infantry Helmets";
+      label="12th Custom Infantry Helmets";
       options[]= {"visor","camo","member"};
       class camo {
         alwaysSelectable=1;

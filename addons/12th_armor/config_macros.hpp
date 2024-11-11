@@ -287,25 +287,50 @@ class twelfth_pilot_h_##SUFFIX : H_HelmetB {                                 \
 };
 
 #define BOONIE_WEP(CAMO) \
-  class twelfth_boonie_##CAMO: H_Booniehat_oli { \
-    scope=2; \
-    scopeArsenal=2;\
-    author="Waylen";\
-    picture="";\
-    displayName="[12th][Caps] Boonie Hat";\
-    model = "\a3\characters_f\Common\booniehat";\
-    hiddenSelections[] = {"camo"};\
-    hiddenSelectionsTextures[] = { "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\##CAMO##\boonie_co.paa" };\
-    class ItemInfo: HeadgearItem {\
-        mass = 5;\
-        uniformModel = "\a3\characters_f\Common\booniehat";\
-        modelSides[] = {6};\
-        hiddenSelections[] = {"camo"};\
-    }; \
-  };
+  class twelfth_boonie_##CAMO: H_HelmetB {  \
+    scope=2;  \
+    scopeArsenal=2; \
+    author="Sammy, Waylen";  \
+    picture=""; \
+    displayName="[12th][Caps] Boonie Hat";  \
+    model = "\a3\characters_f\Common\booniehat"; \
+    hiddenSelections[] = {"camo"};  \
+    hiddenSelectionsTextures[] = {  \
+      QP(helmets\boonie_hat\##CAMO\boonie_co.paa)  \
+    };  \
+    class ItemInfo: HeadgearItem {  \
+        mass = 5; \
+        uniformModel = "\a3\characters_f\Common\booniehat"; \
+        modelSides[] = {6}; \
+        hiddenSelections[] = {"camo"};  \
+    };  \
+  };  \
 
 #define BOONIE_GI(CAMO)\
   class twelfth_boonie_##CAMO## {\
     model = "twelfth_boonies";\
     camo = #CAMO;\
   };\
+
+#define PATROLCAP_WEP(CAMO) \
+  class twelfth_cap_##CAMO: OPTRE_UNSC_PatrolCap_Marines {  \
+    author="Waylen";  \
+    picture=""; \
+    displayName="[12th][Caps] Patrol Cap";  \
+    hiddenSelections[] = { "camo1", "hide_army" };  \
+    hiddenSelectionsTextures[] = {  \
+      QP(helmets\patrol_caps\##CAMO\cap_co.paa) \
+    };  \
+    class ItemInfo: ItemInfo {  \
+      hiddenSelections[] = { "camo1", "hide_army" };  \
+      hiddenSelectionsTextures[] = {  \
+        QP(helmets\patrol_caps\##CAMO\cap_co.paa) \
+      };  \
+    };  \
+  };  \
+  
+#define PATROLCAP_GI(CAMO) \
+  class twelfth_boonie_##CAMO## { \
+    model = "twelfth_patrolcaps"; \
+    camo = #CAMO; \
+  }; \

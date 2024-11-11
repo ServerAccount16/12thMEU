@@ -372,6 +372,7 @@ class CfgWeapons {
   class H_HelmetB;
   class HeadgearItem;
   class OPTRE_UNSC_PatrolCap_Army;
+  class OPTRE_UNSC_PatrolCap_Marines;
   class OPTRE_UNSC_Army_Uniform_WDL;
   class OPTRE_UNSC_Army_Uniform_R_WDL;
   class OPTRE_UNSC_Army_Uniform_S_WDL;
@@ -598,7 +599,7 @@ class CfgWeapons {
     };
   };
 
-  class twelfth_cap_desert: OPTRE_UNSC_PatrolCap_Army {
+  class twelfth_cap_desert: OPTRE_UNSC_PatrolCap_Marines {
     author="Waylen";
     picture="";
     displayName="[12th][Caps][Desert] Patrol Cap";
@@ -615,49 +616,11 @@ class CfgWeapons {
   };
 */
 
-    //TODO - fix boonie macro :sob:
+  BOONIE_WEP(std)
+  BOONIE_WEP(forest)
 
-    class twelfth_boonie_std: H_HelmetB {
-    scope=2;
-    scopeArsenal=2;
-    author="Waylen";
-    picture="";
-    displayName="[12th][Caps] Boonie Hat (Standard)";
-    model = "\a3\characters_f\Common\booniehat";
-    hiddenSelections[] = {"camo"};
-    hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\std\boonie_co.paa"
-    };
-    class ItemInfo: HeadgearItem {
-        mass = 5;
-        uniformModel = "\a3\characters_f\Common\booniehat";
-        modelSides[] = {6};
-        hiddenSelections[] = {"camo"};
-    };
-  };
-
-  class twelfth_boonie_forest: H_HelmetB {
-    scope=2;
-    scopeArsenal=2;
-    author="Waylen";
-    picture="";
-    displayName="[12th][Caps] Boonie Hat (Standard)";
-    model = "\a3\characters_f\Common\booniehat";
-    hiddenSelections[] = {"camo"};
-    hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_armor\helmets\boonie_hat\forest\boonie_co.paa"
-    };
-    class ItemInfo: HeadgearItem {
-        mass = 5;
-        uniformModel = "\a3\characters_f\Common\booniehat";
-        modelSides[] = {6};
-        hiddenSelections[] = {"camo"};
-    };
-  };
-
-
-  //BOONIE_WEP(std)
-  //BOONIE_WEP(forest)
+  PATROLCAP_WEP(std)
+  PATROLCAP_WEP(forest)
 
 
   //-HELMETS----------------------------------------------------------
@@ -872,6 +835,18 @@ class CfgWeapons {
 class XtdGearModels {
   class CfgWeapons {
     // Helmets
+    class twelfth_patrolcaps {
+      label = "12th Patrol Caps";
+      options[] = {"camo"};
+      class camo {
+        alwaysSelectable = 1;
+        label = "Camoflauge";
+        values[] = {"std", "forest"};
+        class std {label = "Standard"; image=XTP(std);};
+        class forest {label="Forest"; image=XTP(forest);};
+      };
+    };
+
     class twelfth_boonies {
       label = "12th Boonie Hats";
       options[] = {"camo"};
@@ -891,7 +866,7 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label="Camouflage";
         values[]={"std"};
-        class std {label="Standard"; image=XTP(std);};
+        class std {label="Standard";};
       };
       class element {
         alwaysSelectable = 1;
@@ -969,6 +944,11 @@ class XtdGearInfos {
 
     BOONIE_GI(std)
     BOONIE_GI(forest)    
+
+    // Patrol caps
+
+    PATROLCAP_GI(std)
+    PATROLCAP_GI(forest)
 
     //-------------------------------------- Helmets 
     // TODO rewrite this shit, this is fuckin silly
