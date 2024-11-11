@@ -1,6 +1,9 @@
 class CfgMagazines
 {
   class OPTRE_32Rnd_762x51_Mag;         // Base class for 7.62x51mm magazine
+  class OPTRE_100Rnd_762x51_Box_Tracer; // Base class for 7.62 Boxes
+  class OPTRE_100Rnd_762x51_Box;        // Base class for 7.62 Boxes w/ tracers
+  class OPTRE_36Rnd_95x40_Mag_Tracer;   // Base class for 9.5 Boxes
   class OPTRE_36Rnd_95x40_Mag;          // Base class for 9.5x40mm magazine
   class OPTRE_400Rnd_762x51_Box_Tracer; // Base class for 7.62x51mm tracer box
   class OPTRE_60Rnd_5x23mm_Mag;         // Base class for 5x23mm magazine
@@ -16,52 +19,6 @@ class CfgMagazines
     count = 32;           // Number of rounds in the magazine
     initspeed = 1500;     // Initial bullet speed in meters per second
     ammo = "twelfth_20g_bb"; // Type of ammo used
-  };
-
-  // Various magazine configurations for different calibers
-  class twelfth_95x40_100rnd : OPTRE_36Rnd_95x40_Mag
-  {
-    scope = 2;
-    author = "Weber";
-    displayName = "100rnd 9.5x40mm Box Magazine";
-    ammo = "OPTRE_B_95x40_Ball";
-    count = 100;
-    mass = 40;
-    tracersEvery = 0;
-    lastRoundsTracer = 6; // Tracer rounds for the last 6 rounds
-    ACE_isBelt = 1;
-  };
-
-    class twelfth_95x40_100rnd_T : OPTRE_36Rnd_95x40_Mag
-  {
-    scope = 2;
-    author = "Waylen";
-    displayName = "100rnd 9.5x40mm Box Magazine (Tracers)";
-    ammo = "OPTRE_B_95x40_Ball";
-    count = 100;
-    mass = 40;
-    tracersEvery = 0;
-    lastRoundsTracer = 100; // Tracers for the last 100 rounds
-    ACE_isBelt = 1;
-  };
-
-  class twelfth_762x51_200rnd : OPTRE_32Rnd_762x51_Mag
-  {
-    author = "Weber";
-    displayName = "200rnd 7.62x51mm Box Magazine";
-    count = 200;
-    mass = 40;
-    ACE_isBelt = 1;
-  };
-
-  class twelfth_762x51_200rnd_T : OPTRE_32Rnd_762x51_Mag
-  {
-    author = "Weber";
-    displayName = "200rnd 7.62x51mm Box Magazine (Tracers)";
-    count = 200;
-    mass = 40;
-    ACE_isBelt = 1;
-    lastRoundsTracer = 200; // Tracers for the last 100 rounds
   };
 
   class twelfth_br_36Rnd_UW : OPTRE_36Rnd_95x40_Mag
@@ -97,6 +54,8 @@ class CfgMagazines
     ammo = "twelfth_5x23mm_UW"; // Underwater ammunition
   };
 
+  ////////// LAUNCHER MAGAZINES
+
   class twelfth_40mm_heat : M319_HEAT_Grenade_Shell
   {
     scope = 2;
@@ -107,7 +66,8 @@ class CfgMagazines
     mass = 8;
   };
 
-  class twelfth_m96_magazine: RPG32_HE_F {
+  class twelfth_m96_magazine: RPG32_HE_F 
+  {
     scope = 2;
     allowedSlots[] = {};
     displayName = "M96 HEAT Disposable Rockets";
@@ -124,6 +84,96 @@ class CfgMagazines
     initSpeed = 650;
     allowedSlots[] = { 901, 701 };
     */
+  };
+
+  ///// MACHINE GUN MAGS
+
+  class twelfth_100Rnd_762x51_Box: OPTRE_100Rnd_762x51_Box 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "100rnd 7.62x51mm Box";
+    count = 100;
+    mass = 40; // 4 lbs
+    lastRoundsTracer = 20; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_100Rnd_762x51_Box_T: OPTRE_100Rnd_762x51_Box_Tracer 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "100rnd 7.62x51mm Box (T)";
+    count = 100;
+    mass = 40; // 4 lbs
+    lastRoundsTracer = 100; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_200Rnd_762x51_Box: OPTRE_100Rnd_762x51_Box 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "200rnd 7.62x51mm Box";
+    count = 200;
+    mass = 60; // 6 lbs
+    lastRoundsTracer = 40; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_200Rnd_762x51_Box_T: OPTRE_100Rnd_762x51_Box_Tracer 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "200rnd 7.62x51mm Box (T)";
+    count = 200;
+    mass = 60; // 6 lbs
+    lastRoundsTracer = 200; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_400Rnd_762x51_Box: OPTRE_100Rnd_762x51_Box 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "400rnd 7.62x51mm Box";
+    count = 400;
+    mass = 90; // 9 lbs
+    lastRoundsTracer = 40; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_400Rnd_762x51_Box_T: OPTRE_100Rnd_762x51_Box_Tracer 
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "400rnd 7.62x51mm Box (T)";
+    count = 400;
+    mass = 90; // 9 lbs
+    lastRoundsTracer = 400; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_100Rnd_95x40_Box: OPTRE_36Rnd_95x40_Mag_Tracer
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "100rnd 9.5x40mm Box";
+    count = 100;
+    mass = 45; // 4.5 lbs
+    lastRoundsTracer = 100; 
+    ACE_isBelt = 1; 
+  };
+
+  class twelfth_100Rnd_95x40_Box_T: OPTRE_36Rnd_95x40_Mag_Tracer
+  {
+    scope = 2;
+    author = "Waylen";
+    displayName = "100rnd 9.5x40mm Box (T)";
+    count = 100;
+    mass = 45; // 4.5 lbs
+    lastRoundsTracer = 100; 
+    ACE_isBelt = 1; 
   };
 
 };

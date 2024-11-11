@@ -205,7 +205,7 @@ class CfgWeapons
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
-    displayName = "[12th] M7 TEST";
+    displayName = "[12th] M7";
     baseWeapon = "twelfth_M7_Test";
     magazines[] = COMMON_SMG_MAGAZINES;
   };
@@ -215,7 +215,7 @@ class CfgWeapons
     author = "Weber";
     scope = 2;
     scopeArsenal = 2;
-    displayName = "[12th] M7 Folded TEST";
+    displayName = "[12th] M7 Folded";
     baseWeapon = "twelfth_M7_Test_Folded";
     magazines[] = COMMON_SMG_MAGAZINES;
   };
@@ -317,7 +317,7 @@ class CfgWeapons
     class WeaponSlotsInfo: WeaponSlotsInfo {
       mass = 30;
       class MuzzleSlot: MuzzleSlot {
-          compatibleitems[] = { "OPTRE_MA5KSuppressor" };
+          compatibleitems[] = { "OPTRE_MA5Suppressor" };
       };
       class CowsSlot: CowsSlot {};
       class PointerSlot: PointerSlot {
@@ -623,7 +623,8 @@ class CfgWeapons
         displayName = "[12th] M33-T";
         baseWeapon = "twelfth_M33_T";
         magazines[] = {
-          "twelfth_762x51_200rnd", "twelfth_762x51_200rnd_T",
+          "twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T",
+          "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T",
           "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
           "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow"
           };
@@ -692,7 +693,7 @@ class CfgWeapons
       displayName = "[12th] MMG33-T";
       baseWeapon = "twelfth_MMG33_T";
       magazines[] = {
-          "twelfth_95x40_100rnd", "twelfth_95x40_100rnd_T",
+          "twelfth_100Rnd_95x40_Box", "twelfth_100Rnd_95x40_Box_T",
           "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
           };
       modes[] = {"FullAuto", "FullAutoFast"};
@@ -763,8 +764,11 @@ class CfgWeapons
       baseWeapon = "twelfth_M247";
       magazines[] = {
           "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
-          "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", "twelfth_762x51_200rnd",
-          "twelfth_762x51_200rnd_T"};
+          "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", 
+          "twelfth_100Rnd_762x51_Box", "twelfth_100Rnd_762x51_Box_T",
+          "twelfth_200Rnd_762x51_Box", "twelfth_200Rnd_762x51_Box_T",
+          "twelfth_400Rnd_762x51_Box", "twelfth_400Rnd_762x51_Box_T"
+          };
       modes[] = {"FullAuto", "FullAutoFast"};
       class FullAuto : FullAuto
       {
