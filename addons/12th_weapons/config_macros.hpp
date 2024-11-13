@@ -9,7 +9,7 @@
 #define COMMON_RAIL_ATTACHMENTS {"OPTRE_BMR_Laser", "ACE_acc_pointer_red", "ace_acc_pointer_green", "ACE_acc_pointer_green_IR", "acc_pointer_ir", "OPTRE_M12_Laser"}
 #define COMMON_LIGHT_BIPOD {"bipod_01_F_blk", "bipod_02_F_blk", "bipod_03_F_blk"}
 #define COMMON_MEDIUM_BIPOD {"bipod_01_F_blk", "bipod_02_F_blk", "bipod_03_F_blk", "dzn_tripod_rifle"}
-#define COMMON_HEAVY_BIPOD {"bipod_01_F_blk", "bipod_02_F_blk", "bipod_03_F_blk", "dzn_MG_Tripod_Universal"}
+#define COMMON_HEAVY_BIPOD {"bipod_01_F_blk", "bipod_02_F_blk", "bipod_03_F_blk", "12th_MG_Tripod"}
 // Start Magazine Macros
 // Start Rifle Macros
 #define COMMON_MA5C_MAGAZINES {"OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer", "OPTRE_32Rnd_762x51_Mag_UW" }
@@ -19,3 +19,16 @@
 #define COMMON_M6_MAGAZINES {"OPTRE_8Rnd_127x40_Mag", "OPTRE_8Rnd_127x40_Mag_Tracer", "OPTRE_16Rnd_127x40_Mag", "OPTRE_16Rnd_127x40_Mag_Tracer"}
 // Start 40mm Macros
 #define COMMON_GL_MAGS {"M319_HE_Grenade_Shell", "M319_HEDP_Grenade_Shell", "M319_HEAT_Grenade_Shell", "M319_Smoke", "M319_Smoke_Orange", "M319_Smoke_Green", "M319_Smoke_Red", "1Rnd_HE_Grenade_shell", "UGL_FlareWhite_F", "UGL_FlareGreen_F", "UGL_FlareRed_F", "UGL_FlareYellow_F", "UGL_FlareCIR_F", "1Rnd_Smoke_Grenade_shell", "1Rnd_SmokeRed_Grenade_shell", "1Rnd_SmokeGreen_Grenade_shell", "1Rnd_SmokeYellow_Grenade_shell", "1Rnd_SmokePurple_Grenade_shell", "1Rnd_SmokeBlue_Grenade_shell", "1Rnd_SmokeOrange_Grenade_shell", "3Rnd_UGL_FlareWhite_F", "3Rnd_UGL_FlareGreen_F", "3Rnd_UGL_FlareRed_F", "3Rnd_UGL_FlareYellow_F", "3Rnd_UGL_FlareCIR_F", "3Rnd_Smoke_Grenade_shell", "3Rnd_SmokeRed_Grenade_shell", "3Rnd_SmokeGreen_Grenade_shell", "3Rnd_SmokeYellow_Grenade_shell", "3Rnd_SmokePurple_Grenade_shell", "3Rnd_SmokeBlue_Grenade_shell", "3Rnd_SmokeOrange_Grenade_shell", "OPTRE_signalSmokeB", "OPTRE_signalSmokeG", "OPTRE_signalSmokeO", "OPTRE_signalSmokeP", "OPTRE_signalSmokeR", "OPTRE_signalSmokeY", "twelfth_40mm_heat"}
+
+#define DEPLOYED_GESTURE_GPMG \
+	dzn_MG_Tripod_deployedGesture[] = {"dzn_MG_Tripod_GestureHoldType1","dzn_MG_Tripod_GestureHoldCrouchType1","dzn_MG_Tripod_GestureHoldProneType1"}
+
+#define RELOAD_EH \
+	class EventHandlers: EventHandlers \
+	{ \
+		class dzn_MG_Tripod \
+		{ \
+			reload = "_this call dzn_MG_Tripod_fnc_handleReloadEH"; \
+			reloaded = "_this call dzn_MG_Tripod_fnc_handleReloadedEH"; \
+		}; \
+	}    

@@ -27,19 +27,83 @@ class CfgWeapons
   class GL_3GL_F;                   // Base class for grenade launchers
   class UGL_F;
   class InventoryOpticsItem_Base_F; // Base class for optics
-  class 19_UNSC_M6C;                //
-  class 19_UNSC_M7;
-  class 19_UNSC_M7_Side;
-  class 19_UNSC_M90;
-  class 19_UNSC_MA5A;
-  class 19_UNSC_MA5A_gl;
-  class 19_UNSC_MA5B;
-  class 19_UNSC_br55;
-  class 19_UNSC_br55_gl;
-  class 19_UNSC_br55_HB;
-  class 19_UNSC_br55_HB_gl;
-  class 19_UNSC_M392;
+  class 19_UNSC_M6C; 
+  class 19_UNSC_M7; 
+  class 19_UNSC_M7_Side;  
+  class 19_UNSC_M90;  
+  class 19_UNSC_MA5A;   
+  class 19_UNSC_MA5A_gl;  
+  class 19_UNSC_MA5B; 
+  class 19_UNSC_br55; 
+  class 19_UNSC_br55_gl;  
+  class 19_UNSC_br55_HB;  
+  class 19_UNSC_br55_HB_gl; 
+  class 19_UNSC_M392; 
+  class InventoryUnderItem_Base_F;  
+  class dzn_MG_Tripod_Universal;  
+  class dzn_MG_Tripod_Universal_Carry;  
 
+
+  class 12th_MG_Tripod_Carry: dzn_MG_Tripod_Universal_Carry{
+    displayName = "[12th] MG Tripod";
+    author = "10Dozen, Waylen";
+    scope = 2;
+    scopeArsenal = 2;
+    class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[]={};
+			mass=100;
+		};
+		dzn_MG_Tripod_AttachItems[]=
+		{
+			"12th_MG_Tripod"
+		};
+  };
+
+  class 12th_MG_Tripod: dzn_MG_Tripod_Universal{
+    displayName = "[12th] MG Tripod";
+    author = "10Dozen, Waylen";
+    scope = 2;
+    scopeArsenal = 2;
+    class ItemInfo: InventoryUnderItem_Base_F
+		{
+			allowedSlots[]={};
+			deployedPivot="bipod";
+			hasBipod="true";
+			mass=250;
+			soundBipodDeploy[]=
+			{
+				"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_deploy",
+				0.70794576,
+				1,
+				20
+			};
+			soundBipodFold[]=
+			{
+				"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_fold",
+				0.70794576,
+				1,
+				20
+			};
+			soundBipodDown[]=
+			{
+				"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_down",
+				0.70794576,
+				1,
+				20
+			};
+			soundBipodUp[]=
+			{
+				"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_up",
+				0.70794576,
+				1,
+				20
+			};
+		};
+    inertia=2;
+		dzn_MG_Tripod_CarryItem="12th_MG_Tripod_Carry";
+		dzn_MG_Tripod_CarryItemUniversal="12th_MG_Tripod_Carry";
+  };
 
   // M96 LAW Rewrite
   
@@ -1089,7 +1153,7 @@ class CfgWeapons
     // M33-T Machine Gun configuration
 
     class twelfth_M33_T: Dmns_M33_T {
-        author = "Jack";
+        author = "Jack, Waylen";
         displayName = "[12th] M33-T";
         baseWeapon = "twelfth_M33_T";
         magazines[] = {
@@ -1099,6 +1163,19 @@ class CfgWeapons
           "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow"
           };
         modes[] = { "FullAuto", "FullAutoFast" };
+	      distanceZoomMin=100;
+	      distanceZoomMax=700;
+        maxZeroing=700;
+        DEPLOYED_GESTURE_GPMG;
+        RELOAD_EH;
+
+        ace_overheating_mrbs = 4000;
+        ace_overheating_slowdownFactor = 1;
+        ace_overheating_allowSwapBarrel = 1;
+        ace_overheating_dispersion = 0.25;
+        ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
+        ace_overheating_closedbolt = 1;
+        ace_overheating_barrelMass = 2.5;        
 
         class FullAuto: FullAuto {
             dispersion = 0.00116;
@@ -1121,7 +1198,7 @@ class CfgWeapons
         };
       class FullAutoFast : FullAuto
       {
-        reloadTime = 0.077; // 800 RPM
+        reloadTime = 0.08; // 800 RPM
         textureType = "fastAuto";
         class BaseSoundModType
         {
@@ -1167,6 +1244,20 @@ class CfgWeapons
           "OPTRE_36Rnd_95x40_Mag", "OPTRE_36Rnd_95x40_Mag_Tracer"
           };
       modes[] = {"FullAuto", "FullAutoFast"};
+	    distanceZoomMin=100;
+	    distanceZoomMax=700;
+      maxZeroing=700;
+
+        ace_overheating_mrbs = 3500;
+        ace_overheating_slowdownFactor = 1;
+        ace_overheating_allowSwapBarrel = 1;
+        ace_overheating_dispersion = 0.25;
+        ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
+        ace_overheating_closedbolt = 1;
+        ace_overheating_barrelMass = 3.5;
+
+      DEPLOYED_GESTURE_GPMG;
+      RELOAD_EH;
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;
@@ -1232,6 +1323,8 @@ class CfgWeapons
       scopeArsenal = 2;
       displayName = "[12th] M247 GPMG";
       baseWeapon = "twelfth_M247";
+      DEPLOYED_GESTURE_GPMG;
+      RELOAD_EH;
       magazines[] = {
           "OPTRE_32Rnd_762x51_Mag", "OPTRE_32Rnd_762x51_Mag_Tracer",
           "OPTRE_32Rnd_762x51_Mag_Tracer_Yellow", 
