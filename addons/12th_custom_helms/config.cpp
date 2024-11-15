@@ -221,7 +221,7 @@ class CfgWeapons {
     twelfth_pilot_ch_[SUFFIX]
   */
 
-  CUSTOM_PILOT_HELM(penquite, "[12th][Pilot][Customs] Penquite",penquite,penquite,default,default,default)
+  CUSTOM_PILOT_HELM(penquite, "[12th][Pilot][Customs] Penquite",default,penquite,default,default,default)
   CUSTOM_PILOT_HELM(waylen, "[12th][Pilot][Customs] Waylen",waylen,waylen,default,default,default)
 
 };
