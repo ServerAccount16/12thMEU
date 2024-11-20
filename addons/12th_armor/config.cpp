@@ -720,113 +720,8 @@ class CfgWeapons {
   ALL_UNI_WEP(drk)
   ALL_UNI_WEP(urban)
 
-
-  // this shit is silly and will get rewritten below
-
-  // Macro Calls for Helmets
-  // standard - no plt - visor
-  HELM_SV(std,         "[12th][Inf][S] Helmet")
-  HELM_SV(std_med,     "[12th][Inf][S] Helmet (Corpsman)")
-  // standard - 1 plt - visor
-  HELM_SV(std_1pl,     "[12th][Inf][S][1Plt] Helmet")
-  HELM_SV(std_1pl_ftl, "[12th][Inf][S][1Plt] Helmet (FTL)")
-  HELM_SV(std_1pl_sl,  "[12th][Inf][S][1Plt] Helmet (SL)")
-  HELM_SV(std_1pl_psg, "[12th][Inf][S][1Plt] Helmet (PSG)")
-  HELM_SV(std_1pl_pl,  "[12th][Inf][S][1Plt] Helmet (PL)")
-  HELM_SV(std_1pl_med, "[12th][Inf][S][1Plt] Helmet (Corpsman)")
-  // standard - 2 plt - visor
-  HELM_SV(std_2pl,     "[12th][Inf][S][2Plt] Helmet")
-  HELM_SV(std_2pl_ftl, "[12th][Inf][S][2Plt] Helmet (FTL)")
-  HELM_SV(std_2pl_sl,  "[12th][Inf][S][2Plt] Helmet (SL)")
-  HELM_SV(std_2pl_psg, "[12th][Inf][S][2Plt] Helmet (PSG)")
-  HELM_SV(std_2pl_pl,  "[12th][Inf][S][2Plt] Helmet (PL)")
-  HELM_SV(std_2pl_med, "[12th][Inf][S][2Plt] Helmet (Corpsman)")
-  // standard - hq plt - visor
-  HELM_SV(std_hq,      "[12th][Inf][S][HQ] Helmet")
-  HELM_SV(std_hq_ftl,  "[12th][Inf][S][HQ] Helmet (FTL)")
-  HELM_SV(std_hq_sl,   "[12th][Inf][S][HQ] Helmet (SL)")
-  HELM_SV(std_hq_psg,  "[12th][Inf][S][HQ] Helmet (PSG)")
-  HELM_SV(std_hq_pl,   "[12th][Inf][S][HQ] Helmet (PL)")
-  HELM_SV(std_hq_med,  "[12th][Inf][S][HQ] Helmet (Corpsman)")
-  // standard - logi plt - visor
-  HELM_SV(std_lpl,     "[12th][Inf][S][Logi] Helmet")
-  HELM_SV(std_lpl_ftl, "[12th][Inf][S][Logi] Helmet (FTL)")
-  HELM_SV(std_lpl_sl,  "[12th][Inf][S][Logi] Helmet (SL)")
-  HELM_SV(std_lpl_psg, "[12th][Inf][S][Logi] Helmet (PSG)")
-  HELM_SV(std_lpl_pl,  "[12th][Inf][S][Logi] Helmet (PL)")
-  HELM_SV(std_lpl_med, "[12th][Inf][S][Logi] Helmet (Corpsman)")
-
-  // standard - no plt - no visor
-  HELM_NV(std,         "[12th][Inf][S][NV] Helmet")
-  HELM_NV(std_med,     "[12th][Inf][S][NV] Helmet (Corpsman)")
-  // standard - 1 plt - no visor
-  HELM_NV(std_1pl,     "[12th][Inf][S][NV][1Plt] Helmet")
-  HELM_NV(std_1pl_ftl, "[12th][Inf][S][NV][1Plt] Helmet (FTL)")
-  HELM_NV(std_1pl_sl,  "[12th][Inf][S][NV][1Plt] Helmet (SL)")
-  HELM_NV(std_1pl_psg, "[12th][Inf][S][Nv][1Plt] Helmet (PSG)")
-  HELM_NV(std_1pl_pl,  "[12th][Inf][S][NV][1Plt] Helmet (PL)")
-  HELM_NV(std_1pl_med, "[12th][Inf][S][NV][1Plt] Helmet (Corpsman)")
-  // standard - 2 plt - no visor
-  HELM_NV(std_2pl,     "[12th][Inf][S][NV][2Plt] Helmet")
-  HELM_NV(std_2pl_ftl, "[12th][Inf][S][NV][2Plt] Helmet (FTL)")
-  HELM_NV(std_2pl_sl,  "[12th][Inf][S][NV][2Plt] Helmet (SL)")
-  HELM_NV(std_2pl_psg, "[12th][Inf][S][NV][2Plt] Helmet (PSG)")
-  HELM_NV(std_2pl_pl,  "[12th][Inf][S][NV][2Plt] Helmet (PL)")
-  HELM_NV(std_2pl_med, "[12th][Inf][S][NV][2Plt] Helmet (Corpsman)")
-  // standard - hq plt - no visor
-  HELM_NV(std_hq,      "[12th][Inf][S][NV][HQ] Helmet")
-  HELM_NV(std_hq_ftl,  "[12th][Inf][S][NV][HQ] Helmet (FTL)")
-  HELM_NV(std_hq_sl,   "[12th][Inf][S][NV][HQ] Helmet (SL)")  
-  HELM_NV(std_hq_psg,  "[12th][Inf][S][NV][HQ] Helmet (PSG)")
-  HELM_NV(std_hq_pl,   "[12th][Inf][S][NV][HQ] Helmet (PL)")
-  HELM_NV(std_hq_med,  "[12th][Inf][S][NV][HQ] Helmet (Corpsman)")
-  // standard - logi plt - no visor
-  HELM_NV(std_lpl,     "[12th][Inf][S][NV][Logi] Helmet")
-  HELM_NV(std_lpl_ftl, "[12th][Inf][S][NV][Logi] Helmet (FTL)")
-  HELM_NV(std_lpl_sl,  "[12th][Inf][S][NV][Logi] Helmet (SL)")
-  HELM_NV(std_lpl_psg, "[12th][Inf][S][NV][Logi] Helmet (PSG)")
-  HELM_NV(std_lpl_pl,  "[12th][Inf][S][NV][Logi] Helmet (PL)")
-  HELM_NV(std_lpl_med, "[12th][Inf][S][NV][Logi] Helmet (Corpsman)")
-
-  // disabled for now, may revisit later
-  //--Winter----------------------------------------------------------
-  //HELM_SV(win,         "[12th][Inf][W] Helmet")
-  //HELM_SV(win_med,     "[12th][Inf][W] Helmet (Corpsman)")
-  //HELM_SV(win_1pl_ftl, "[12th][Inf][W][1Plt] Helmet (FTL)")
-  //HELM_SV(win_1pl_sl,  "[12th][Inf][W][1Plt] Helmet (SL)")
-  //HELM_SV(win_1pl_pl,  "[12th][Inf][W][1Plt] Helmet (PL)")
-  //HELM_SV(win_1pl_med, "[12th][Inf][W][1Plt] Helmet (Corpsman)")
-  //HELM_SV(win_2pl_ftl, "[12th][Inf][W][2Plt] Helmet (FTL)")
-  //HELM_SV(win_2pl_sl,  "[12th][Inf][W][2Plt] Helmet (SL)")
-  //HELM_SV(win_2pl_pl,  "[12th][Inf][W][2Plt] Helmet (PL)")
-  //HELM_SV(win_2pl_med, "[12th][Inf][W][2Plt] Helmet (Corpsman)")
-  //HELM_SV(win_hq_ftl,  "[12th][Inf][W][HQ] Helmet (FTL)")
-  //HELM_SV(win_hq_sl,   "[12th][Inf][W][HQ] Helmet (SL)")
-  //HELM_SV(win_hq_pl,   "[12th][Inf][W][HQ] Helmet (PL)")
-  ////HELM_SV(win_hq_med,  "[12th][Inf][W][HQ] Helmet (Corpsman)")
-  //HELM_SV(win_lpl_ftl, "[12th][Inf][W][Logi] Helmet (FTL)")
-  //HELM_SV(win_lpl_sl,  "[12th][Inf][W][Logi] Helmet (SL)")
-  //HELM_SV(win_lpl_pl,  "[12th][Inf][W][Logi] Helmet (PL)")
-  //HELM_SV(win_lpl_med, "[12th][Inf][W][Logi] Helmet (Corpsman)")
-
-  //HELM_NV(win,         "[12th][Inf][W][NV] Helmet")
-  //HELM_NV(win_med,     "[12th][Inf][W][NV] Helmet (Corpsman)")
-  //HELM_NV(win_1pl_ftl, "[12th][Inf][W][NV][1Plt] Helmet (FTL)")
-  //HELM_NV(win_1pl_sl,  "[12th][Inf][W][NV][1Plt] Helmet (SL)")
-  //HELM_NV(win_1pl_pl,  "[12th][Inf][W][NV][1Plt] Helmet (PL)")
-  //HELM_NV(win_1pl_med, "[12th][Inf][W][NV][1Plt] Helmet (Corpsman)")
-  //HELM_NV(win_2pl_ftl, "[12th][Inf][W][NV][2Plt] Helmet (FTL)")
-  //HELM_NV(win_2pl_sl,  "[12th][Inf][W][NV][2Plt] Helmet (SL)")
-  //HELM_NV(win_2pl_pl,  "[12th][Inf][W][NV][2Plt] Helmet (PL)")
-  //HELM_NV(win_2pl_med, "[12th][Inf][W][NV][2Plt] Helmet (Corpsman)")
-  //HELM_NV(win_hq_ftl,  "[12th][Inf][W][NV][HQ] Helmet (FTL)")
-  //HELM_NV(win_hq_sl,   "[12th][Inf][W][NV][HQ] Helmet (SL)")
-  //HELM_NV(win_hq_pl,   "[12th][Inf][W][NV][HQ] Helmet (PL)")
-  //HELM_NV(win_hq_med,  "[12th][Inf][W][NV][HQ] Helmet (Corpsman)")
-  //HELM_NV(win_lpl_ftl, "[12th][Inf][W][NV][Logi] Helmet (FTL)")
-  //HELM_NV(win_lpl_sl,  "[12th][Inf][W][NV][Logi] Helmet (SL)")
-  //HELM_NV(win_lpl_pl,  "[12th][Inf][W][NV][Logi] Helmet (PL)")
-  //HELM_NV(win_lpl_med, "[12th][Inf][W][NV][Logi] Helmet (Corpsman)")
+  //-HELMETS----------------------------------------------------------
+  ALL_HELM(std)
 
   // Pilot Helmets
   PILOT_HELM(default, "[12th][Pilot] Helmet",default,default,default,default,default)
@@ -842,8 +737,8 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label = "Camoflauge";
         values[] = {"std", "forest"};
-        class std {label = "Standard"; image=XTP(std);};
-        class forest {label="Forest"; image=XTP(forest);};
+        class forest {label="Standard"; image=XTP(forest);};
+        class std {label = "MARPAT"; image=XTP(std);};
       };
     };
 
@@ -854,8 +749,8 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label = "Camoflauge";
         values[] = {"std", "forest"};
-        class std {label = "Standard"; image=XTP(std);};
-        class forest {label="Forest"; image=XTP(forest);};
+        class forest {label="Standard"; image=XTP(forest);};
+        class std {label = "MARPAT"; image=XTP(std);};
       };
     };
 
@@ -904,8 +799,8 @@ class XtdGearModels {
         alwaysSelectable = 1;
         label="Camouflage";
         values[]={"std", "forest", "forest90", "urban", "drk"};
-        class std {label="Standard"; image=XTP(std);};
-        class forest {label="Forest";     image=XTP(forest);};
+        class forest {label="Standard";     image=XTP(forest);};
+        class std {label="MARPAT"; image=XTP(std);};
         class forest90 {label="Forest90";     image=XTP(forest90);};
         class urban {label="Urban";     image=XTP(urban);}; //maybe winter?? will need to look into new armor pieces
         class drk {label="VBSS";     image=XTP(vbss);};
@@ -935,6 +830,7 @@ class XtdGearInfos {
   class CfgWeapons {
     // THIS IS WHERE EXTENDED ARSENAL PULLS INFO FOR THE SELECTIONS FROM
     //-------------------------------------- Uniforms
+    
     ALL_UNI_GI(std)
     ALL_UNI_GI(drk)
     ALL_UNI_GI(forest)
@@ -951,187 +847,9 @@ class XtdGearInfos {
     PATROLCAP_GI(forest)
 
     //-------------------------------------- Helmets 
-    // TODO rewrite this shit, this is fuckin silly
-    HELM_NV_GI(std,std,na,na)
-    HELM_NV_GI(std_med,std,na,med)
 
-    //1plt
-    HELM_NV_GI(std_1pl,std,1pl,na)
-    HELM_NV_GI(std_1pl_ftl,std,1pl,ftl)
-    HELM_NV_GI(std_1pl_sl,std,1pl,sl)
-    HELM_NV_GI(std_1pl_psg,std,1pl,psg)
-    HELM_NV_GI(std_1pl_pl,std,1pl,pl)
-    HELM_NV_GI(std_1pl_med,std,1pl,med)
+    ALL_HELM_GI(std)
+    //ALL_HELM_GI(drk)
 
-    //2plt
-    HELM_NV_GI(std_2pl,std,2pl,na)
-    HELM_NV_GI(std_2pl_ftl,std,2pl,ftl)
-    HELM_NV_GI(std_2pl_sl,std,2pl,sl)
-    HELM_NV_GI(std_2pl_psg,std,2pl,psg)
-    HELM_NV_GI(std_2pl_pl,std,2pl,pl)
-    HELM_NV_GI(std_2pl_med,std,2pl,med)
-
-    //hq plt
-    HELM_NV_GI(std_hq,std,hq,na)
-    HELM_NV_GI(std_hq_ftl,std,hq,ftl)
-    HELM_NV_GI(std_hq_sl,std,hq,sl)
-    HELM_NV_GI(std_hq_psg,std,hq,psg)
-    HELM_NV_GI(std_hq_pl,std,hq,pl)
-    HELM_NV_GI(std_hq_med,std,hq,med)
-
-    //logi plt
-    HELM_NV_GI(std_lpl,std,lpl,na)
-    HELM_NV_GI(std_lpl_ftl,std,lpl,ftl)
-    HELM_NV_GI(std_lpl_sl,std,lpl,sl)
-    HELM_NV_GI(std_lpl_psg,std,lpl,psg)
-    HELM_NV_GI(std_lpl_pl,std,lpl,pl)
-    HELM_NV_GI(std_lpl_med,std,lpl,med)
-
-    // visored helmets
-    HELM_SV_GI(std,std,na,na)
-    HELM_SV_GI(std_med,std,na,med)
-
-    //1plt
-    HELM_SV_GI(std_1pl,std,1pl,na)
-    HELM_SV_GI(std_1pl_ftl,std,1pl,ftl)
-    HELM_SV_GI(std_1pl_sl,std,1pl,sl)
-    HELM_SV_GI(std_1pl_psg,std,1pl,psg)
-    HELM_SV_GI(std_1pl_pl,std,1pl,pl)
-    HELM_SV_GI(std_1pl_med,std,1pl,med)
-
-    //2plt
-    HELM_SV_GI(std_2pl,std,2pl,na)
-    HELM_SV_GI(std_2pl_ftl,std,2pl,ftl)
-    HELM_SV_GI(std_2pl_sl,std,2pl,sl)
-    HELM_SV_GI(std_2pl_psg,std,2pl,psg)
-    HELM_SV_GI(std_2pl_pl,std,2pl,pl)
-    HELM_SV_GI(std_2pl_med,std,2pl,med)
-
-    //hq plt
-    HELM_SV_GI(std_hq,std,hq,na)
-    HELM_SV_GI(std_hq_ftl,std,hq,ftl)
-    HELM_SV_GI(std_hq_sl,std,hq,sl)
-    HELM_SV_GI(std_hq_psg,std,hq,psg)
-    HELM_SV_GI(std_hq_pl,std,hq,pl)
-    HELM_SV_GI(std_hq_med,std,hq,med)
-
-    //logi plt
-    HELM_SV_GI(std_lpl,std,lpl,na)
-    HELM_SV_GI(std_lpl_ftl,std,lpl,ftl)
-    HELM_SV_GI(std_lpl_sl,std,lpl,sl)
-    HELM_SV_GI(std_lpl_psg,std,lpl,psg)
-    HELM_SV_GI(std_lpl_pl,std,lpl,pl)
-    HELM_SV_GI(std_lpl_med,std,lpl,med)
-
-    // Dark Helmets
-    HELM_NV_GI(drk,drk,na,na)
-    HELM_NV_GI(drk_med,drk,na,med)
-
-    //1plt
-    HELM_NV_GI(drk_1pl,drk,1pl,na)
-    HELM_NV_GI(drk_1pl_ftl,drk,1pl,ftl)
-    HELM_NV_GI(drk_1pl_sl,drk,1pl,sl)
-    HELM_NV_GI(drk_1pl_psg,drk,1pl,psg)
-    HELM_NV_GI(drk_1pl_pl,drk,1pl,pl)
-    HELM_NV_GI(drk_1pl_med,drk,1pl,med)
-
-    //2plt
-    HELM_NV_GI(drk_2pl,drk,2pl,na)
-    HELM_NV_GI(drk_2pl_ftl,drk,2pl,ftl)
-    HELM_NV_GI(drk_2pl_sl,drk,2pl,sl)
-    HELM_NV_GI(drk_2pl_psg,drk,2pl,psg)
-    HELM_NV_GI(drk_2pl_pl,drk,2pl,pl)
-    HELM_NV_GI(drk_2pl_med,drk,2pl,med)
-
-    //hq plt
-    HELM_NV_GI(drk_hq,drk,hq,na)
-    HELM_NV_GI(drk_hq_ftl,drk,hq,ftl)
-    HELM_NV_GI(drk_hq_sl,drk,hq,sl)
-    HELM_NV_GI(drk_hq_psg,drk,hq,psg)
-    HELM_NV_GI(drk_hq_pl,drk,hq,pl)
-    HELM_NV_GI(drk_hq_med,drk,hq,med)
-
-    //logi plt
-    HELM_NV_GI(drk_lpl,drk,lpl,na)
-    HELM_NV_GI(drk_lpl_ftl,drk,lpl,ftl)
-    HELM_NV_GI(drk_lpl_sl,drk,lpl,sl)
-    HELM_NV_GI(drk_lpl_psg,drk,lpl,psg)
-    HELM_NV_GI(drk_lpl_pl,drk,lpl,pl)
-    HELM_NV_GI(drk_lpl_med,drk,lpl,med)
-
-    // visored helmets
-    HELM_SV_GI(drk,drk,na,na)
-    HELM_SV_GI(drk_med,drk,na,med)
-
-    //1plt
-    HELM_SV_GI(drk_1pl,drk,1pl,na)
-    HELM_SV_GI(drk_1pl_ftl,drk,1pl,ftl)
-    HELM_SV_GI(drk_1pl_sl,drk,1pl,sl)
-    HELM_SV_GI(drk_1pl_psg,drk,1pl,psg)
-    HELM_SV_GI(drk_1pl_pl,drk,1pl,pl)
-    HELM_SV_GI(drk_1pl_med,drk,1pl,med)
-
-    //2plt
-    HELM_SV_GI(drk_2pl,drk,2pl,na)
-    HELM_SV_GI(drk_2pl_ftl,drk,2pl,ftl)
-    HELM_SV_GI(drk_2pl_sl,drk,2pl,sl)
-    HELM_SV_GI(drk_2pl_psg,drk,2pl,psg)
-    HELM_SV_GI(drk_2pl_pl,drk,2pl,pl)
-    HELM_SV_GI(drk_2pl_med,drk,2pl,med)
-
-    //hq plt
-    HELM_SV_GI(drk_hq,drk,hq,na)
-    HELM_SV_GI(drk_hq_ftl,drk,hq,ftl)
-    HELM_SV_GI(drk_hq_sl,drk,hq,sl)
-    HELM_SV_GI(drk_hq_psg,drk,hq,psg)
-    HELM_SV_GI(drk_hq_pl,drk,hq,pl)
-    HELM_SV_GI(drk_hq_med,drk,hq,med)
-
-    //logi plt
-    HELM_SV_GI(drk_lpl,drk,lpl,na)
-    HELM_SV_GI(drk_lpl_ftl,drk,lpl,ftl)
-    HELM_SV_GI(drk_lpl_sl,drk,lpl,sl)
-    HELM_SV_GI(drk_lpl_psg,drk,lpl,psg)
-    HELM_SV_GI(drk_lpl_pl,drk,lpl,pl)
-    HELM_SV_GI(drk_lpl_med,drk,lpl,med)
-
-    // Winter Helmets
-    //HELM_NV_GI(win,win,na,na)
-    //HELM_NV_GI(win_med,win,na,med)
-    //HELM_NV_GI(win_1pl_ftl,win,1pl,ftl)
-    //HELM_NV_GI(win_1pl_sl,win,1pl,sl)
-    //HELM_NV_GI(win_1pl_pl,win,1pl,pl)
-    //HELM_NV_GI(win_1pl_med,win,1pl,med)
-    //HELM_NV_GI(win_2pl_ftl,win,2pl,ftl)
-    //HELM_NV_GI(win_2pl_sl,win,2pl,sl)
-    //HELM_NV_GI(win_2pl_pl,win,2pl,pl)
-    //HELM_NV_GI(win_2pl_med,win,2pl,med)
-    //HELM_NV_GI(win_hq_ftl,win,hq,ftl)
-    //HELM_NV_GI(win_hq_sl,win,hq,sl)
-    //HELM_NV_GI(win_hq_pl,win,hq,pl)
-    //HELM_NV_GI(win_hq_med,win,hq,med)
-    //HELM_NV_GI(win_lpl_ftl,win,lpl,ftl)
-    //HELM_NV_GI(win_lpl_sl,win,lpl,sl)
-    //HELM_NV_GI(win_lpl_pl,win,lpl,pl)
-    //HELM_NV_GI(win_lpl_med,win,lpl,med)
-
-    //HELM_SV_GI(win,win,na,na)
-    //HELM_SV_GI(win_med,win,na,med)
-    //HELM_SV_GI(win_1pl_ftl,win,1pl,ftl)
-    //HELM_SV_GI(win_1pl_sl,win,1pl,sl)
-    //HELM_SV_GI(win_1pl_pl,win,1pl,pl)
-    //HELM_SV_GI(win_1pl_med,win,1pl,med)
-    //HELM_SV_GI(win_2pl_ftl,win,2pl,ftl)
-    //HELM_SV_GI(win_2pl_sl,win,2pl,sl)
-    //HELM_SV_GI(win_2pl_pl,win,2pl,pl)
-    //HELM_SV_GI(win_2pl_med,win,2pl,med)
-    //HELM_SV_GI(win_hq_ftl,win,hq,ftl)
-    //HELM_SV_GI(win_hq_sl,win,hq,sl)
-    //HELM_SV_GI(win_hq_pl,win,hq,pl)
-    //HELM_SV_GI(win_hq_med,win,hq,med)
-    //HELM_SV_GI(win_lpl_ftl,win,lpl,ftl)
-    //HELM_SV_GI(win_lpl_sl,win,lpl,sl)
-    //HELM_SV_GI(win_lpl_pl,win,lpl,pl)
-    //HELM_SV_GI(win_lpl_med,win,lpl,med)
   };
 };

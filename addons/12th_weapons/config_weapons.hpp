@@ -116,8 +116,8 @@ class CfgWeapons
       scope = 2; 
       scopeArsenal = 2;
       baseWeapon = "twelfth_m96";
-      //displayName = "[12th] M96 LAW - Mk VI"; // usual displayName
-      displayName = "[12th] M96 LAW - Mk VI (B)"; // debug displayname 
+      displayName = "[12th] M96 LAW - Mk VI"; // usual displayName
+      //displayName = "[12th] M96 LAW - Mk VI (B)"; // debug displayname 
 
       magazines[] = { "CBA_FakeLauncherMagazine" };
 
@@ -207,7 +207,7 @@ class CfgWeapons
             compatibleItems[] = COMMON_SIGHTS;
             iconPosition[] = { 0.5, 0.3 };
           };
-          mass = 145; // launcher + rocket (100 + 45)
+          mass = 125; // launcher + rocket (100 + 45)
       };
 
       class ItemInfo {
@@ -217,7 +217,8 @@ class CfgWeapons
     };
 
     class twelfth_m96_READY: twelfth_m96{ // launcher when shouldered/held
-        displayName = "[12th] M96 LAW - Mk VI (R)"; // debug displayName
+        displayName = "[12th] M96 LAW - Mk VI";
+        //displayName = "[12th] M96 LAW - Mk VI (R)"; // debug displayName
         scope = 1;
         scopeArsenal = 1;
         baseWeapon = "twelfth_m96";
@@ -230,7 +231,7 @@ class CfgWeapons
         };
 
         class WeaponSlotsInfo: WeaponSlotsInfo {
-            mass = 145; // launcher mass + rocket (100 + 45)
+            mass = 125; // launcher mass + rocket (100 + 45)
         };
     };
 
@@ -246,7 +247,7 @@ class CfgWeapons
         model = "DMNS\Weapons\Launchers\DMNS_M96_LAW_Used.p3d";
 
         class WeaponSlotsInfo: WeaponSlotsInfo{
-            mass = 100; // launcher mass (100)
+            mass = 80; // launcher mass (100)
         };
     };
 
@@ -291,6 +292,10 @@ class CfgWeapons
     scopeArsenal = 2;
     displayName = "[12th] M90";
     baseWeapon = "twelfth_M90";
+    magazines[] = {
+      "12Rnd_8Gauge", "12Rnd_8Gauge_slug",
+      "12Rnd_8Gauge_slug_tracer", "TCF_12Rnd_8Gauge_Beanbag"
+    };
   };
 
    class twelfth_MA5C: OPTRE_MA5C {
