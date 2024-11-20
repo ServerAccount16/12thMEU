@@ -15,6 +15,7 @@ class CfgPatches {
       "twelfth_warthog_gauss",
       "twelfth_warthog_mlms",
       "twelfth_scorpion",
+      "twelfth_wildebeest",
       "twelfth_oryx",
       "twelfth_hemtt",
       "twelfth_hemtt_transport",
@@ -58,7 +59,6 @@ class CfgVehicles {
   // scorpion base classes
   class DMNS_M808B_F;
 
-
   // oryx
   class OPTRE_M494;
 
@@ -84,6 +84,9 @@ class CfgVehicles {
 
   // Lynx
   class I_LT_01_cannon_F;
+
+  // Wildebeest
+  class OPTRE_M125_APC_Base;
 
   //-WARTHOGS---------------------------------------------------------
 
@@ -288,6 +291,27 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M79
     };
     WARTHOG_SP_INFO(8,MLMS)
+  };
+
+  // -WILDEBEEST------------------------------------------------------
+
+  class twelfth_wildebeest: OPTRE_M125_APC_Base {
+    scope = 2;
+    scopeCurator = 2;
+    side = 1;
+    author = "Waylen";
+    displayName = "[12th] M125 Wildebeest";
+    faction = "twelfth_MEU";
+    editorCategory = "twelfth_MEU";
+    editorSubcategory = "twelfth_MEU_Armor";
+
+    armor = 350;
+    waterSpeedFactor = 1;
+    enginePower = 1000;
+    engineShiftY = -0.1;
+    maxFordingDepth = 0.1;
+    waterResistanceCoef = 0.1;
+
   };
 
   //-SCORPIONS--------------------------------------------------------

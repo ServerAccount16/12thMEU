@@ -297,8 +297,8 @@ class CfgVehicles {
     hiddenSelectionsTextures[]= {
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+      "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
       "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
     };
     class TextureSources {
@@ -308,8 +308,8 @@ class CfgVehicles {
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_02_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\default\ext_03_l_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
         };
       };
@@ -319,8 +319,8 @@ class CfgVehicles {
         textures[]= {
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_01_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_02_co.paa",
-          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_r_co.paa",
+          "\x\12thMEU\addons\12th_aircraft\wyvern\asg\ext_03_l_co.paa",
           "\x\12thMEU\addons\12th_aircraft\wyvern\default\signs_co.paa"
         };
       };
