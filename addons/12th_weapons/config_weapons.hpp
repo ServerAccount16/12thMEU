@@ -1174,13 +1174,13 @@ class CfgWeapons
         DEPLOYED_GESTURE_GPMG;
         RELOAD_EH;
 
-        ace_overheating_mrbs = 4000;
+        ace_overheating_mrbs = 5500;
         ace_overheating_slowdownFactor = 1;
         ace_overheating_allowSwapBarrel = 1;
         ace_overheating_dispersion = 0.25;
         ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
         ace_overheating_closedbolt = 1;
-        ace_overheating_barrelMass = 2.5;        
+        ace_overheating_barrelMass = 3.5;        
 
         class FullAuto: FullAuto {
             dispersion = 0.00116;
@@ -1253,7 +1253,7 @@ class CfgWeapons
 	    distanceZoomMax=700;
       maxZeroing=700;
 
-        ace_overheating_mrbs = 3500;
+        ace_overheating_mrbs = 5000;
         ace_overheating_slowdownFactor = 1;
         ace_overheating_allowSwapBarrel = 1;
         ace_overheating_dispersion = 0.25;

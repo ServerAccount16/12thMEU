@@ -50,6 +50,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1
     };
     WARTHOG_SP_INFO(0,FAV)
+    STDINV
   };
 
   class twelfth_warthog_fav_apc: OPTRE_M12_FAV_APC {
@@ -73,6 +74,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_APC
     };
     WARTHOG_SP_INFO(1,APC)
+    STDINV
   };
 
   class twelfth_warthog_fav_medical: OPTRE_M12_FAV_APC_MED {
@@ -95,6 +97,23 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_MED
     };
     WARTHOG_SP_INFO(2,Medical APC)
+    class TransportMagazines {   
+      class _xx_OPTRE_32Rnd_762x51_Mag_Tracer { magazine = "OPTRE_32Rnd_762x51_Mag_Tracer"; count = 4; }; 
+      class _xx_OPTRE_36Rnd_95x40_Mag_Tracer { magazine = "OPTRE_36Rnd_95x40_Mag_Tracer"; count = 4; };
+    };
+    class TransportItems{
+      class _xx_kat_IV_16 { name = "kat_IV_16"; count = 10; };     
+      class _xx_kat_AFAK { name = "kat_AFAK"; count = 4; };    
+      class _xx_kat_MFAK { name = "kat_MFAK"; count = 2; };    
+      class _xx_ACE_tourniquet { name = "ACE_tourniquet"; count = 8; };    
+      class _xx_kat_bloodIV_O_N_500 { name = "kat_bloodIV_O_N_500"; count = 10; };     
+      class _xx_ACE_splint { name = "ACE_splint"; count = 8; };    
+      class _xx_ACE_morphine { name = "ACE_morphine"; count = 10; };   
+      class _xx_ACE_adenosine { name = "ACE_adenosine"; count = 10; };     
+      class _xx_ACE_epinephrine { name = "ACE_epinephrine"; count = 10; };     
+      class _xx_ACE_salineIV { name = "ACE_salineIV"; count = 5; };    
+      class _xx_ACE_suture { name = "ACE_suture"; count = 40; };   
+    };
   };
 
   class twelfth_warthog_tt: OPTRE_M813_TT {
@@ -118,6 +137,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_APC
     };
     WARTHOG_SP_INFO(3,Troop Transport)
+    STDINV
   };
 
   class twelfth_warthog_mg: OPTRE_M12_LRV {
@@ -140,6 +160,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M12
     };
     WARTHOG_SP_INFO(4,MG)
+    STDINV
   };
 
   class twelfth_warthog_atgm: OPTRE_M12A1_LRV {
@@ -162,6 +183,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M12
     };
     WARTHOG_SP_INFO(5,ATGM)
+    STDINV
   };
 
   class twelfth_warthog_gauss: OPTRE_M12G1_LRV {
@@ -185,6 +207,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M68
     };
     WARTHOG_SP_INFO(6,Gauss)
+    STDINV
   };
 
   class twelfth_warthog_aa: OPTRE_M12R_AA {
@@ -208,6 +231,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M79
     };
     WARTHOG_SP_INFO(7,AA)
+    STDINV
   };
 
   class twelfth_warthog_mlms: SAG6_M12_MLMS {
@@ -231,6 +255,7 @@ class CfgVehicles {
       WARTHOG_TEX_STD_V1_M79
     };
     WARTHOG_SP_INFO(8,MLMS)
+    STDINV
   };
 
 };
