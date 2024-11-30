@@ -1,11 +1,84 @@
 #pragma hemtt suppress pw3_padded_arg config
-#include "config_macros.hpp"
+//#include "config_macros.hpp"
+
+// Path macros for simplified file path usage
+#define P(PATH) \x\12thMEUAssets\addons\12th_tagging\##PATH
+#define QP(PATH) #P(PATH)
+#define Q(INPUT) #INPUT
+#define GLUE(g1, g2) g1##g2
+
+/*
+  SPRAY_CLASS(CSFX):
+  - Adds a basic prefix to indicate a spray class.
+  - CSFX: Class suffix, used to create a unique class name for the spray item.
+*/
+#define SPRAY_CLASS(CSFX) twelfth_spray_##CSFX
+
+/*
+  TPATH(TYPE, FILE):
+  - Stands for Tag Path. Defines the path to a texture file.
+  - TYPE: Folder type (e.g., platoon, unit).
+  - FILE: The specific texture file within the folder.
+*/
+#define TPATH(TYPE, FILE) P(data\tags\##TYPE\##FILE)
+
+/*
+  SPRAY_ITEM(CSFX, DSFX):
+  - Defines a spray can item with a specific suffix and display name.
+  - CSFX: Unique class suffix.
+  - DSFX: Suffix added to the display name.
+*/
+#define SPRAY_ITEM(CSFX, DSFX)                                        \
+class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                       \
+  author = "Waylen";                                                  \
+  displayName = #GLUE([12th] Spray Can, DSFX);                        \
+  picture = "\z\ace\addons\tagging\UI\items\itemSpraypaintBlack.paa"; \
+  hiddenSelectionsTextures[] = {                                      \
+    "\z\ace\addons\tagging\data\spraycanBlack_co.paa"                 \
+  };                                                                  \
+  class ItemInfo: CBA_MiscItem_ItemInfo {                             \
+    mass = 0;                                                         \
+  };                                                                  \
+};
+
+/*
+  TAG(SUFFIX, REQ_ITEM, DISPLAY, TEXPATH):
+  - Defines a single tag item.
+  - SUFFIX: A unique suffix appended to the class name.
+  - REQ_ITEM: The required item class in quotes.
+  - DISPLAY: The display name for the tag.
+  - TEXPATH: Full texture path to the texture that will be painted on the surface.
+*/
+#define TAG(SUFFIX, REQ_ITEM, DISPLAY, TEXPATH) \
+class twelfth_tag_##SUFFIX {                    \
+  displayName = DISPLAY;                        \
+  requiredItem = REQ_ITEM;                      \
+  textures[] = { #TEXPATH };                    \
+  icon = #TEXPATH;                              \
+};
+
+/*
+  PLT_TAGS(CSFX, REQ_ITEM, TYPE):
+  - Defines a standard set of tags for a specific platoon or HQ element.
+  - CSFX: Class suffix, ensure uniqueness.
+  - REQ_ITEM: The required item class in quotes.
+  - TYPE: Folder name for a set of platoon-specific tags.
+*/
+#define PLT_TAGS(CSFX, REQ_ITEM, TYPE)                                      \
+TAG(GLUE(CSFX, _bhz), REQ_ITEM, "Biohazard", TPATH(TYPE, bhz.paa))          \
+TAG(GLUE(CSFX, _clr), REQ_ITEM, "Clear", TPATH(TYPE, clr.paa))              \
+TAG(GLUE(CSFX, _int), REQ_ITEM, "Intel", TPATH(TYPE, int.paa))              \
+TAG(GLUE(CSFX, _mines), REQ_ITEM, "Mines", TPATH(TYPE, mines.paa))          \
+TAG(GLUE(CSFX, _noent), REQ_ITEM, "No Entry", TPATH(TYPE, no_ent.paa))      \
 
 class CfgPatches {
     class twelfth_tagging {
         units[] = {""};
         weapons[] = {
-            "twelfth_spray_hq"
+            "twelfth_spray_hq",
+            "twelfth_spray_1stplt",
+            "twelfth_spray_2ndplt",
+            "twelfth_spray_misc"
         };
         requiredAddons[] = {
             "ace_interaction",
@@ -24,59 +97,17 @@ class CfgWeapons {
     class CBA_MiscItem_ItemInfo; // Base class for item information
 
     // Define spray cans for each platoon
-    class twelfth_spray_hq: ACE_SpraypaintBlack {
-        displayName = "HQ Spray";
-        descriptionShort = "HQ Spray";
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
-        };
-    };
+    SPRAY_ITEM(1stplt,1PLT)
+    SPRAY_ITEM(2ndplt,2PLT)
+    SPRAY_ITEM(hq,HQ)
+    SPRAY_ITEM(misc,Misc)
 
-    class twelfth_spray_1stplt: ACE_SpraypaintBlack {
-        displayName = "1st Platoon Spray";
-        descriptionShort = "1st Platoon Spray";
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
-        };
-    };
-
-    class twelfth_spray_2ndplt: ACE_SpraypaintBlack {
-        displayName = "2nd Platoon Spray";
-        descriptionShort = "2nd Platoon Spray";
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
-        };
-    };
-
-    class twelfth_spray_misc: ACE_SpraypaintBlack {
-        displayName = "Miscellaneous Spray";
-        descriptionShort = "Miscellaneous Spray";
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
-        };
-    };
 };
 
 // Define the tags that can be applied using the spray cans
 class ACE_Tags {
     // Define tags for HQ, 1st Platoon, and 2nd Platoon
-    class hq {
-        displayName = "HQ";
-        texture = "path\to\hq\texture.paa";
-        weapon = "twelfth_spray_hq";
-    };
-
-    class 1stplt {
-        displayName = "1st Platoon";
-        texture = "path\to\1stplt\texture.paa";
-        weapon = "twelfth_spray_1stplt";
-    };
-
-    class 2ndplt {
-        displayName = "2nd Platoon";
-        texture = "path\to\2ndplt\texture.paa";
-        weapon = "twelfth_spray_2ndplt";
-    };
+    PLT_TAGS(1stplt,twelfth_spray_1stplt,1stplt)
 
     // Define miscellaneous tags that can be used with the misc spray can
     class misc_lb {

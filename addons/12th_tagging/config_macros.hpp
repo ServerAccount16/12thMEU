@@ -25,17 +25,17 @@
   - CSFX: Unique class suffix.
   - DSFX: Suffix added to the display name.
 */
-#define SPRAY_ITEM(CSFX, DSFX)                                       \
-class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                     \
-  author = "Waylen";                                          \
-  displayName = #GLUE([12th] Spray Can, DSFX);                      \
+#define SPRAY_ITEM(CSFX, DSFX)                                        \
+class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                       \
+  author = "Waylen";                                                  \
+  displayName = #GLUE([12th] Spray Can, DSFX);                        \
   picture = "\z\ace\addons\tagging\UI\items\itemSpraypaintBlack.paa"; \
-  hiddenSelectionsTextures[] = {                                    \
-    "\z\ace\addons\tagging\data\spraycanBlack_co.paa"               \
-  };                                                                \
-  class ItemInfo: CBA_MiscItem_ItemInfo {                           \
-    mass = 0;                                                       \
-  };                                                                \
+  hiddenSelectionsTextures[] = {                                      \
+    "\z\ace\addons\tagging\data\spraycanBlack_co.paa"                 \
+  };                                                                  \
+  class ItemInfo: CBA_MiscItem_ItemInfo {                             \
+    mass = 0;                                                         \
+  };                                                                  \
 };
 
 /*
@@ -47,7 +47,7 @@ class SPRAY_CLASS(CSFX) : ACE_SpraypaintBlack {                     \
   - TEXPATH: Full texture path to the texture that will be painted on the surface.
 */
 #define TAG(SUFFIX, REQ_ITEM, DISPLAY, TEXPATH) \
-class twelfth_tag_##SUFFIX {                       \
+class twelfth_tag_##SUFFIX {                    \
   displayName = DISPLAY;                        \
   requiredItem = REQ_ITEM;                      \
   textures[] = { #TEXPATH };                    \
@@ -61,9 +61,9 @@ class twelfth_tag_##SUFFIX {                       \
   - REQ_ITEM: The required item class in quotes.
   - TYPE: Folder name for a set of platoon-specific tags.
 */
-#define PLT_TAGS(CSFX, REQ_ITEM, TYPE)                               \
-TAG(GLUE(CSFX, _bhz), REQ_ITEM, "Biohazard", TPATH(TYPE, bhz.paa))   \
-TAG(GLUE(CSFX, _clr), REQ_ITEM, "Clear", TPATH(TYPE, clr.paa))       \
-TAG(GLUE(CSFX, _int), REQ_ITEM, "Intel", TPATH(TYPE, int.paa))       \
-TAG(GLUE(CSFX, _mines), REQ_ITEM, "Mines", TPATH(TYPE, mines.paa))   \
-TAG(GLUE(CSFX, _noent), REQ_ITEM, "No Entry", TPATH(TYPE, no_ent.paa))
+#define PLT_TAGS(CSFX, REQ_ITEM, TYPE)                                      \
+TAG(GLUE(CSFX, _bhz), REQ_ITEM, "Biohazard", TPATH(TYPE, bhz.paa))          \
+TAG(GLUE(CSFX, _clr), REQ_ITEM, "Clear", TPATH(TYPE, clr.paa))              \
+TAG(GLUE(CSFX, _int), REQ_ITEM, "Intel", TPATH(TYPE, int.paa))              \
+TAG(GLUE(CSFX, _mines), REQ_ITEM, "Mines", TPATH(TYPE, mines.paa))          \
+TAG(GLUE(CSFX, _noent), REQ_ITEM, "No Entry", TPATH(TYPE, no_ent.paa))      \
