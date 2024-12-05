@@ -1171,6 +1171,8 @@ class CfgWeapons
 	      distanceZoomMin=100;
 	      distanceZoomMax=700;
         maxZeroing=700;
+
+        // Tripod compat
         DEPLOYED_GESTURE_GPMG;
         RELOAD_EH;
 
@@ -1253,16 +1255,19 @@ class CfgWeapons
 	    distanceZoomMax=700;
       maxZeroing=700;
 
-        ace_overheating_mrbs = 5000;
-        ace_overheating_slowdownFactor = 1;
-        ace_overheating_allowSwapBarrel = 1;
-        ace_overheating_dispersion = 0.25;
-        ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
-        ace_overheating_closedbolt = 1;
-        ace_overheating_barrelMass = 3.5;
+      ace_overheating_mrbs = 5000;
+      ace_overheating_slowdownFactor = 1;
+      ace_overheating_allowSwapBarrel = 1;
+      ace_overheating_dispersion = 0.25;
+      ace_overheating_jamTypesAllowed[] = {"Feed", "Fire", "Eject", "Extract"};
+      ace_overheating_closedbolt = 1;
+      ace_overheating_barrelMass = 3.5;
 
+
+      // Tripod compat
       DEPLOYED_GESTURE_GPMG;
       RELOAD_EH;
+
       class FullAuto : FullAuto
       {
         dispersion = 0.00116;

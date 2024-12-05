@@ -189,6 +189,7 @@ class CfgPatches {
 class CfgVehicles {
 
   class B_Soldier_base_F;
+  class B_CTRG_Soldier_2_F;
   class OPTRE_UNSC_Army_Soldier_WDL;
   class OPTRE_UNSC_Army_Soldier_R_WDL;
   class OPTRE_UNSC_Army_Soldier_S_WDL;
@@ -230,15 +231,20 @@ class CfgVehicles {
     };
   };*/
 
-	class twelfth_instructor_uniform_veh: B_Soldier_base_F
-	{
-		author = "Sammy";
-		displayName = "";
-		uniformClass = "twelfth_instructor_uniform_wep";
-  
-		model = "\A3\characters_F\BLUFOR\b_soldier_02.p3d";
-  
-	};
+	//class twelfth_instructor_uniform_veh: B_CTRG_Soldier_2_F
+	//{
+	//	author = "Sammy";
+	//	displayName = "";
+	//	uniformClass = "twelfth_instructor_uniform_wep";
+  //
+	//	model = "\A3\characters_F\BLUFOR\b_soldier_02.p3d";
+  //
+	//	hiddenSelectionsTextures[]=
+	//	{
+	//		QP(uniforms\extra\basic.paa),
+	//		QP(uniforms\extra\instructor_pants.paa)
+	//	};
+	//};
 
   // DON'T COPY + PASTE THIS IF YOU NEED NEW ODST ARMOR.
   // INSTEAD, USE MACROS AND DO THE SAME THING AS IS
@@ -408,31 +414,31 @@ class CfgWeapons {
     };
   };*/ //Awaiting textures
 
-  class twelfth_instructor_uniform_wep: U_B_CombatUniform_mcam_tshirt {
-    author = "Sammy";
-    displayName = "[12th] AIC Instructor Uniform";
-    picture = "";
-    scope = 2;
-    scopeArsenal = 2;
-    model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			QP(uniforms\extra\aic_instructor.paa)
-		};
-    class ItemInfo: ItemInfo {
-      uniformModel = "-";
-      uniformClass = "B_T_Soldier_AR_F";
-      containerClass = "Supply100";
-      mass = 1;
-      uniformType = "Neopren";
-      allowedSlots[] = {"701","801","901"};
-      armor=20;
-    };
-  };
+  //class twelfth_instructor_uniform_wep: U_B_CombatUniform_mcam_tshirt {
+  //  author = "Sammy";
+  //  displayName = "[12th] AIC Instructor Uniform";
+  //  picture = "";
+  //  scope = 2;
+  //  scopeArsenal = 2;
+  //  model = "\A3\Characters_F\Common\Suitpacks\suitpack_original_F.p3d";
+ 	//	hiddenSelections[]=
+ 	//	{
+ 	//		"camo"
+ 	//	};
+ 	//	hiddenSelectionsTextures[]=
+ 	//	{
+ 	//		QP(uniforms\extra\instructor_pants.paa)
+ 	//	};
+  //  class ItemInfo: ItemInfo {
+  //    uniformModel = "-";
+  //    uniformClass = "B_T_Soldier_AR_F";
+  //    containerClass = "Supply100";
+  //    mass = 1;
+  //    uniformType = "Neopren";
+  //    allowedSlots[] = {"701","801","901"};
+  //    armor=20;
+  //  };
+  //};
 
   class twelfth_odst_uniform_wep: Uniform_Base {
     scope=2;

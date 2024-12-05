@@ -97,17 +97,17 @@ class CfgWeapons {
     class CBA_MiscItem_ItemInfo; // Base class for item information
 
     // Define spray cans for each platoon
-    SPRAY_ITEM(1stplt,1PLT)
-    SPRAY_ITEM(2ndplt,2PLT)
-    SPRAY_ITEM(hq,HQ)
-    SPRAY_ITEM(misc,Misc)
+//    SPRAY_ITEM(1stplt,1PLT)
+//    SPRAY_ITEM(2ndplt,2PLT)
+//    SPRAY_ITEM(hq,HQ)
+//    SPRAY_ITEM(misc,Misc)
 
 };
 
 // Define the tags that can be applied using the spray cans
 class ACE_Tags {
     // Define tags for HQ, 1st Platoon, and 2nd Platoon
-    PLT_TAGS(1stplt,twelfth_spray_1stplt,1stplt)
+//    PLT_TAGS(1stplt,twelfth_spray_1stplt,1stplt)
 
     // Define miscellaneous tags that can be used with the misc spray can
     class misc_lb {
