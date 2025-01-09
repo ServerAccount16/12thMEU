@@ -1,8 +1,34 @@
 #pragma hemtt suppress pw3_padded_arg config
 #include "config_macros.hpp"
 
+/*
+  ==============================================================================
+  config.cpp
+
+  This file defines:
+    - The 12th MEU custom uniforms (both vehicle display classes and weapon/uniform classes).
+    - The 12th MEU custom helmets (standard, NV variants, pilot helmets, etc.).
+    - CfgPatches: Lists every uniform & helmet class for Arma’s engine.
+    - CfgVehicles: Configures the actual wearable units for uniforms (the “vehicle” class).
+    - CfgWeapons: Configures the “inventory” items for these uniforms & helmets.
+    - XtdGearModels & XtdGearInfos for extended arsenal integration.
+
+  Key Points:
+    - The macros in `config_macros.hpp` generate a large number of uniform & helmet 
+      variants: standard, forest, dark (drk), urban, plus roles like medic, HQ, 1PL, 
+      2PL, etc.
+    - Some items are commented out pending final textures or usage decisions.
+
+  ==============================================================================
+*/
+
 class CfgPatches {
   class twelfth_armor {
+    /*
+      units[]: All the placeable "vehicle" classes for uniforms in the editor 
+               or gear lists.  
+      weapons[]: The “weapon” (i.e., uniform item) classes.  
+    */
     units[]= {
       "twelfth_odst_uniform_veh",
       "twelfth_uni_ng_base_veh",
@@ -182,12 +208,11 @@ class CfgPatches {
   };
 };
 
-// NOTE: the ODST armor that is currently present
-// is not going to be turned into a macro due to
-// us only needing one version of it.
-
+// -----------------------------------------------------------------------------
+//  CfgVehicles
+// -----------------------------------------------------------------------------
 class CfgVehicles {
-
+// Base classes from Arma or third-party mods
   class B_Soldier_base_F;
   class B_CTRG_Soldier_2_F;
   class OPTRE_UNSC_Army_Soldier_WDL;
@@ -198,7 +223,13 @@ class CfgVehicles {
   class OPTRE_UNSC_CH252A_Helmet_dp;
   class 19th_ODST;
   
-  // base class for our new and cool uniforms
+  // ---------------------------------------------------------------------------
+  //  twelfth_uni_ng_base_veh
+  // ---------------------------------------------------------------------------
+  /*
+    A base class for your new-gen (ng) armor sets (chest, arms, legs, etc.).
+    Other macros or classes inherit from this to create specific camos/roles.
+  */
   class twelfth_uni_ng_base_veh: B_Soldier_base_F {
     scope=0;
     scopeArsenal=0;
@@ -246,9 +277,14 @@ class CfgVehicles {
 	//	};
 	//};
 
-  // DON'T COPY + PASTE THIS IF YOU NEED NEW ODST ARMOR.
-  // INSTEAD, USE MACROS AND DO THE SAME THING AS IS
-  // BEING DONE WITH THE UNIFORMS.
+  // ---------------------------------------------------------------------------
+  //  twelfth_odst_uniform_veh
+  // ---------------------------------------------------------------------------
+  /*
+    A special ODST uniform referencing a 19th ODST base. If you only need 
+    one ODST variant, there’s no macro overhead. If you plan many variants, 
+    you might consider macros.
+  */
   class twelfth_odst_uniform_veh: 19th_ODST {
     scope=1;
     scopeArsenal=0;
@@ -354,12 +390,7 @@ class CfgVehicles {
     };
   };*/ //Waiting textures
 
-  //-MACRO CALLS (VEH)------------------------------------------------
-
-  // UNIFORM_VEH(CSFX,ARMS,BASE,DISPLAY) - example args
-
-  // Macro Calls for Vehicles (UNIFORM_VEH)
-  // CAMO, ARM CAMO
+// Macro expansions for the new-gen armor sets, e.g. standard, drk, forest, urban
   ALL_UNI_VEH(std,std)
   ALL_UNI_VEH(drk,drk)
   ALL_UNI_VEH(forest,std)
@@ -367,6 +398,9 @@ class CfgVehicles {
 
 };
 
+// -----------------------------------------------------------------------------
+//  CfgWeapons
+// -----------------------------------------------------------------------------
 class CfgWeapons {
   class H_Cap_oli;
   class H_Booniehat_oli;
@@ -382,9 +416,7 @@ class CfgWeapons {
   class OPTRE_UNSC_Army_Uniform_S_WDL;
   class OPTRE_UNSC_Dress_Uniform_gray;
   class U_B_CombatUniform_mcam_tshirt;
-
-  //-UNIFORMS---------------------------------------------------------
-
+  // Base uniform item for new-gen armor
   class twelfth_uni_ng_base_wep: Uniform_Base {
     author="Waylen";
     scope=0;
@@ -439,7 +471,7 @@ class CfgWeapons {
   //    armor=20;
   //  };
   //};
-
+  // Example ODST uniform item referencing twelfth_odst_uniform_veh
   class twelfth_odst_uniform_wep: Uniform_Base {
     scope=2;
     scopeArsenal=2;
@@ -458,7 +490,7 @@ class CfgWeapons {
       armor=20;
     };
   };
-
+  // Army Aviator helmet example: CH252AA
   class twelfth_aa_helm: OPTRE_UNSC_CH252A_Helmet_Base {
     scope=2;
     scopeArsenal=2;
@@ -492,7 +524,7 @@ class CfgWeapons {
     };
   };
 
-  // CH252AA DEPOLARIZED
+  // Depolarized variant of the AA helmet
   class twelfth_aa_helm_dp: OPTRE_UNSC_CH252A_Helmet_dp {
     scope=2;
     scopeArsenal=0;
@@ -629,6 +661,15 @@ class CfgWeapons {
   };
 */
 
+  /*
+    Boonie Hat macro expansions. 
+    BOONIE_WEP(std)
+    BOONIE_WEP(forest)
+
+    Patrol Cap expansions.
+    PATROLCAP_WEP(std)
+    PATROLCAP_WEP(forest)
+  */
   BOONIE_WEP(std)
   BOONIE_WEP(forest)
 
@@ -740,6 +781,13 @@ class CfgWeapons {
   PILOT_HELM(default, "[12th][Pilot] Helmet",default,default,default,default,default)
 };
 
+// -----------------------------------------------------------------------------
+//  XtdGearModels & XtdGearInfos
+// -----------------------------------------------------------------------------
+/*
+  These define extended gear categories for UI or ACE arsenal expansions.
+  - e.g. "twelfth_base_helms" with options "visor","camo","element","role".
+*/
 class XtdGearModels {
   class CfgWeapons {
     // Helmets

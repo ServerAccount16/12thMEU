@@ -3,12 +3,36 @@
 #include "config_macros.hpp"
 
 /*
-  Defines the mod's configuration for backpacks, including different variants
-  such as standard, jungle, desert, and winter backpacks with different roles
-  like RTO (Radio Telephone Operator) and bio (biomedical).
+  ==============================================================================
+  Overview
+  ==============================================================================
+  - CfgPatches: Declares this addon (twelfth_backpacks) and the units (backpack
+    classes) it provides.
+  - CfgVehicles: Defines each custom backpack class. The macros in
+    config_macros.hpp generate different variants (light, heavy, RTO, medic)
+    for each camo type (e.g., standard, forest).
+  - XtdGearModels & XtdGearInfos: Provide extended gear definitions for custom
+    UI/Arsenal handling.
+
+  Key Macros:
+    - BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE) => Creates 5 classes:
+         twelfth_backpack_na_<CAMOTYPE>
+         twelfth_backpack_light_<CAMOTYPE>
+         twelfth_backpack_heavy_<CAMOTYPE>
+         twelfth_backpack_rto_<CAMOTYPE>
+         twelfth_backpack_medic_<CAMOTYPE>
+      Each with different texture setups for the hidden selections.
+
+    - BP_MAXLOAD & BP_MASS => Control the backpack capacity and weight.
+  ==============================================================================
 */
 
 class CfgPatches {
+  /*
+    Base classes from Arma or other mods that we inherit from:
+    - B_AssaultPack_Base: The vanilla Arma 3 assault pack base.
+    - 19th_Bag_Base: Another modded base class for an alternative RTO backpack.
+  */
   class twelfth_backpacks {
     units[] = {  // List of all custom backpack units.
       "twelfth_backpack_standard",
@@ -32,7 +56,13 @@ class CfgVehicles {
   class B_AssaultPack_Base;  // Base class for standard backpacks.
   class 19th_Bag_Base;  // Base class for alternative backpacks.
 
-  // Base class for all custom backpacks.
+  // ---------------------------------------------------------------------------
+  //  twelfth_backpack_base
+  // ---------------------------------------------------------------------------
+  /*
+    This serves as a parent class for standard 12th MEU backpacks. 
+    All other variants (standard, forest, etc.) inherit from it.
+  */
   class twelfth_backpack_base : B_AssaultPack_Base {
     author = "19th; Sammy";
     scope = 0;  // Not visible in the editor.
@@ -52,7 +82,14 @@ class CfgVehicles {
     class TransportItems {};  // No items by default.
   };
 
-  // Invisible backpack class for special use cases.
+
+  // ---------------------------------------------------------------------------
+  //  twelfth_backpack_invis
+  // ---------------------------------------------------------------------------
+  /*
+    An invisible backpack used for special cases (maybe for certain loadouts
+    that need a backpack slot but no visible model).
+  */
   class twelfth_backpack_invis : twelfth_backpack_base {
     author = "Waylen";
     scope = 2;
@@ -62,7 +99,14 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"", "", "", ""};  // No textures.
   };
 
-  // Alternative RTO backpack due to popular demand.
+  // ---------------------------------------------------------------------------
+  //  twelfth_backpack_alt_rto
+  // ---------------------------------------------------------------------------
+  /*
+    A separate RTO backpack that inherits from 19th_Bag_Base instead of
+    twelfth_backpack_base. This is a special variant for those who prefer
+    a different model/appearance for radio operators.
+  */
   class twelfth_backpack_alt_rto : 19th_Bag_Base {
     scope = 2;
     author = "19th";
@@ -78,13 +122,36 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"", ""};  // No textures by default.
   };
 
-  // Generate all backpack types (standard, jungle, desert, winter) using macros.
+  /*
+    The big macro: BACKPACK_ALLTYPES(CAMOTYPE, DISPLAY_TYPE)
+    For example, BACKPACK_ALLTYPES(standard,Standard) creates:
+      twelfth_backpack_na_standard     -> [12th][Standard] Backpack
+      twelfth_backpack_light_standard  -> [12th][Standard][Light] Backpack
+      twelfth_backpack_heavy_standard  -> [12th][Standard][Heavy] Backpack
+      twelfth_backpack_rto_standard    -> [12th][Standard][RTO] Backpack
+      twelfth_backpack_medic_standard  -> [12th][Standard][Medic] Backpack
+    Each sets a different texture combination for hiddenSelectionsTextures[].
+  */
   BACKPACK_ALLTYPES(standard,Standard)
   BACKPACK_ALLTYPES(forest,Forest)
 };
 
+// -----------------------------------------------------------------------------
+//  XtdGear Integration
+// -----------------------------------------------------------------------------
+/*
+  The "XtdGearModels" and "XtdGearInfos" classes let you define custom UI 
+  or arsenal categories for these backpacks if you have an extended gear mod 
+  supporting them (like XtdGear).
+*/
 class XtdGearModels {
   class CfgVehicles{
+    /*
+      The ALL_GI(CAMO) macro calls BACKPACK_GI(CAMO, TYPE) for each type
+      (light, na, heavy, medic, rto). This means the extended gear system
+      sees each variant (e.g., twelfth_backpack_light_standard) with 
+      model="twelfth_backpacks", camo="standard", type="light", etc.
+    */
     class twelfth_backpacks {
       label = "12th Backpacks";
       options[] = {"camo", "type"};

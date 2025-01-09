@@ -1,4 +1,21 @@
-// Configuration for custom weapons
+/*
+  ==============================================================================
+  config_weapons.hpp
+
+  This file defines our custom weapons, including rifles, SMGs, machine guns,
+  launchers, etc. Each class typically inherits from a known parent mod/class
+  like OPTRE_MA5C or 19_UNSC_M6C. Then we override properties such as
+  displayName, magazines[], attachments, etc.
+
+  Key Points:
+    - `scope` and `scopeArsenal` control how the weapon appears in the editor/arsenal.
+    - `baseWeapon` is the "root" weapon that is recognized by the Arsenal.
+    - `magazines[]` sets which magazines the weapon can use.
+    - `class WeaponSlotsInfo` controls attachable items (muzzle, optics, etc.)
+    - The macros from config_macros.hpp (e.g. COMMON_SIGHTS) reduce repetition.
+  ==============================================================================
+*/
+// Predeclaring references for weapon states, attachments, etc.
   class Mode_SemiAuto;
   class Mode_Burst;
   class Mode_FullAuto;
@@ -11,6 +28,7 @@
 
 class CfgWeapons
 {
+  // Base classes from external mods or vanilla A3
   class Launcher;        // Base class for launcher weapons
   class OPTRE_MA37K;
   class OPTRE_MA5C;
@@ -43,7 +61,11 @@ class CfgWeapons
   class dzn_MG_Tripod_Universal;  
   class dzn_MG_Tripod_Universal_Carry;  
 
-
+  /*
+    =============================================================================
+    MG Tripod Definitions
+    =============================================================================
+  */
   class 12th_MG_Tripod_Carry: dzn_MG_Tripod_Universal_Carry{
     displayName = "[12th] MG Tripod";
     author = "10Dozen, Waylen";
@@ -104,9 +126,12 @@ class CfgWeapons
 		dzn_MG_Tripod_CarryItem="12th_MG_Tripod_Carry";
 		dzn_MG_Tripod_CarryItemUniversal="12th_MG_Tripod_Carry";
   };
-
-  // M96 LAW Rewrite
-  
+  /*
+    =============================================================================
+    M96 LAW (Disposable Launcher) Definition
+    =============================================================================
+    We define multiple states: normal backpack state, ready-to-fire, and used.
+  */
     class Launcher_Base_F: Launcher {
         class WeaponSlotsInfo;
     };
@@ -119,7 +144,7 @@ class CfgWeapons
       displayName = "[12th] M96 LAW - Mk VI"; // usual displayName
       //displayName = "[12th] M96 LAW - Mk VI (B)"; // debug displayname 
 
-      magazines[] = { "CBA_FakeLauncherMagazine" };
+      magazines[] = { "CBA_FakeLauncherMagazine" }; // When stowed/backpacked, it does not carry a real rocket.
 
       model = "\DMNS\Weapons\Launchers\DMNS_M96_LAW_loaded.p3d";
       picture = "\DMNS\Weapons\Launchers\Data\Law_Icon.paa";
@@ -215,8 +240,8 @@ class CfgWeapons
       };
       descriptionShort = "A 66mm single-use RPG, effective against medium armor";
     };
-
-    class twelfth_m96_READY: twelfth_m96{ // launcher when shouldered/held
+  // Ready state: actual loaded launcher in hands
+    class twelfth_m96_READY: twelfth_m96{
         displayName = "[12th] M96 LAW - Mk VI";
         //displayName = "[12th] M96 LAW - Mk VI (R)"; // debug displayName
         scope = 1;
@@ -250,9 +275,11 @@ class CfgWeapons
             mass = 80; // launcher mass (100)
         };
     };
-
-  // Configuration for various rifles and attachments
-
+  /*
+    =============================================================================
+    Sidearms, SMGs, Shotguns, and other small arms
+    =============================================================================
+  */
   // **ANY COMMON_MACRO_NAME CAN BE FOUND IN macros.hpp**
 
   class twelfth_M6C : 19_UNSC_M6C
@@ -297,7 +324,11 @@ class CfgWeapons
       "12Rnd_8Gauge_slug_tracer", "TCF_12Rnd_8Gauge_Beanbag"
     };
   };
-
+  /*
+    =============================================================================
+    Assault Rifles
+    =============================================================================
+  */
    class twelfth_MA5C: OPTRE_MA5C {
      author = "Waylen";
      scope = 2;
@@ -487,9 +518,11 @@ class CfgWeapons
     baseWeapon = "twelfth_MA5B";
     magazines[] = {"OPTRE_60Rnd_762x51_Mag"};
   };
-
-    // BR55 Rifle configuration with attachments
-    // I want to come back through this later and update this so that these are maybe a macro since they're so similar
+  /*
+    =============================================================================
+    BR and DMR
+    =============================================================================
+  */
 
     class twelfth_br55 : 19_UNSC_br55
     {
@@ -1085,9 +1118,11 @@ class CfgWeapons
     //    };
     //  };
     //};
-
-    // M392 DMR configuration
-
+  /*
+    =============================================================================
+    Machine Guns
+    =============================================================================
+  */
     class twelfth_M392 : 19_UNSC_M392
     {
       author = "Weber";
@@ -1380,8 +1415,11 @@ class CfgWeapons
         };
       };
     };
-
-    // Individual grenade launcher configuration
+  /*
+    =============================================================================
+    Grenade Launchers
+    =============================================================================
+  */
 
     class twelfth_M319 : OPTRE_M319
     {

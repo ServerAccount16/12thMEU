@@ -2,33 +2,35 @@
 #include "config_macros.hpp"
 
 /*
-  Documentation on how to add a custom Marine helmet:
-  This used to be a single macro-per-helmet but has since
-  become a slightly more involved process due to the
-  fact that every helmet is now also gets an entry in the extended
-  arsenal mod.
+  ==============================================================================
+  Documentation / Workflow
+  ==============================================================================
+  1) **Texture Import**  
+     - Convert your helmet texture(s) to .paa.  
+     - Name them using this pattern: `twelfth_ch_[CAMO]_[NAME].paa`, for example
+       "twelfth_ch_std_Bert.paa" (if no explicit camo is used, omit that part).
 
-  NOTE: if you're just doing a plain texture update, there is no need to update the
-        config here.
-  NOTE: please add in these custom helmets in alphabetical order, A->Z.
+  2) **Add a New Helmet**  
+     - In the `CfgPatches` -> `weapons[]` array below, add both:
+       `twelfth_ch_[CAMO]_[NAME]`
+       and
+       `twelfth_ch_[CAMO]_[NAME]_nv`
+       (the NV variant).
+     - Under `CfgWeapons`, call the relevant macro:
+       `CUSTOM_HELM_S_AV(NAME)`, which auto-generates two classes:
+         - `twelfth_ch_std_[NAME]`
+         - `twelfth_ch_std_[NAME]_nv`.
+     - Add the new helmet name to `XtdGearModels->CfgWeapons->twelfth_custom_helms->member[]`.
+     - Use the macro `CH_HELM_S_GI(NAME)` in `XtdGearInfos->CfgWeapons` block.
 
-  I'm just gonna break this down into steps:
+  3) **Pilot Helmets**  
+     - If you’re adding a custom pilot helmet, use `CUSTOM_PILOT_HELM(...)`.
+     - Then also add the resulting class name to `CfgPatches` weapons[] array.
 
-  Texture import step:
-    * Get your custom helmet texture converted into a paa.
-    * Rename said texture along this format: "twelfth_ch_[CAMO]_[NAME].paa".
-      I will note that the standard brown camo variant used here does not have
-      a CAMO prefix and it is therefore ommited from the filename
-    * Put the helmet texture into "addons/twelfth_custom_helms/data/helms".
+  4) **Alphabetical Order**  
+     - Insert new entries in alphabetical order to keep the file tidy.
 
-  Config update step:
-    * Add in "twelfth_ch_[CAMO]_[NAME]" into the weapons[] array below.
-    * Add in "twelfth_ch_[CAMO]_[NAME]_nv" into the weapons[] array below.
-    * Add in a CUSTOM_HELM_S_AV([NAME]) macro call, along
-      with the other macro calls below.
-    * Add in an entry into the XtdGearModels->CfgWeapons->twelfth_custom_helms->member
-      array that goes like "[NAME]", below.
-    * Add in a CH_HELM_S_GI([NAME]) macro call into XtdGearInfos->CfgWeapons block.
+  ==============================================================================
 */
 
 class CfgPatches {
@@ -119,10 +121,17 @@ class CfgPatches {
 };
 
 class CfgWeapons {
+  /*
+    Base classes & references:
+    - H_HelmetB: Standard ArmA 3 base helmet
+    - HeadgearItem: For item-specific config (weight, armor, etc.)
+  */
   class H_HelmetB;
   class ItemInfo;
   class HeadgearItem;
-
+  // ---------------------------------------------------------------------------
+  //  Base Class for 12th Custom Helmets
+  // ---------------------------------------------------------------------------
   class twelfth_custom_helm_base : H_HelmetB {
     scope=0;
     scopeArsenal=0;
@@ -146,8 +155,19 @@ class CfgWeapons {
       };
     };
   };
+  // ---------------------------------------------------------------------------
+  //  Macros: CUSTOM_HELM_S_AV(NAME)
+  // ---------------------------------------------------------------------------
+  /*
+    Creates two classes:
+      1) twelfth_ch_std_[NAME]    : Standard
+      2) twelfth_ch_std_[NAME]_nv : NV variant (capable of some "visor" or 2nd selection)
+    
+    Each inherits from `twelfth_custom_helm_base`, sets textures, etc.
+    If you want to hide or comment out certain members, do so below in the macro calls.
+  */
 
-  //-STANDARD-------------------------------------------------------
+  // -- Standard Helmets --
   CUSTOM_HELM_S_AV(Aurora)
   CUSTOM_HELM_S_AV(Bert)
   CUSTOM_HELM_S_AV(Bobby)
@@ -186,39 +206,24 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Wolffe)
   CUSTOM_HELM_S_AV(Wulf)
 
-  //-PILOTS---------------------------------------------------------
-
+  // -- Pilot Helmets --
   /*
-    Adding Custom pilot helms:
-    The main macro used here is this:
-    CUSTOM_PILOT_HELM(SUFFIX,DISPLAY,C1,C2,C3,C4,C5)
-    Input:
-      * SUFFIX:
-        Class name suffix. This macro creates a new class in the config
-        that follows this format: twelfth_pilot_ch_[SUFFIX]. Keep these suffixes unique.
-      * DISPLAY:
-        Display text, in quotes. This value gets shown in the ACE arsenal.
-      * C1 up to C5:
-        These are the category values that are to be used in loading textures.
-        The model used for these helmets requires 5 texture paths.
-        These texture paths would look something like this:
-          \base\folder\Addons_co.paa
-          \base\folder\EXT_co.paa
-          \base\folder\INT_co.paa
-          \base\folder\MID_co.paa
-          \base\folder\Visor_co.paa
+    Macro usage:
+    CUSTOM_PILOT_HELM(
+      SUFFIX, 
+      DISPLAY, 
+      C1, C2, C3, C4, C5
+    );
+    Each bracket represents a separate texture path inside data\pilots\.
 
-        Basically, these macro input variables designate the folder
-        in which to look for a specific pilot helmet texture, something like:
-          \data\pilots\[C1]\Addons_co.paa
-          \data\pilots\[C2]\EXT_co.paa
-          \data\pilots\[C3]\INT_co.paa
-          \data\pilots\[C4]\MID_co.paa
-          \data\pilots\[C5]\Visor_co.paa
-
-    Additionally, don't forget to add the newly created class name
-    to the 'Units' array at the top of this file, in this format:
-    twelfth_pilot_ch_[SUFFIX]
+    Example:
+    If you pass (penquite,"[12th][Pilot][Customs] Penquite", default, penquite, default, default, default)
+    The 5 textures it looks for:
+      \...\pilots\default\Addons_co.paa
+      \...\pilots\penquite\EXT_co.paa
+      \...\pilots\default\INT_co.paa
+      \...\pilots\default\MID_co.paa
+      \...\pilots\default\Visor_co.paa
   */
 
   CUSTOM_PILOT_HELM(penquite, "[12th][Pilot][Customs] Penquite",default,penquite,default,default,default)
@@ -226,6 +231,14 @@ class CfgWeapons {
 
 };
 
+// -----------------------------------------------------------------------------
+//  Extended Arsenal Integration
+// -----------------------------------------------------------------------------
+/*
+  1) XtdGearModels: The top-level definitions for different helmet configs.
+  2) XtdGearInfos:  Concrete expansions mapping each helmet name to its model, 
+                    camo variant, and visor state (Yes or No).
+*/
 class XtdGearModels {
   class CfgWeapons {
     class twelfth_custom_helms {
@@ -290,6 +303,10 @@ class XtdGearModels {
 };
 
 class XtdGearInfos {
+  /*
+      The macro CH_HELM_S_GI(SFX) => expands to references for both standard
+      (visor = "Yes") and NV (visor = "No") for each name in "member".
+    */
   class CfgWeapons {
     CH_HELM_S_GI(Aurora)
     CH_HELM_S_GI(Bert)

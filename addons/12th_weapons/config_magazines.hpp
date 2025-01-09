@@ -1,5 +1,27 @@
+/*
+  ==============================================================================
+  config_magazines.hpp
+
+  This file defines all magazine classes. Each class can inherit from an ArmA
+  base magazine or a modded base magazine. The main differences typically are
+  capacity, ammo type, display name, and mass.
+
+  Key Properties:
+    - `count`: number of rounds.
+    - `ammo`: the type of CfgAmmo it fires.
+    - `initspeed`: muzzle velocity in m/s (some parent classes also set this).
+    - `mass`: used by ACE to represent weight. (Bigger number = heavier)
+    - `scope`: 
+        2 = Public, visible in Arsenal.
+        1 = Hidden in-game, but accessible by script.
+        0 = Not visible/hidden, used internally.
+
+  Keep consistent naming so players/devs can easily find the correct magazine!
+  ==============================================================================
+*/
 class CfgMagazines
 {
+  // Forward declarations (inheritance targets)
   class OPTRE_32Rnd_762x51_Mag;         // Base class for 7.62x51mm magazine
   class OPTRE_100Rnd_762x51_Box_Tracer; // Base class for 7.62 Boxes
   class OPTRE_100Rnd_762x51_Box;        // Base class for 7.62 Boxes w/ tracers
@@ -11,7 +33,7 @@ class CfgMagazines
   class CA_LauncherMagazine;
   class RPG32_HE_F;
 
-  // Training magazine configuration
+  // Training Magazine for BB
   class twelfth_20g_mag : OPTRE_32Rnd_762x51_Mag
   {
     displayName = "32Rnd .20g BB Cartridge";
@@ -20,7 +42,7 @@ class CfgMagazines
     initspeed = 1500;     // Initial bullet speed in meters per second
     ammo = "twelfth_20g_bb"; // Type of ammo used
   };
-
+  // Underwater BR magazine
   class twelfth_br_36Rnd_UW : OPTRE_36Rnd_95x40_Mag
   {
     author = "Weber";
@@ -31,7 +53,7 @@ class CfgMagazines
     mass = 10;
     ammo = "twelfth_95x40_UW"; // Underwater ammunition
   };
-
+  // Underwater M7 60-round mag
   class twelfth_m7_60rnd_UW : OPTRE_60Rnd_5x23mm_Mag
   {
     author = "Weber";
@@ -42,7 +64,7 @@ class CfgMagazines
     mass = 8;
     ammo = "twelfth_5x23mm_UW"; // Underwater ammunition
   };
-
+  // Underwater M7 48-round mag
   class twelfth_m7_48rnd_UW : OPTRE_60Rnd_5x23mm_Mag
   {
     author = "Weber";
@@ -53,9 +75,7 @@ class CfgMagazines
     mass = 8;
     ammo = "twelfth_5x23mm_UW"; // Underwater ammunition
   };
-
-  ////////// LAUNCHER MAGAZINES
-
+  // Custom 40mm HEAT magazine
   class twelfth_40mm_heat : M319_HEAT_Grenade_Shell
   {
     scope = 2;
@@ -65,7 +85,7 @@ class CfgMagazines
     author = "Waylen";        // Nerd (your mother - waylen)
     mass = 8;
   };
-
+  // M96 LAW rocket magazine
   class twelfth_m96_magazine: RPG32_HE_F 
   {
     scope = 2;
@@ -85,9 +105,7 @@ class CfgMagazines
     allowedSlots[] = { 901, 701 };
     */
   };
-
-  ///// MACHINE GUN MAGS
-
+  // MG Belts
   class twelfth_100Rnd_762x51_Box: OPTRE_100Rnd_762x51_Box 
   {
     scope = 2;
@@ -153,7 +171,7 @@ class CfgMagazines
     lastRoundsTracer = 400; 
     ACE_isBelt = 1; 
   };
-
+  // 9.5x40mm box mag
   class twelfth_100Rnd_95x40_Box: OPTRE_36Rnd_95x40_Mag_Tracer
   {
     scope = 2;

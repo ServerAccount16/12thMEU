@@ -1,4 +1,22 @@
+/*
+  ==============================================================================
+  config_macros.hpp
 
+  This file contains a comprehensive set of macros for creating uniforms, helmets,
+  caps, boonie hats, etc. It leverages hiddenSelectionsTextures to define how 
+  multiple camos and roles (e.g., medic, PL, etc.) are generated en masse.
+
+  Key Macros:
+    - ALL_UNI_VEH / ALL_UNI_WEP / ALL_UNI_GI to produce all platoon+role combos.
+    - ALL_HELM / ALL_HELM_GI to produce multiple variations of a single helmet 
+      in standard or NV variants.
+    - BOONIE_WEP / PATROLCAP_WEP for boonie/patrol caps.
+    - PILOT_HELM for custom pilot helmet references.
+
+  Remember to look at the expansions near the bottom of config.cpp for usage:
+    ALL_UNI_WEP(std), ALL_UNI_WEP(forest), etc.
+  ==============================================================================
+*/
 #define P(PATH) \x\12thMEU\addons\12th_armor\##PATH
 #define QP(PATH) #P(PATH)
 #define GLUE(A,B) A##B

@@ -1,5 +1,26 @@
 #include "config_macros.hpp"
 
+/*
+  ==============================================================================
+  config.cpp
+
+  This file defines all the 12th MEU aircraft classes. It references base
+  classes from OPTRE, the Splits Pelican mod, and vanilla Arma. The macros
+  in config_macros.hpp apply additional textures, set up hiddenSelections,
+  and define spawn info (AIR_SP_INFO) used by your vehicle spawner script.
+
+  Key Points:
+    - CfgPatches: Registers these classes so Arma recognizes them.
+    - CfgVehicles: Actual aircraft classes with references to new textures,
+      macros for additional texture sets, and custom factions (twelfth_MEU).
+    - Macros for each aircraft type handle texture sources, hidden selections,
+      and spawner info definitions.
+
+  Expand or comment out sections as needed for future updates or newly added
+  aircraft.
+  ==============================================================================
+*/
+
 class CfgPatches {
   class twelfth_aircraft {
     units[] = {
@@ -33,8 +54,17 @@ class CfgPatches {
   };
 };
 
-class CfgVehicles {
+/*
+  ==============================================================================
+  CfgVehicles
+  ==============================================================================
+  Each custom aircraft class inherits from a base class (e.g., Splits_Pelican_base),
+  modifies textures, sets faction, and includes macros for more complex logic
+  like extended spawn info or texture sets.
+*/
 
+class CfgVehicles {
+  // -------------------------- Base Classes --------------------------
   class Splits_Pelican_base;
 
   class OPTRE_UNSC_hornet;
@@ -64,7 +94,9 @@ class CfgVehicles {
 
   // Nandao
   class MEU_F29_Nandao_VTOL;
-
+  // ---------------------------------------------------------------------------
+  //  Pelican (D77-TC)
+  // ---------------------------------------------------------------------------
   class twelfth_d77_tc_pelican: Splits_Pelican_base {
     scope = 2;
     scopeCurator = 2;
@@ -83,7 +115,9 @@ class CfgVehicles {
     PELICAN_TEXTURESETS
     AIR_SP_INFO(Pelican,0,Troop Transport)
   };
-
+  // ---------------------------------------------------------------------------
+  //  AV-14 Hornet
+  // ---------------------------------------------------------------------------
   class twelfth_hornet: OPTRE_UNSC_hornet {
     scope = 2;
     scopeCurator = 2;
@@ -116,7 +150,10 @@ class CfgVehicles {
     };
     AIR_SP_INFO(Hornet,0,Base)
   };
-
+  // ---------------------------------------------------------------------------
+  //  UH-144 Falcon Variants
+  // ---------------------------------------------------------------------------
+  // Unarmed
   class twelfth_falcon_unarmed: OPTRE_UNSC_falcon {
     scope = 2;
     scopeCurator = 2;
@@ -129,7 +166,7 @@ class CfgVehicles {
     AIR_SP_INFO(Falcon,0,Unarmed)
     FALCON_TEXTURESETS
   };
-
+  // Armed
   class twelfth_falcon_armed: OPTRE_UNSC_falcon_armed {
     scope = 2;
     scopeCurator = 2;
@@ -142,7 +179,7 @@ class CfgVehicles {
     AIR_SP_INFO(Falcon,1,20mm Cannon)
     FALCON_TEXTURESETS
   };
-
+  // S variant (Side Gun) unarmed
   class twelfth_falcon_s_unarmed: OPTRE_UNSC_falcon_S {
     scope = 2;
     scopeCurator = 2;
@@ -155,7 +192,7 @@ class CfgVehicles {
     AIR_SP_INFO(Falcon,2,Unarmed w/ Side Gun)
     FALCON_TEXTURESETS
   };
-
+  // S variant armed
   class twelfth_falcon_s_armed: OPTRE_UNSC_falcon_armed_S {
     scope = 2;
     scopeCurator = 2;
@@ -168,7 +205,9 @@ class CfgVehicles {
     AIR_SP_INFO(Falcon,3,20mm w/ Side Gun)
     FALCON_TEXTURESETS
   };
-
+  // ---------------------------------------------------------------------------
+  //  AV-22 Sparrowhawk Variants
+  // ---------------------------------------------------------------------------
   class twelfth_sparrowhawk_m: OPTRE_AV22_Sparrowhawk {
     author="Waylen";
     scope = 2;
@@ -276,7 +315,10 @@ class CfgVehicles {
     AIR_SP_INFO(Sparrowhawk,3,30mm Fixed | Cannon)
     SPARROWHAWK_TEXTURESETS
   };
-
+  // ---------------------------------------------------------------------------
+  //  Wyvern (Based on Tigris/VTOL)
+  // ---------------------------------------------------------------------------
+  // Infantry version
   class twelfth_wyvern_inf: O_T_VTOL_02_infantry_dynamicLoadout_F {
     author="Waylen";
     scope = 2;
@@ -327,7 +369,7 @@ class CfgVehicles {
     };
     AIR_SP_INFO(Wyvern,0,Infantry)
   };
-
+  // Vehicle version
   class twelfth_wyvern_veh: O_T_VTOL_02_vehicle_dynamicLoadout_F {
     author="Waylen";
     scope = 2;
@@ -414,7 +456,9 @@ class CfgVehicles {
   };*/
 
 
-
+  // ---------------------------------------------------------------------------
+  //  Blackfish Variants
+  // ---------------------------------------------------------------------------
   class twelfth_blackfish_inf: B_T_VTOL_01_infantry_F {
     scope=2;
     scopeCurator=2;

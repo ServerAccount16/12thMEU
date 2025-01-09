@@ -1,4 +1,27 @@
-// Define the mod's dependencies and version requirements.
+/*
+  ==============================================================================
+  config.cpp
+
+  This file establishes the 12th MEU factions, editor categories, and subcategories
+  for use in the Eden Editor. It defines three factions: 12th MEU (BLUFOR),
+  Insurrection (OPFOR), and CMA (INDEPENDENT), each with its own sets of subcategories
+  (cars, turrets, supplies, etc.).
+
+  Key Points:
+    - CfgPatches: Basic mod info (units, weapons, requiredAddons).
+    - CfgFactionClasses: Creates the 12th MEU factions. You can add a faction icon
+      later for each, if desired.
+    - CfgEditorCategories: Top-level categories used in Eden (like "12th Marine
+      Expeditionary Unit").
+    - CfgEditorSubcategories: More specific groupings for vehicles, turrets, supplies,
+      etc., under the top-level category.
+
+  NOTE: For these factions/categories to appear in Eden, ensure you reference them
+  in your vehicles or units (e.g., `faction = "twelfth_MEU"; editorCategory = "twelfth_MEU";`).
+  ==============================================================================
+*/
+
+// Basic mod info and dependencies
 class CfgPatches {
   class twelfth_faction_data {
     units[] = {};  // No units defined yet.
@@ -8,8 +31,17 @@ class CfgPatches {
   };
 };
 
-// Define faction classes for the 12th Marine Expeditionary Unit (MEU)
-// including Marine, Insurrection, and CMA assets.
+/*
+  ==============================================================================
+  CfgFactionClasses
+  ==============================================================================
+  Creates the actual factions: 12th MEU, 12th Insurrection, 12th CMA. 
+  - displayName: How it shows up in lists.
+  - icon: Path to a faction icon (paa or png). Example: "x\12thMEU\path\icon.paa".
+  - side: 1 = BLUFOR, 2 = OPFOR, 3 = Independent, 4 = Civilian.
+
+  priority: The engine uses this to decide sort order. Higher = displayed first.
+*/
 class CfgFactionClasses {
   class twelfth_MEU {
     displayName = "12th Marine Expeditionary Unit";
@@ -34,7 +66,14 @@ class CfgFactionClasses {
   };
 };
 
-// Define editor categories for the 12th MEU factions.
+/*
+  ==============================================================================
+  CfgEditorCategories
+  ==============================================================================
+  These are the "top-level" folders in the Eden Editor for objects belonging
+  to our 12th MEU faction. For instance, "twelfth_MEU" will appear as a main
+  category with subcategories (like "twelfth_MEU_Cars").
+*/
 class CfgEditorCategories {
   class twelfth_MEU {
     displayName="12th Marine Expeditionary Unit";
@@ -53,7 +92,16 @@ class CfgEditorCategories {
   };
 };
 
-// Define editor subcategories for various asset types within each faction.
+/*
+  ==============================================================================
+  CfgEditorSubcategories
+  ==============================================================================
+  Subcategories under each main category. For example, "twelfth_MEU_Cars" can
+  appear under "twelfth_MEU" if a vehicle is declared with 
+    faction = "twelfth_MEU";
+    editorCategory = "twelfth_MEU";
+    editorSubcategory = "twelfth_MEU_Cars";
+*/
 class CfgEditorSubcategories {
   // 12th MEU Marine Assets
   class twelfth_MEU_Rotary {

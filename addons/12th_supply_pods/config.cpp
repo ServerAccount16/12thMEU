@@ -1,3 +1,24 @@
+/*
+  ==============================================================================
+  config.cpp
+
+  This file configures custom supply pods for the 12th MEU mod. Each supply pod
+  inherits from an OPTRE base class, but carries different inventories (medical,
+  explosives, launcher ammo, mortar ammo, etc.). A logic module is also modified
+  so these pods can be selected in an in-game Pelican Supply Drop module.
+
+  Key Points:
+    - CfgPatches: Identifies this as part of twelfth_supply_pods. Lists the
+      supply pod units.
+    - CfgVehicles: Contains all supply pod definitions, each inheriting from
+      OPTRE_Ammo_SupplyPod_Empty but with different textures and inventory.
+    - Module_OPTRE_PelicanSupplyDrop: Extended so mission makers can pick
+      your custom 12th supply pods from a drop-down list in Eden Editor.
+
+  ==============================================================================
+*/
+
+// Suppresses HEMTT's warning about padded arguments in config files
 #pragma hemtt suppress pw3_padded_arg config
 
 class CfgPatches {
@@ -18,31 +39,52 @@ class CfgPatches {
 };
 
 class CfgVehicles {
-  // Base class for supply pods
+  /*
+    Base Class:
+    OPTRE_Ammo_SupplyPod_Empty is from the OPTRE mod. 
+    Make sure your mod includes "OPTRE_Weapons...", "OPTRE_Ammo..." or 
+    appropriate references in your requiredAddons.
+  */
   class OPTRE_Ammo_SupplyPod_Empty;
 
-  // Define the empty supply pod
+  // ---------------------------------------------------------------------------
+  //  Empty Supply Pod
+  // ---------------------------------------------------------------------------
+  /*
+    The "twelfth_supply_pod_empty" serves as the baseline for all pods below. 
+    It retextures the base pod with a default texture. 
+    Then it sets capacity and leaves inventory empty for custom usage.
+  */
   class twelfth_supply_pod_empty: OPTRE_Ammo_SupplyPod_Empty {
     author = "Weber";
-    scope = 2;
-    scopeCurator = 2;
-    scopeArsenal = 2;
+    scope = 2;          // Visible in Editor
+    scopeCurator = 2;   // Visible in Zeus
+    scopeArsenal = 2;   // Accessible in Virtual Arsenal
     displayName = "[12th] Supply Pod (Empty)";
-    faction = "twelfth_MEU";
-    editorCategory = "twelfth_MEU";
-    editorSubcategory = "twelfth_MEU_Supplies";
+    faction = "twelfth_MEU";         // Which faction it belongs to
+    editorCategory = "twelfth_MEU";  // Editor category/folder
+    editorSubcategory = "twelfth_MEU_Supplies"; // Editor subfolder
+
+    // The maximum items/magazines/weapons this supply pod can hold
     transportMaxWeapons = 25;
     transportMaxMagazines = 100;
+
+    // HiddenSelections for retexturing
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {
-      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"
+      "\x\12thMEU\addons\12th_supply_pods\data\pod_co.paa"  
+        // The default texture for an empty supply pod
     };
+
+    // By default, no items, magazines, or weapons
     class TransportMagazines {};
     class TransportWeapons {};
     class TransportItems {};
   };
 
-  // Define the medical supply pod
+  // ---------------------------------------------------------------------------
+  //  Medical Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_medical: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Medical)";
     hiddenSelectionsTextures[] = {
@@ -79,7 +121,9 @@ class CfgVehicles {
     };
   };
 
-  // Define the explosives supply pod
+  // ---------------------------------------------------------------------------
+  //  Explosives Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_ex: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Explosives)";
     hiddenSelectionsTextures[] = {
@@ -119,7 +163,10 @@ class CfgVehicles {
     };
   };
 
-  // Define the launcher supply pod
+
+  // ---------------------------------------------------------------------------
+  //  Launcher Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_at: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Launchers)";
     hiddenSelectionsTextures[] = {
@@ -141,7 +188,9 @@ class CfgVehicles {
     class TransportItems {};
   };
 
-  // Define the mortar supply pod
+  // ---------------------------------------------------------------------------
+  //  Mortar Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_mortar: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Mortars)";
     hiddenSelectionsTextures[] = {
@@ -161,7 +210,9 @@ class CfgVehicles {
     };
   };
 
-  // Define the rifle ammo supply pod
+  // ---------------------------------------------------------------------------
+  //  Rifle Ammo Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_rifle: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Rifle Ammo)";
     hiddenSelectionsTextures[] = {
@@ -180,7 +231,9 @@ class CfgVehicles {
     class TransportItems {};
   };
 
-  // Define the MG ammo supply pod
+  // ---------------------------------------------------------------------------
+  //  MG Ammo Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_mg: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (MG Ammo)";
     hiddenSelectionsTextures[] = {
@@ -200,8 +253,9 @@ class CfgVehicles {
     };
   };
 
-  // Define Equipment Supply Pod
-  // thanks weber for this <3
+  // ---------------------------------------------------------------------------
+  //  Equipment Supply Pod
+  // ---------------------------------------------------------------------------
   class twelfth_supply_pod_eq: twelfth_supply_pod_empty {
     displayName = "[12th] Supply Pod (Equipment)";
     hiddenSelectionsTextures[] = {
@@ -225,7 +279,18 @@ class CfgVehicles {
     };
   };
 
-  // Define supply pod load/unload logic for interaction with Maglock Mania
+  /*
+    Optional: If you define more pods (like DMR, or other specialized containers),
+    replicate the pattern above, changing the textures and transport contents.
+  */
+
+  // ---------------------------------------------------------------------------
+  //  Module Logic for Pelican Supply Drop
+  // ---------------------------------------------------------------------------
+  /*
+    This section integrates your pods into the "Module_OPTRE_PelicanSupplyDrop"
+    from the OPTRE or a similar mod, letting mission makers pick them in Eden.
+  */
   class Logic;
   class Module_F: Logic {
     class Arguments {};
@@ -239,6 +304,11 @@ class CfgVehicles {
         description = "Type of box required.";
         defaultValue = "rdm";
         typeName = "STRING";
+        /*
+          The 'values' array enumerates all possible supply pod classes 
+          for the drop-down. We add references to our 12th supply pods at
+          the bottom, letting you pick them in Eden's module interface.
+        */
         class values {
           class n1 { name = "none"; value = "none"; };
           class n2 { name = "Random Supply Pod"; value = "rdm"; default = 1; };

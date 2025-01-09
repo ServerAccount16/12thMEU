@@ -1,7 +1,27 @@
-#define P(PATH) \x\12thMEU\addons\12th_vehicles\##PATH
-#define QP(PATH) #P(PATH)
+/*
+  ==============================================================================
+  config_macros.hpp
 
-// Default vehicle inventory
+  This file contains macros that handle:
+    1. File path building: P() and QP().
+    2. Default inventories: STDINV and MEDINV (for medical vehicles).
+    3. Any custom macros for vehicle definitions, textures, or properties.
+
+  Notably, `STOMPER_SP_INFO(...)` is alluded to in config.cpp but not defined here;
+  you'd add it if you want to apply special side/faction/spawn properties consistently.
+  ==============================================================================
+*/
+#define P(PATH) \x\12thMEU\addons\12th_vehicles\##PATH
+    // Concatenates the internal path for your 12th_vehicles addon, e.g.:
+    // P(mySubfolder\something.paa) => \x\12thMEU\addons\12th_vehicles\mySubfolder\something.paa
+#define QP(PATH) #P(PATH)
+    // Wraps the path in quotes to produce a string.
+
+// -----------------------------------------------------------------------------
+//  Macro: STDINV
+//  This macro sets a “Standard” default inventory for a vehicle’s cargo.
+//  Typically includes common magazines, grenades, and some medical items.
+// -----------------------------------------------------------------------------
 #define STDINV   \
 class TransportMagazines {      \
     class _xx_OPTRE_32Rnd_762x51_Mag_Tracer { magazine = "OPTRE_32Rnd_762x51_Mag_Tracer"; count = 10; };    \
@@ -22,7 +42,12 @@ class TransportItems{   \
     class _xx_ACE_WaterBottle { name = "ACE_WaterBottle"; count = 2; }; \
 };  
 
-// Medical inventory 
+// -----------------------------------------------------------------------------
+//  Macro: MEDINV
+//  This macro sets a “Medical” oriented default inventory for a vehicle’s cargo.
+//  Typically used by dedicated medical vehicles or logistic vehicles that
+//  specialize in treatment items.
+// -----------------------------------------------------------------------------
 #define MEDINV   \
 class TransportMagazines {      \
     class _xx_OPTRE_32Rnd_762x51_Mag_Tracer { magazine = "OPTRE_32Rnd_762x51_Mag_Tracer"; count = 4; };    \

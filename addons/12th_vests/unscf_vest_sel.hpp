@@ -1,16 +1,25 @@
+/*
+  ==============================================================================
+  unscf_vest_sel.hpp
+
+  This file defines "selection sets" that specify which hiddenSelections
+  (pouch compartments, chest rigs, leg pouches, etc.) are shown on the vest
+  model. Each #define is a comma-separated list of hiddenSelections.
+
+  For instance, RIFLEMAN_BASE_SEL might include "Leg" but not "Breacher"
+  or "Grenedier", etc. By combining these sets with macros, we can create
+  multiple variations of the same vest model with different pouches visible.
+
+  Each #define = a bunch of string literal selection names. If your vest model
+  changes or you want to rename a selection in your .p3d, update these here.
+  ==============================================================================
+*/
 #ifndef UNSCF_VEST_SEL_HPP
 #define UNSCF_VEST_SEL_HPP
 
-/*
-A big set of every possible selection combination
-for the UNSC Foundries halo-themed vests.
-*/
-
-/*
----- RIFLEMAN SELECTION SETS -----------------------------------------
-*/
-
-// Base selection set for Rifleman.
+/* -------------------------------------------------------------------------- */
+/* Rifleman Selection Sets                                                    */
+/* -------------------------------------------------------------------------- */
 #define RIFLEMAN_BASE_SEL             \
   "camo5",                            \
   "Chest",                            \
@@ -141,12 +150,18 @@ for the UNSC Foundries halo-themed vests.
   "Grenedier",                        \
   "Shotgun",                          \
   "HeavyBreacher"                     \
+// ... (and so on for each selection variant)
 
-/*
----- BREACHER SELECTION SETS -----------------------------------------
-*/
 
-// Base selection set for Breacher.
+// Additional sets for chest pouches, partial chest pouches, etc.
+// The pattern is the same: each #define is a unique combination
+// of hiddenSelection names used by the vest model.
+
+
+/* -------------------------------------------------------------------------- */
+/* Breacher Selection Sets                                                    */
+/* -------------------------------------------------------------------------- */
+// Similar structure to the Rifleman sets but includes "Breacher" references
 #define BREACHER_BASE_SEL             \
   "camo5",                            \
   "Rifleman",                         \
@@ -265,12 +280,12 @@ for the UNSC Foundries halo-themed vests.
   "light",                            \
   "Grenedier",                        \
   "HeavyRifle",                       \
+// ... (and so on, each set controlling different combinations)
 
-/*
----- GRENADIER SELECTION SETS ----------------------------------------
-*/
-
-// Base selection set for Grenadier.
+/* -------------------------------------------------------------------------- */
+/* Grenadier Selection Sets                                                  */
+/* -------------------------------------------------------------------------- */
+// Mirrors the same structure for "GRENEDIER" sets.
 #define GRENADIER_BASE_SEL            \
   "camo5",                            \
   "Rifleman",                         \
