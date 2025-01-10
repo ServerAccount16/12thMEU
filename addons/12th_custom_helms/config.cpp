@@ -43,12 +43,13 @@ class CfgPatches {
       "twelfth_ch_Bretek",
       "twelfth_ch_Broad",
       "twelfth_ch_Burns",
-//      "twelfth_ch_Bunge",
+      "twelfth_ch_Bunge",
       "twelfth_ch_Coady",
       "twelfth_ch_Dennis",
       "twelfth_ch_Dom",
       "twelfth_ch_Don",
 //      "twelfth_ch_Dras",
+      "twelfth_ch_Dixie",
       "twelfth_ch_Gallegos",
       "twelfth_ch_Galvin",
       "twelfth_ch_Geoff",
@@ -77,13 +78,14 @@ class CfgPatches {
       "twelfth_ch_Bert_nv",
       "twelfth_ch_Bretek_nv",
       "twelfth_ch_Broad_nv",
-//      "twelfth_ch_Bunge_nv",
+      "twelfth_ch_Bunge_nv",
       "twelfth_ch_Burns_nv",
       "twelfth_ch_Coady_nv",
       "twelfth_ch_Dennis_nv",
       "twelfth_ch_Dom_nv",
       "twelfth_ch_Don_nv",
 //      "twelfth_ch_Dras_nv",
+      "twelfth_ch_Dixie_nv",
       "twelfth_ch_Gallegos_nv",
       "twelfth_ch_Galvin_nv",
       "twelfth_ch_Geoff_nv",
@@ -173,13 +175,14 @@ class CfgWeapons {
   CUSTOM_HELM_S_AV(Bobby)
   CUSTOM_HELM_S_AV(Bretek)
   CUSTOM_HELM_S_AV(Broad)
-//  CUSTOM_HELM_S_AV(Bunge)
+  CUSTOM_HELM_S_AV(Bunge)
   CUSTOM_HELM_S_AV(Burns)
   CUSTOM_HELM_S_AV(Coady)
   CUSTOM_HELM_S_AV(Dennis)
   CUSTOM_HELM_S_AV(Dom)
   CUSTOM_HELM_S_AV(Don)
 //  CUSTOM_HELM_S_AV(Dras)
+  CUSTOM_HELM_S_AV(Dixie)
   CUSTOM_HELM_S_AV(Gallegos)
   CUSTOM_HELM_S_AV(Galvin)
   CUSTOM_HELM_S_AV(Geoff)
@@ -265,12 +268,13 @@ class XtdGearModels {
           "Bretek",
           "Broad",
           "Burns",
-//          "Bunge",
+          "Bunge",
           "Coady",
           "Dennis",
           "Dom",
           "Don",
 //          "Dras",
+          "Dixie",
           "Gallegos",
           "Galvin",
           "Geoff",
@@ -314,12 +318,13 @@ class XtdGearInfos {
     CH_HELM_S_GI(Bretek)
     CH_HELM_S_GI(Broad)
     CH_HELM_S_GI(Burns)
-//    CH_HELM_S_GI(Bunge)
+    CH_HELM_S_GI(Bunge)
     CH_HELM_S_GI(Coady)
     CH_HELM_S_GI(Dennis)
     CH_HELM_S_GI(Dom)
     CH_HELM_S_GI(Don)
 //    CH_HELM_S_GI(Dras)
+    CH_HELM_S_GI(Dixie)
     CH_HELM_S_GI(Gallegos)
     CH_HELM_S_GI(Galvin)
     CH_HELM_S_GI(Geoff)

@@ -50,7 +50,7 @@ class CfgVehicles {
     Uncomment to use this vehicle in-game.
     Inherits from B_UGV_01_F (the unarmed stomper).
   */
-  /*
+  
   class twelfth_stomper: B_UGV_01_F {
     scope = 2;               // Visible/available in the editor
     scopeCurator = 2;        // Visible to Zeus
@@ -99,7 +99,7 @@ class CfgVehicles {
         // If you have more camos, increment them here. 
     };
   };
-  */
+  
 
   // ---------------------------------------------------------------------------
   //  [12th] Stomper RCWS UGV (armed variant)
@@ -107,7 +107,7 @@ class CfgVehicles {
   /*
     Similarly, for the armed stomper version with an RCWS (remote-controlled weapon station).
   */
-  /*
+  
   class twelfth_stomper_rcws: B_UGV_01_rcws_F {
     scope = 2;
     scopeCurator = 2;
@@ -152,6 +152,6 @@ class CfgVehicles {
       camouflage = 0;
     };
   };
-  */
+  
 
 };
